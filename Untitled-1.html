@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIVRA BY PORWALS | Handloom & Home Furnishing</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FBF8F3;
+    --deep-brown: #2C1A0E;
+    --terracotta: #B5522A;
+    --gold: #C49A3C;
+    --sage: #7A8C6E;
+    --linen: #E8DFD0;
+    --charcoal: #3D3530;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  section { position: relative; }
+
+  /* ══════════════════════════════
+     SECTION 1 — HERO / LOGO
+  ══════════════════════════════ */
+  #hero {
+    min-height: 100vh;
+    background: var(--deep-brown);
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 20px 60px;
+  }
+
+  .hero-weave {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(196,154,60,0.08) 39px, rgba(196,154,60,0.08) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(196,154,60,0.08) 39px, rgba(196,154,60,0.08) 40px);
+    animation: weaveDrift 20s linear infinite;
+  }
+
+  @keyframes weaveDrift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(40px, 40px); }
+  }
+
+  .hero-diagonal {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: clamp(60px, 10vw, 120px);
+    background: var(--warm-white);
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeUp 1.2s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .logo-mark {
+    width: clamp(80px, 15vw, 100px);
+    height: clamp(80px, 15vw, 100px);
+    margin: 0 auto 2rem;
+    position: relative;
+  }
+
+  .logo-mark svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo-wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 300;
+    color: var(--cream);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .logo-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.6rem, 2vw, 0.7rem);
+    letter-spacing: clamp(0.25em, 2vw, 0.5em);
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 1rem;
+    opacity: 0.9;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    color: rgba(245,240,232,0.6);
+    margin-top: 2.5rem;
+    letter-spacing: 0.05em;
+    padding: 0 1rem;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: -1;
+  }
+
+  .hero-cta:hover { color: var(--deep-brown); }
+  .hero-cta:hover::before { transform: scaleX(1); }
+
+  /* ══════════════════════════════
+     SECTION 2 — LEGACY
+  ══════════════════════════════ */
+  #legacy {
+    padding: clamp(60px, 8vw, 100px) 0;
+    background: var(--warm-white);
+    overflow: hidden;
+  }
+
+  .legacy-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+
+  .legacy-visual {
+    position: relative;
+  }
+
+  .legacy-frame {
+    position: relative;
+    background: var(--linen);
+    padding: clamp(1.5rem, 3vw, 3rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 500px) {
+    .legacy-frame { grid-template-columns: 1fr 1fr; }
+  }
+
+  .legacy-frame::before {
+    content: '';
+    position: absolute;
+    top: -12px; left: -12px;
+    right: 12px; bottom: -12px;
+    border: 2px solid var(--gold);
+    z-index: 0;
+  }
+
+  .stat-block {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 1.5rem;
+    background: var(--warm-white);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 300;
+    color: var(--terracotta);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.6;
+    margin-top: 0.8rem;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .legacy-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    color: var(--deep-brown);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .legacy-text h2 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .legacy-text p {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.9;
+    color: var(--charcoal);
+    opacity: 0.75;
+    margin-bottom: 1.2rem;
+  }
+
+  .legacy-divider {
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+    margin: 1.5rem 0;
+  }
+
+  .legacy-text .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    text-decoration: none;
+    margin-top: 1.5rem;
+    transition: gap 0.3s ease;
+    font-weight: 500;
+  }
+
+  .legacy-text .cta-link:hover { gap: 1.4rem; }
+
+  .legacy-text .cta-link span {
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: var(--terracotta);
+    transition: width 0.3s ease;
+  }
+
+  .legacy-text .cta-link:hover span { width: 50px; }
+
+  /* ══════════════════════════════
+     SECTION 3 — PRODUCTS
+  ══════════════════════════════ */
+  #products {
+    padding: clamp(60px, 8vw, 100px) 0;
+    background: var(--deep-brown);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #products::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(196,154,60,0.04) 0, rgba(196,154,60,0.04) 1px, transparent 1px, transparent 50%);
+    background-size: 20px 20px;
+  }
+
+  .products-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: clamp(40px, 6vw, 70px);
+  }
+
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+  }
+
+  .section-header h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .section-header p {
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    color: rgba(245,240,232,0.6);
+    margin-top: 1rem;
+    letter-spacing: 0.05em;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  @media (min-width: 768px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .products-grid { grid-template-columns: repeat(3, 1fr); }
+    .product-card:first-child { grid-row: span 2; aspect-ratio: auto; }
+  }
+
+  .product-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 3/4;
+    background: var(--linen);
+    border-radius: 4px;
+    transform: translateZ(0);
+  }
+
+  .product-illustration {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .product-card:hover .product-illustration {
+    transform: scale(1.05);
+  }
+
+  .product-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44,26,14,0.95) 0%, rgba(44,26,14,0.3) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    transition: background 0.4s ease;
+  }
+
+  .product-card:hover .product-overlay {
+    background: linear-gradient(to top, rgba(44,26,14,0.98) 0%, rgba(44,26,14,0.7) 70%, transparent 100%);
+  }
+
+  .product-category {
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.2;
+  }
+
+  .product-desc {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.8);
+    margin-top: 0.8rem;
+    line-height: 1.6;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+  }
+
+  @media (hover: none) {
+    .product-desc {
+      max-height: 120px;
+      opacity: 1;
+      margin-bottom: 1rem;
+    }
+    .product-link {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    .product-overlay {
+      background: linear-gradient(to top, rgba(44,26,14,0.98) 0%, rgba(44,26,14,0.5) 80%, transparent 100%);
+    }
+  }
+
+  .product-card:hover .product-desc {
+    max-height: 120px;
+    opacity: 1;
+  }
+
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease 0.1s;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .product-card:hover .product-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .bg-weave-1 { background: linear-gradient(135deg, #8B6B4A 0%, #C49A3C 50%, #7A5C3C 100%); }
+  .bg-weave-2 { background: linear-gradient(135deg, #4A6B5C 0%, #7A8C6E 50%, #3C5A4A 100%); }
+  .bg-weave-3 { background: linear-gradient(135deg, #6B4A4A 0%, #B5522A 50%, #3C2A1A 100%); }
+  .bg-weave-4 { background: linear-gradient(135deg, #3C4A5C 0%, #5C6B7A 50%, #2C3A4A 100%); }
+  .bg-weave-5 { background: linear-gradient(135deg, #5C4A6B 0%, #8B6BA8 50%, #3C2A4A 100%); }
+
+  /* ══════════════════════════════
+     SECTION 4 — TESTIMONIALS
+  ══════════════════════════════ */
+  #testimonials {
+    padding: clamp(60px, 8vw, 100px) 0;
+    background: var(--cream);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .testimonials-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(8rem, 18vw, 22rem);
+    font-weight: 300;
+    color: rgba(196,154,60,0.05);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .testimonials-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .testimonials-inner .section-header h2 { color: var(--deep-brown); }
+  .testimonials-inner .section-header p { color: var(--charcoal); opacity: 0.7; }
+
+  .testimonials-swiper {
+    width: 100%;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    height: auto; 
+    display: flex;
+  }
+
+  .testi-card {
+    width: 100%;
+    background: var(--warm-white);
+    padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+  }
+
+  .testi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+
+  .testi-card.featured {
+    background: var(--deep-brown);
+  }
+
+  .quote-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    line-height: 0.5;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: block;
+    opacity: 0.5;
+  }
+
+  .testi-card.featured .quote-icon { opacity: 0.8; }
+
+  .testi-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    font-style: italic;
+    line-height: 1.75;
+    color: var(--charcoal);
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  .testi-card.featured .testi-text {
+    color: var(--cream);
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid rgba(44,26,14,0.08);
+    padding-top: 1.5rem;
+    margin-top: auto;
+  }
+
+  .testi-card.featured .testi-author { border-top-color: rgba(245,240,232,0.15); }
+
+  .author-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--linen);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--terracotta);
+    flex-shrink: 0;
+  }
+
+  .testi-card.featured .author-avatar {
+    background: rgba(245,240,232,0.1);
+    color: var(--gold);
+  }
+
+  .author-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--deep-brown);
+    letter-spacing: 0.05em;
+  }
+
+  .testi-card.featured .author-name { color: var(--cream); }
+
+  .author-company {
+    font-size: 0.7rem;
+    color: var(--charcoal);
+    opacity: 0.6;
+    letter-spacing: 0.05em;
+    margin-top: 0.3rem;
+    line-height: 1.3;
+  }
+
+  .testi-card.featured .author-company { color: var(--gold); opacity: 0.9; }
+
+  .stars {
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    margin-bottom: 1.2rem;
+  }
+
+  .swiper-pagination-bullet { background: var(--deep-brown); opacity: 0.2; }
+  .swiper-pagination-bullet-active { background: var(--terracotta); opacity: 1; }
+
+  /* ══════════════════════════════
+     SECTION 5 — CONTACT & FORM
+  ══════════════════════════════ */
+  #contact {
+    padding: clamp(60px, 8vw, 100px) 0 0;
+    background: var(--warm-white);
+  }
+
+  .contact-split {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .contact-split { grid-template-columns: 1fr 1.2fr; }
+  }
+
+  .contact-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    font-weight: 300;
+    color: var(--deep-brown);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-left h2 em { font-style: italic; color: var(--terracotta); }
+
+  .contact-left p {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.9;
+    color: var(--charcoal);
+    opacity: 0.8;
+    max-width: 450px;
+  }
+
+  .contact-info { margin-top: 3rem; }
+
+  .contact-info-item {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+    align-items: flex-start;
+  }
+
+  .contact-info-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--linen);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+
+  .contact-info-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--terracotta);
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  .contact-info-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    opacity: 0.8;
+  }
+
+  .contact-info-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  /* FORM CONTAINER */
+  .contact-form-container {
+    background: var(--deep-brown);
+    padding: clamp(2rem, 5vw, 4rem);
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact-form-container::before {
+    content: '';
+    position: absolute;
+    top: 12px; left: 12px;
+    right: -12px; bottom: -12px;
+    border: 1px solid var(--gold);
+    z-index: -1;
+    opacity: 0.3;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 600px) {
+    .contact-form-container::before { top: 6px; left: 6px; right: -6px; bottom: -6px; }
+  }
+
+  #enquiryForm {
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 600px) {
+    .form-row { grid-template-columns: 1fr 1fr; }
+  }
+
+  .form-group { margin-bottom: 1.5rem; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(245,240,232,0.2);
+    padding: 0.8rem 0;
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  .form-group select option { background: var(--deep-brown); color: var(--cream); }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(245,240,232,0.3);
+    font-size: 0.9rem;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-bottom-color: var(--gold); }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--gold);
+    border: none;
+    color: var(--deep-brown);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    border-radius: 2px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .form-submit:hover:not(:disabled) {
+    background: var(--terracotta);
+    color: var(--cream);
+  }
+
+  .form-submit:active:not(:disabled) { transform: scale(0.98); }
+
+  .form-submit:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
+  .spinner {
+    display: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(44,26,14,0.2);
+    border-top-color: var(--deep-brown);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  .form-submit.is-loading .spinner { display: block; }
+  .form-submit.is-loading .btn-text { opacity: 0.8; }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .success-state {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  .success-state.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .checkmark-wrapper {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 2rem;
+  }
+
+  .checkmark {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2.5;
+    stroke: var(--gold);
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px var(--gold);
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+  }
+
+  .checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2.5;
+    stroke-miterlimit: 10;
+    stroke: var(--gold);
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+
+  .checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+  }
+
+  @keyframes stroke { 100% { stroke-dashoffset: 0; } }
+  @keyframes scale {
+    0%, 100% { transform: none; }
+    50% { transform: scale3d(1.1, 1.1, 1); }
+  }
+
+  .success-state h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+    font-weight: 300;
+  }
+
+  .success-state p {
+    font-size: 0.95rem;
+    color: rgba(245,240,232,0.7);
+    line-height: 1.6;
+    max-width: 300px;
+  }
+
+  /* FOOTER */
+  footer {
+    margin-top: clamp(60px, 8vw, 100px);
+    padding: 3rem 1.5rem;
+    background: var(--deep-brown);
+    text-align: center;
+    border-top: 1px solid rgba(245,240,232,0.05);
+  }
+
+  footer p {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: rgba(245,240,232,0.5);
+    text-transform: uppercase;
+  }
+
+  /* ══════════════════════════════
+     NAVIGATION & PERFECT MOBILE MENU
+  ══════════════════════════════ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    padding: 1.5rem clamp(1.5rem, 4vw, 3rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+  }
+
+  nav.scrolled {
+    background: rgba(44,26,14,0.98);
+    padding: 1rem clamp(1.5rem, 4vw, 3rem);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 300;
+    position: relative;
+    z-index: 10001; /* Stay above mobile overlay */
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* SINGLE BUTTON APPROACH */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cream);
+    cursor: pointer;
+    z-index: 10001;
+    padding: 0.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .mobile-menu-btn:hover { color: var(--gold); }
+  .mobile-menu-btn:active { transform: scale(0.9); }
+
+  /* --- FULL SCREEN MOBILE SIDEBAR --- */
+  @media (max-width: 800px) {
+    .mobile-menu-btn { display: block; }
+    
+    .nav-links {
+      position: fixed;
+      top: 0; right: 0; bottom: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(44, 26, 14, 0.98);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      transform: translateX(100%); /* Hidden completely to the right */
+      transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      z-index: 10000;
+    }
+
+    .nav-links.active {
+      transform: translateX(0); /* Slides perfectly in view */
+    }
+
+    .nav-links li {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    /* Staggered animation for links when menu is open */
+    .nav-links.active li {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: calc(0.1s * var(--i));
+    }
+
+    .nav-links a {
+      font-size: 1.25rem;
+      letter-spacing: 0.3em;
+      color: var(--cream);
+    }
+  }
+
+  /* ══════════════════════════════
+     SCROLL ANIMATIONS
+  ══════════════════════════════ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* Add this to your existing CSS styles */
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .product-card:hover .product-image {
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="#hero" class="nav-brand">Nivra</a>
+  
+  <ul class="nav-links">
+    <li style="--i:1"><a href="#legacy">Our Legacy</a></li>
+    <li style="--i:2"><a href="#products">Products</a></li>
+    <li style="--i:3"><a href="#testimonials">Partners</a></li>
+    <li style="--i:4"><a href="#contact">Connect</a></li>
+  </ul>
+
+  <button class="mobile-menu-btn" aria-label="Toggle menu" id="menuToggleBtn">
+    <svg id="icon-hamburger" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+    <svg id="icon-close" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+</nav>
+
+<section id="hero">
+  <div class="hero-weave"></div>
+  <div class="hero-inner">
+    <div class="logo-mark">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="10" x2="20" y2="90" stroke="#C49A3C" stroke-width="1" opacity="0.6"/>
+        <line x1="35" y1="10" x2="35" y2="90" stroke="#C49A3C" stroke-width="1" opacity="0.6"/>
+        <line x1="50" y1="10" x2="50" y2="90" stroke="#C49A3C" stroke-width="1" opacity="0.6"/>
+        <line x1="65" y1="10" x2="65" y2="90" stroke="#C49A3C" stroke-width="1" opacity="0.6"/>
+        <line x1="80" y1="10" x2="80" y2="90" stroke="#C49A3C" stroke-width="1" opacity="0.6"/>
+        <path d="M10 30 Q20 25 35 30 Q50 35 65 30 Q80 25 90 30" stroke="#B5522A" stroke-width="2" fill="none"/>
+        <path d="M10 45 Q20 50 35 45 Q50 40 65 45 Q80 50 90 45" stroke="#B5522A" stroke-width="2" fill="none"/>
+        <path d="M10 60 Q20 55 35 60 Q50 65 65 60 Q80 55 90 60" stroke="#B5522A" stroke-width="2" fill="none"/>
+        <path d="M50 15 L65 50 L50 85 L35 50 Z" stroke="#C49A3C" stroke-width="1.5" fill="rgba(196,154,60,0.1)"/>
+        <circle cx="50" cy="50" r="4" fill="#C49A3C"/>
+      </svg>
+    </div>
+    <h1 class="logo-wordmark">Nivra</h1>
+    <p class="logo-sub">Heritage Handloom &amp; Home Furnishing</p>
+    <p class="hero-tagline">Where ancestral craft meets contemporary living</p>
+    <a href="#contact" class="hero-cta">Partner With Us</a>
+  </div>
+  <div class="hero-diagonal"></div>
+</section>
+
+<section id="legacy">
+  <div class="legacy-layout">
+    <div class="legacy-visual reveal">
+      <div class="legacy-frame">
+        <div class="stat-block">
+          <div class="stat-number">1954</div>
+          <div class="stat-label">Founded</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">70+</div>
+          <div class="stat-label">Years of Craft</div>
+        </div>
+      </div>
+    </div>
+    <div class="legacy-text">
+      <p class="section-label reveal">Our Legacy</p>
+      <h2 class="reveal reveal-delay-1">Threads woven through <em>generations</em> of mastery</h2>
+      <div class="legacy-divider reveal reveal-delay-2"></div>
+      <p class="reveal reveal-delay-2">Since 1978, Nivra has stood at the intersection of timeless Indian textile heritage and the evolving demands of global interiors.</p>
+      <p class="reveal reveal-delay-3">Today, we are a trusted B2B sourcing partner for interior designers, hospitality brands, and retail chains across indore. Every piece carries the fingerprint of its maker a guarantee of authenticity you cannot find in machine-made alternatives.</p>
+      <a href="#contact" class="cta-link reveal reveal-delay-4">Explore Partnership <span></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="products-inner">
+    <div class="section-header">
+      <p class="section-label reveal" style="color:var(--gold)">Product Categories</p>
+      <h2 class="reveal reveal-delay-1">Crafted for <em>distinguished</em> spaces</h2>
+      <p class="reveal reveal-delay-2">Minimum order quantities available for wholesale and project sourcing. Custom colorways and weave patterns on request.</p>
+    </div>
+    
+    <div class="products-grid">
+        
+      <!-- 1. FITTED BEDSHEETS -->
+      <div class="product-card reveal">
+        <div class="product-illustration">
+          <img src="./Porwal Images/premium cotton king size fittef bedsheet/onbed.png" alt="Fitted Bedsheets" class="product-image">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Bedding</span>
+          <h3 class="product-name">Fitted Bedsheets</h3>
+          <p class="product-desc">Premium elasticated fitted sheets designed for a perfect, wrinkle-free mattress fit. Available in multiple thread counts.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+      <!-- 2. WHITE BEDSHEETS -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-illustration">
+          <img src="https://m.media-amazon.com/images/I/61pXbNC1NiL._AC_UF894,1000_QL80_.jpg" alt="White Bedsheets" class="product-image">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Bedding</span>
+          <h3 class="product-name">White Bedsheets</h3>
+          <p class="product-desc">Classic, crisp white bedsheets ideal for luxury hospitality and elegant minimalist home interiors.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+      <!-- 3. COMFORTER DOUBLE BED -->
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-illustration">
+          <img src="./Porwal Images/comfoorter/onbed.png" class="product-image">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Soft Furnishing</span>
+          <h3 class="product-name">Comforter Double Bed</h3>
+          <p class="product-desc">Plush, all-season double bed comforters offering exceptional warmth without the heavy weight.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+      <!-- 4. COMFORTER KIDS -->
+      <div class="product-card reveal">
+        <div class="product-illustration">
+          <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/c4b28963-e137-42e6-9692-50d959fe995c.__CR0,203,1287,796_PT0_SX970_V1___.jpg" alt="Kids Comforter" class="product-image">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Kids Collection</span>
+          <h3 class="product-name">Comforter Kids</h3>
+          <p class="product-desc">Vibrant, hypoallergenic kids' comforters featuring playful designs and easy-to-wash fabrics.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+      <!-- 5. KING SIZE COTTON BEDSHEETS -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-illustration">
+          <img src="https://www.premsons.com/cdn/shop/files/PS15172_1.jpg?v=1746272074&width=1946" alt="King Size Cotton Bedsheets" class="product-image">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Luxury Bedding</span>
+          <h3 class="product-name">King Size Cotton Bedsheets</h3>
+          <p class="product-desc">Generously sized pure cotton bedsheets offering breathable comfort and a lavish drape for king mattresses.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+      <!-- 6. RUGS (Rectangle / Round) -->
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-illustration">
+          <img src="https://m.media-amazon.com/images/I/71Z3RwtQisL._AC_UF350,350_QL80_.jpg" alt="Rectangle and Round Rugs" class="product-image">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Flooring</span>
+          <h3 class="product-name">Rugs (Rectangle / Round)</h3>
+          <p class="product-desc">Hand-loomed and tufted rugs available in versatile rectangular and circular profiles for any room layout.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+      <!-- 7. SINGLE BEDSHEET -->
+      <div class="product-card reveal">
+        <div class="product-illustration">
+          <img src="https://sukritistore.com/cdn/shop/files/9_f10dde89-a314-4cbc-a6b0-40f22f1a39d3.jpg?v=1702991239" alt="Single Bedsheet" class="product-image">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Bedding</span>
+          <h3 class="product-name">Single Bedsheet</h3>
+          <p class="product-desc">Durable, soft cotton single bedsheets perfect for guest rooms, kids' rooms, and boutique hotels.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+      <!-- 8. RUGS (Round) -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-illustration">
+          <img src="https://m.media-amazon.com/images/I/81iLHQCkHQL._AC_UF894,1000_QL80_.jpg" alt="Round Rugs" class="product-image">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Accent Flooring</span>
+          <h3 class="product-name">Rugs (Round)</h3>
+          <p class="product-desc">Statement circular rugs designed to anchor furniture arrangements and add a softening architectural element.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="testimonials-bg-text">Trust</div>
+  <div class="testimonials-inner">
+    <div class="section-header">
+      <p class="section-label reveal">Partner Voices</p>
+      <h2 class="reveal reveal-delay-1">What our <em>partners</em> say</h2>
+      <p class="reveal reveal-delay-2">Trusted by interior designers, hotel chains, and lifestyle retailers worldwide.</p>
+    </div>
+
+    <div class="swiper testimonials-swiper reveal reveal-delay-3">
+      <div class="swiper-wrapper">
+  
+  <!-- Review 1: BROWN (featured) -->
+  <div class="swiper-slide">
+    <div class="testi-card featured">
+      <div class="stars">★★★★★</div>
+      <span class="quote-icon">"</span>
+      <p class="testi-text">It's a wholesale shop, fixed rate good for bulk purchase or for wedding or similar kind of shoping.</p>
+      <div class="testi-author">
+        <div class="author-avatar">R</div>
+        <div>
+          <div class="author-name">Bhaskar Jain</div>
+          <div class="author-company"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review 2: WHITE -->
+  <div class="swiper-slide">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <span class="quote-icon">"</span>
+      <p class="testi-text">Variety Collection, Quality Products & Reasonable Price. Must Visit.</p>
+      <div class="testi-author">
+        <div class="author-avatar">S</div>
+        <div>
+          <div class="author-name">Amit Neema</div>
+          <div class="author-company"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review 3: BROWN (featured add kar diya hai) -->
+  <div class="swiper-slide">
+    <div class="testi-card featured">
+      <div class="stars">★★★★★</div>
+      <span class="quote-icon">"</span>
+      <p class="testi-text">We run a home décor store in Pune and have been placing wholesale orders with Nivra for the past 14 months. Starting from a modest trial order of 80 pieces, we now reorder every 6 weeks. Our customers constantly ask where we source our dhurries from — that itself says everything.</p>
+      <div class="testi-author">
+        <div class="author-avatar">S</div>
+        <div>
+          <div class="author-name">Sneha Deshpande</div>
+          <div class="author-company">Owner, Ghar Sajawat — Home Décor Store, Pune</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review 4: WHITE -->
+  <div class="swiper-slide">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <span class="quote-icon">"</span>
+      <p class="testi-text">As a small interior design studio in Bangalore, finding a wholesale handloom supplier who works with boutique order sizes was always a challenge. Nivra accommodated our quantities without compromising on quality or communication. Three projects later, they are our first call for every client brief.</p>
+      <div class="testi-author">
+        <div class="author-avatar">A</div>
+        <div>
+          <div class="author-name">Arjun Shetty</div>
+          <div class="author-company">Founder, Mitti Interiors, Bengaluru</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-split">
+    <div class="contact-left">
+      <p class="section-label reveal">Let's Work Together</p>
+      <h2 class="reveal reveal-delay-1">Start your <em>sourcing</em> journey with us</h2>
+      <p class="reveal reveal-delay-2">Share your requirements and a member of our B2B team will respond within 24 hours. Minimum order quantities are flexible for first-time partners.</p>
+      <div class="contact-info reveal reveal-delay-3">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Office</div>
+            <div class="contact-info-text"><a href="https://www.google.com/maps/place/Porwal+Handloom+and+Handicraft/@22.7203206,75.8485591,17z/data=!3m1!4b1!4m6!3m5!1s0x3962fda19acef7df:0x699fc60bd0f6eeb4!8m2!3d22.7203206!4d75.8485591!16s%2Fg%2F11b7q8ldfk!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" style="text-decoration: none; color: black;">1 Chippa, Kasera Bakhal Rd, Malharganj, Indore, Madhya Pradesh 452002</a></div>
+
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 10a19.79 19.79 0 01-3.07-8.67A2 2 0 013.61 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Phone</div>
+            <div class="contact-info-text">+917869916333</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-text">Nivrabytheporwals@gmail.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-container reveal reveal-delay-2">
+      
+      <div class="success-state" id="successState">
+        <div class="checkmark-wrapper">
+          <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+          </svg>
+        </div>
+        <h3>Thank You</h3>
+        <p>Your enquiry has been successfully submitted. We will be in touch within 24 hours.</p>
+      </div>
+
+      <form id="enquiryForm" action="https://formsubmit.co/nivrabytheporwals@gmail.com" method="POST" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="First Name" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="Last Name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Company Name</label>
+          <input type="text" name="Company Name" required>
+        </div>
+        <div class="form-group">
+          <label>Business Email</label>
+          <input type="email" name="Business Email" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Country</label>
+            <input type="text" name="Country" required>
+          </div>
+          <div class="form-group">
+            <label>Business Type</label>
+            <select name="Business Type" required>
+              <option value="" disabled selected>Select type</option>
+              <option value="Interior Designer">Interior Designer</option>
+              <option value="Hospitality Brand">Hospitality Brand</option>
+              <option value="Retail Chain">Retail Chain</option>
+              <option value="E-commerce">E-commerce</option>
+              <option value="Distributor">Distributor</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Products of Interest</label>
+          <select name="Products of Interest" required>
+            <option value="" disabled selected>Select category</option>
+            <option value="Dhurries & Rugs">Dhurries & Rugs</option>
+            <option value="Throws & Blankets">Throws & Blankets</option>
+            <option value="Cushion Covers">Cushion Covers</option>
+            <option value="Table Linen">Table Linen</option>
+            <option value="Drapes & Curtains">Drapes & Curtains</option>
+            <option value="Multiple">Multiple</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message / Requirements</label>
+          <textarea name="Message" required></textarea>
+        </div>
+        
+        <button type="submit" class="form-submit" id="submitBtn">
+          <span class="btn-text">Send Enquiry</span>
+          <span class="spinner"></span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>2025 Nivra All Rights Reserved</p>
+  </footer>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+// ── NAVBAR SCROLL ──
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── PERFECT MOBILE MENU WITH SINGLE TOGGLE BUTTON ──
+const toggleBtn = document.getElementById('menuToggleBtn');
+const navLinks = document.querySelector('.nav-links');
+const iconHamburger = document.getElementById('icon-hamburger');
+const iconClose = document.getElementById('icon-close');
+
+function toggleMenu() {
+  navLinks.classList.toggle('active');
+  
+  if(navLinks.classList.contains('active')) {
+    // Menu Open
+    document.body.style.overflow = 'hidden'; // Scroll lock
+    iconHamburger.style.display = 'none';
+    iconClose.style.display = 'block';
+  } else {
+    // Menu Close
+    document.body.style.overflow = ''; // Remove scroll lock
+    iconHamburger.style.display = 'block';
+    iconClose.style.display = 'none';
+  }
+}
+
+toggleBtn.addEventListener('click', toggleMenu);
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    if(window.innerWidth <= 800) {
+      toggleMenu();
+    }
+  });
+});
+
+window.addEventListener('resize', () => {
+  if(window.innerWidth > 800 && navLinks.classList.contains('active')) {
+    toggleMenu(); // Automatically reset if user resizes window to desktop
+  }
+});
+
+
+// ── SCROLL REVEAL ──
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+revealEls.forEach(el => observer.observe(el));
+
+
+// ── INITIALIZE SWIPER FOR TESTIMONIALS ──
+const swiper = new Swiper('.testimonials-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    }
+  }
+});
+
+
+// ── FORMSUBMIT AJAX & ANIMATIONS ──
+function handleSubmit(e) {
+  e.preventDefault();
+  
+  const form = e.target;
+  const btn = document.getElementById('submitBtn');
+  const btnText = btn.querySelector('.btn-text');
+  
+  if(!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  // Set loading state
+  btn.classList.add('is-loading');
+  btnText.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const formData = new FormData(form);
+
+  fetch('https://formsubmit.co/ajax/nivrabytheporwals@gmail.com', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    form.style.opacity = '0';
+    form.style.visibility = 'hidden';
+    
+    setTimeout(() => {
+      form.style.display = 'none';
+      const successState = document.getElementById('successState');
+      successState.classList.add('active');
+      
+      form.reset();
+      btn.classList.remove('is-loading');
+      btnText.textContent = 'Send Enquiry';
+      btn.disabled = false;
+    }, 400);
+  })
+  .catch(error => {
+    console.error('Error submitting form:', error);
+    btn.classList.remove('is-loading');
+    btnText.textContent = 'Error. Try Again.';
+    btn.disabled = false;
+    alert("There was an issue sending your message. Please try again later.");
+  });
+}
+</script>
+
+</body>
+</html>
