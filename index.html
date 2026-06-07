@@ -719,93 +719,110 @@
   footer p { font-size: 0.75rem; letter-spacing: 0.15em; color: rgba(245,240,232,0.5); text-transform: uppercase; }
 
   /* ══════════════════════════════
-     NAVIGATION & NEW SIDEBAR MENU
+     NAVIGATION & COMPLETELY NEW SIDEBAR
   ══════════════════════════════ */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; padding: 1.5rem clamp(1.5rem, 4vw, 3rem); display: flex; justify-content: space-between; align-items: center; transition: all 0.4s ease; }
-  nav.scrolled { background: rgba(44,26,14,0.98); padding: 1rem clamp(1.5rem, 4vw, 3rem); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
-  .nav-brand-container { display: flex; align-items: center; gap: 12px; text-decoration: none; position: relative; z-index: 10001; }
+  nav { 
+    position: fixed; 
+    top: 0; left: 0; right: 0; 
+    z-index: 9999; 
+    padding: 1.5rem clamp(1.5rem, 4vw, 3rem); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    transition: all 0.4s ease; 
+  }
+  nav.scrolled { 
+    background: rgba(44,26,14,0.98); 
+    padding: 1rem clamp(1.5rem, 4vw, 3rem); 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
+  }
+  .nav-brand-container { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    text-decoration: none; 
+    position: relative; 
+    z-index: 100001; 
+  }
   .nav-mini-logo { width: 36px; height: 36px; border-radius: 6px; object-fit: contain; border: 1px solid var(--gold); background: #ffffff; }
   .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 0.2em; color: var(--cream); font-weight: 300; }
   
+  /* Desktop Layout Styles */
   .nav-links { display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; }
   .nav-links a { font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(245,240,232,0.7); text-decoration: none; transition: color 0.3s ease; }
   .nav-links a:hover { color: var(--gold); }
 
-  .mobile-menu-btn { display: none; background: none; border: none; color: var(--cream); cursor: pointer; z-index: 10001; padding: 0.5rem; transition: transform 0.3s ease, color 0.3s ease; }
-  .mobile-menu-btn:hover { color: var(--gold); }
-  .mobile-menu-btn:active { transform: scale(0.9); }
+  .mobile-menu-btn { 
+    display: none; 
+    background: none; 
+    border: none; 
+    color: var(--cream); 
+    cursor: pointer; 
+    z-index: 100001; 
+    padding: 0.5rem; 
+  }
 
-  /* ─── FULL SCREEN PREMIUM MOBILE SIDEBAR (Untitled-1 Style) ─── */
+  /* ─── NEW CLEAN SYSTEM FOR RESPONSIVE MOBILE SIDEBAR ─── */
   @media (max-width: 800px) {
+    body.menu-open {
+      overflow: hidden !important; /* Locks background body scrolling cleanly */
+    }
+
     .mobile-menu-btn { display: block; }
-    
     .mobile-menu-btn #icon-hamburger { display: block; }
     .mobile-menu-btn #icon-close { display: none; }
     
-    .mobile-menu-btn.active #icon-hamburger { display: none; }
-    .mobile-menu-btn.active #icon-close { display: block; }
+    /* Toggle states for absolute control drawer button triggers */
+    .mobile-menu-btn.is-active #icon-hamburger { display: none; }
+    .mobile-menu-btn.is-active #icon-close { display: block; }
 
     .nav-links {
       position: fixed;
-      top: 0; right: 0; bottom: 0; left: 0;
+      top: 0; top: 0; bottom: 0; right: -100%;
       width: 100vw; height: 100vh;
-      background: rgba(44, 26, 14, 0.98); /* Solid beautiful shade without blur */
+      background: #2C1A0E; /* Deep Solid Premium Theme Color */
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 3rem;
-      transform: translateX(100%); /* Completely hidden to the right */
-      transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      gap: 2.5rem;
+      transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
       z-index: 10000;
-      padding-top: 0;
+      opacity: 0;
+      visibility: hidden;
     }
 
-    .nav-links.active {
-      transform: translateX(0); /* Slides perfectly into screen view */
+    .nav-links.is-open {
+      right: 0;
+      opacity: 1;
+      visibility: visible;
     }
 
     .nav-links li {
-      width: auto;
+      width: 100%;
       text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      border-bottom: none;
-    }
-
-    /* Staggered load effect from Untitled-1 */
-    .nav-links.active li {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: calc(0.1s * var(--i));
     }
 
     .nav-links a {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      font-size: 1.25rem;
-      letter-spacing: 0.3em;
+      display: block;
+      padding: 1rem;
+      font-size: 1.4rem;
+      letter-spacing: 0.25em;
       color: var(--cream);
-      width: auto;
     }
-    
-    .nav-links a:hover {
-      background: transparent;
+    .nav-links a:hover, .nav-links a:active {
       color: var(--gold);
-      padding-left: 1rem;
     }
 
-    /* Transparent back overlay mask */
     .sidebar-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.5);
       z-index: 9999;
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
     }
-    .sidebar-overlay.active {
+    .sidebar-overlay.is-visible {
       opacity: 1;
       visibility: visible;
     }
@@ -909,10 +926,10 @@
   </a>
   
   <ul class="nav-links">
-    <li style="--i:1"><a href="#legacy">Our Legacy</a></li>
-    <li style="--i:2"><a href="#products">Products</a></li>
-    <li style="--i:3"><a href="#testimonials">Partners</a></li>
-    <li style="--i:4"><a href="#contact">Connect</a></li>
+    <li><a href="#legacy">Our Legacy</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#testimonials">Partners</a></li>
+    <li><a href="#contact">Connect</a></li>
   </ul>
 
   <button class="mobile-menu-btn" aria-label="Toggle menu" id="menuToggleBtn">
@@ -1340,70 +1357,67 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// ── SLIDING SIDEBAR MOBILE DRAWER CORE ENGINE ──
-const toggleBtn = document.getElementById('menuToggleBtn');
-const navLinks = document.querySelector('.nav-links');
+// ── COMPLETELY NEW SIDEBAR ENGINE ──
+const menuToggleBtn = document.getElementById('menuToggleBtn');
+const navLinksContainer = document.querySelector('.nav-links');
 const sidebarOverlay = document.getElementById('sidebarOverlay');
-const iconHamburger = document.getElementById('icon-hamburger');
-const iconClose = document.getElementById('icon-close');
 
-function openMenu() {
-  navLinks.classList.add('active');
-  sidebarOverlay.classList.add('active');
-  toggleBtn.classList.add('active');
-  document.body.style.overflow = 'hidden'; // Scroll lock background
-  iconHamburger.style.display = 'none';
-  iconClose.style.display = 'block';
+function openMobileMenu() {
+  menuToggleBtn.classList.add('is-active');
+  navLinksContainer.classList.add('is-open');
+  sidebarOverlay.classList.add('is-visible');
+  document.body.classList.add('menu-open');
 }
 
-function closeMenu() {
-  navLinks.classList.remove('active');
-  sidebarOverlay.classList.remove('active');
-  toggleBtn.classList.remove('active');
-  document.body.style.overflow = ''; // Release scroll lock background
-  iconHamburger.style.display = 'block';
-  iconClose.style.display = 'none';
+function closeMobileMenu() {
+  menuToggleBtn.classList.remove('is-active');
+  navLinksContainer.classList.remove('is-open');
+  sidebarOverlay.classList.remove('is-visible');
+  document.body.classList.remove('menu-open');
 }
 
-function toggleMenu() {
-  if (navLinks.classList.contains('active')) {
-    closeMenu();
-  } else {
-    openMenu();
-  }
-}
-
-// Triggers mapping with stopPropagation to prevent instant closed triggers
-toggleBtn.addEventListener('click', (e) => {
+menuToggleBtn.addEventListener('click', (e) => {
   e.stopPropagation();
-  toggleMenu();
+  if (navLinksContainer.classList.contains('is-open')) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
 });
 
-sidebarOverlay.addEventListener('click', closeMenu);
+sidebarOverlay.addEventListener('click', closeMobileMenu);
 
-// FIXED: Handle mobile click links properly with standard default anchor transitions
+// Modern Scroll Optimization Handling
 document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', (e) => {
-    if(window.innerWidth <= 800) {
-      e.preventDefault(); // Prevent instant jump breakdown
-      const targetId = link.getAttribute('href'); 
-      const targetElement = document.querySelector(targetId);
+  link.addEventListener('click', function(e) {
+    if (window.innerWidth <= 800) {
+      e.preventDefault(); // Click intercept breakout
       
-      closeMenu(); // Turn off navigation drawer overlay first
-
-      // Smooth scroll triggers via JS right after body scroll restrictions release
+      const targetSelector = this.getAttribute('href');
+      const targetElement = document.querySelector(targetSelector);
+      
+      // Close side tray immediately 
+      closeMobileMenu();
+      
       if (targetElement) {
+        // Precise element view rendering bounds mapping
         setTimeout(() => {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-        }, 350); // Gives drawer enough room (350ms transition) to clear safely
+          const headerHeight = 75; 
+          const elementTargetY = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          
+          window.scrollTo({
+            top: elementTargetY,
+            behavior: 'smooth'
+          });
+        }, 250); // Fluid timing alignment matches sliding drawer reset
       }
     }
   });
 });
 
 window.addEventListener('resize', () => {
-  if(window.innerWidth > 800 && navLinks.classList.contains('active')) {
-    closeMenu();
+  if (window.innerWidth > 800) {
+    closeMobileMenu();
   }
 });
 
@@ -1543,7 +1557,7 @@ document.querySelectorAll('.product-card').forEach(card => {
 
 function closeCatalogModal() {
   catalogModal.classList.remove('active');
-  if (!navLinks.classList.contains('active')) {
+  if (!navLinksContainer.classList.contains('is-open')) {
     document.body.style.overflow = '';
   }
 }
