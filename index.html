@@ -722,7 +722,7 @@
      NAVIGATION & NEW SIDEBAR MENU
   ══════════════════════════════ */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; padding: 1.5rem clamp(1.5rem, 4vw, 3rem); display: flex; justify-content: space-between; align-items: center; transition: all 0.4s ease; }
-  nav.scrolled { background: rgba(44,26,14,0.98); padding: 1rem clamp(1.5rem, 4vw, 3rem); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+  nav.scrolled { background: rgba(44,26,14,0.98); padding: 1rem clamp(1.5rem, 4vw, 3rem); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
   .nav-brand-container { display: flex; align-items: center; gap: 12px; text-decoration: none; position: relative; z-index: 10001; }
   .nav-mini-logo { width: 36px; height: 36px; border-radius: 6px; object-fit: contain; border: 1px solid var(--gold); background: #ffffff; }
   .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 0.2em; color: var(--cream); font-weight: 300; }
@@ -735,73 +735,71 @@
   .mobile-menu-btn:hover { color: var(--gold); }
   .mobile-menu-btn:active { transform: scale(0.9); }
 
-  /* ─── NEW SLIDING SIDEBAR STYLES FOR MOBILE ─── */
+  /* ─── FULL SCREEN PREMIUM MOBILE SIDEBAR (Untitled-1 Style) ─── */
   @media (max-width: 800px) {
     .mobile-menu-btn { display: block; }
     
-    /* Clean programmatic logic via CSS states for hamburger menu icons */
     .mobile-menu-btn #icon-hamburger { display: block; }
     .mobile-menu-btn #icon-close { display: none; }
     
-    /* CSS rules to toggle icons without relying on fragile inline styling scripts */
     .mobile-menu-btn.active #icon-hamburger { display: none; }
     .mobile-menu-btn.active #icon-close { display: block; }
 
     .nav-links {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 280px; 
-      height: 100vh;
-      background: var(--deep-brown);
-      box-shadow: 5px 0 25px rgba(0, 0, 0, 0.4);
+      top: 0; right: 0; bottom: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(44, 26, 14, 0.98); /* Solid beautiful shade without blur */
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: 0;
-      padding-top: 100px; 
-      transform: translateX(-100%); /* Left pull out base positioning */
-      transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      transform: translateX(100%); /* Completely hidden to the right */
+      transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
       z-index: 10000;
+      padding-top: 0;
     }
 
     .nav-links.active {
-      transform: translateX(0); /* Pulls smoothly inside window viewport grid */
+      transform: translateX(0); /* Slides perfectly into screen view */
     }
 
     .nav-links li {
-      width: 100%;
+      width: auto;
+      text-align: center;
       opacity: 0;
-      transform: translateX(-20px);
+      transform: translateY(20px);
       transition: opacity 0.4s ease, transform 0.4s ease;
-      border-bottom: 1px solid rgba(245, 240, 232, 0.05);
+      border-bottom: none;
     }
 
+    /* Staggered load effect from Untitled-1 */
     .nav-links.active li {
       opacity: 1;
-      transform: translateX(0);
-      transition-delay: calc(0.08s * var(--i));
+      transform: translateY(0);
+      transition-delay: calc(0.1s * var(--i));
     }
 
     .nav-links a {
-      display: block;
-      padding: 1.2rem 2rem;
-      font-size: 1.05rem;
-      letter-spacing: 0.2em;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      font-size: 1.25rem;
+      letter-spacing: 0.3em;
       color: var(--cream);
-      width: 100%;
+      width: auto;
     }
     
     .nav-links a:hover {
-      background: rgba(196, 154, 60, 0.1);
-      padding-left: 2.5rem;
+      background: transparent;
+      color: var(--gold);
+      padding-left: 1rem;
     }
 
-    /* Subtle backdrop block behind sliding drawer */
+    /* Transparent back overlay mask */
     .sidebar-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.4);
       z-index: 9999;
       opacity: 0;
       visibility: hidden;
@@ -816,66 +814,66 @@
   /* ─── MOBILE PROPER CARDS & POPUP OPTIMIZATIONS ─── */
   @media (max-width: 480px) {
     .products-grid {
-    grid-template-columns: 1fr !important;
-    gap: 25px !important;
-  }
-  
-  .product-card {
-    aspect-ratio: auto !important;
-    height: 440px !important; /* Fixed structural height on mobile */
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .product-illustration {
-    height: 70% !important; /* Top 70% goes to image space */
-    background: #ffffff !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+      grid-template-columns: 1fr !important;
+      gap: 25px !important;
+    }
+    
+    .product-card {
+      aspect-ratio: auto !important;
+      height: 440px !important; 
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .product-illustration {
+      height: 70% !important; 
+      background: #ffffff !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  .product-image {
-    max-height: 90% !important;
-    object-fit: contain !important;
-    padding: 10px !important;
-  }
-  
-  .product-overlay {
-    position: relative !important; /* Stacked below the image instead of overlapping */
-    height: 30% !important; /* Bottom 30% for texts */
-    background: var(--deep-brown) !important;
-    padding: 1.2rem 1.2rem !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    opacity: 1 !important;
-  }
-  
-  .product-category {
-    font-size: 0.7rem !important;
-    margin-bottom: 0.3rem !important;
-    text-shadow: none !important;
-  }
+    .product-image {
+      max-height: 90% !important;
+      object-fit: contain !important;
+      padding: 10px !important;
+    }
+    
+    .product-overlay {
+      position: relative !important; 
+      height: 30% !important; 
+      background: var(--deep-brown) !important;
+      padding: 1.2rem 1.2rem !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 1 !important;
+    }
+    
+    .product-category {
+      font-size: 0.7rem !important;
+      margin-bottom: 0.3rem !important;
+      text-shadow: none !important;
+    }
 
-  .product-name {
-    font-size: 1.25rem !important;
-    line-height: 1.3 !important;
-    text-shadow: none !important;
-    white-space: normal !important;
-  }
-  
-  .product-desc {
-    display: none !important; /* Kept hidden on mobile grid to prevent crowding (Full description loads in the Popup anyway) */
-  }
-  
-  .product-link {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    margin-top: 0.5rem !important;
-    font-size: 0.7rem !important;
-    text-shadow: none !important;
-  }
+    .product-name {
+      font-size: 1.25rem !important;
+      line-height: 1.3 !important;
+      text-shadow: none !important;
+      white-space: normal !important;
+    }
+    
+    .product-desc {
+      display: none !important; 
+    }
+    
+    .product-link {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      margin-top: 0.5rem !important;
+      font-size: 0.7rem !important;
+      text-shadow: none !important;
+    }
     
     .modal-content {
       max-height: 90vh;
@@ -1346,19 +1344,25 @@ window.addEventListener('scroll', () => {
 const toggleBtn = document.getElementById('menuToggleBtn');
 const navLinks = document.querySelector('.nav-links');
 const sidebarOverlay = document.getElementById('sidebarOverlay');
+const iconHamburger = document.getElementById('icon-hamburger');
+const iconClose = document.getElementById('icon-close');
 
 function openMenu() {
   navLinks.classList.add('active');
   sidebarOverlay.classList.add('active');
   toggleBtn.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden'; // Scroll lock background
+  iconHamburger.style.display = 'none';
+  iconClose.style.display = 'block';
 }
 
 function closeMenu() {
   navLinks.classList.remove('active');
   sidebarOverlay.classList.remove('active');
   toggleBtn.classList.remove('active');
-  document.body.style.overflow = '';
+  document.body.style.overflow = ''; // Release scroll lock background
+  iconHamburger.style.display = 'block';
+  iconClose.style.display = 'none';
 }
 
 function toggleMenu() {
@@ -1369,14 +1373,30 @@ function toggleMenu() {
   }
 }
 
-// Triggers mapping
-toggleBtn.addEventListener('click', toggleMenu);
+// Triggers mapping with stopPropagation to prevent instant closed triggers
+toggleBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleMenu();
+});
+
 sidebarOverlay.addEventListener('click', closeMenu);
 
+// FIXED: Handle mobile click links properly with standard default anchor transitions
 document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
+  link.addEventListener('click', (e) => {
     if(window.innerWidth <= 800) {
-      closeMenu();
+      e.preventDefault(); // Prevent instant jump breakdown
+      const targetId = link.getAttribute('href'); 
+      const targetElement = document.querySelector(targetId);
+      
+      closeMenu(); // Turn off navigation drawer overlay first
+
+      // Smooth scroll triggers via JS right after body scroll restrictions release
+      if (targetElement) {
+        setTimeout(() => {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }, 350); // Gives drawer enough room (350ms transition) to clear safely
+      }
     }
   });
 });
@@ -1501,7 +1521,8 @@ document.querySelectorAll('.product-card').forEach(card => {
         thumbImg.classList.add('modal-thumb');
         if (index === 0) thumbImg.classList.add('active');
 
-        thumbImg.addEventListener('click', () => {
+        thumbImg.addEventListener('click', (thumbEvent) => {
+          thumbEvent.stopPropagation(); 
           modalMainImage.style.opacity = '0.3';
           setTimeout(() => {
             modalMainImage.src = imgUrl;
