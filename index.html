@@ -20,6 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
   <style>
     /* ════════════════════════════════════════════════════════════════
        DESIGN TOKENS & DESIGN SYSTEM RECONCILIATION VIA SYSTEM VARIABLES
@@ -738,15 +740,14 @@
     }
 
     /* ════════════════════════════════════════════════════════════════
-       SECTION 9 — SOCIAL PROOF / TRUST LINES
+       SECTION 9 — SOCIAL PROOF / SWIPER TESTIMONIAL LINES (WITH AUTOPLAY)
        ════════════════════════════════════════════════════════════════ */
-    .partner-voices-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); 
-      gap: clamp(20px, 3vw, 32px); 
-      margin-top: clamp(30px, 4vw, 50px); 
+    .testimonials-swiper-container {
+      position: relative;
+      margin-top: clamp(30px, 4vw, 50px);
+      padding: 10px 0 50px;
     }
-    
+
     .partner-voice-card { 
       background-color: var(--warm-white); 
       padding: clamp(24px, 4vw, 40px); 
@@ -755,6 +756,9 @@
       display: flex; 
       flex-direction: column; 
       justify-content: space-between; 
+      height: 100%; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      transition: var(--transition-smooth);
     }
     
     .partner-voice-card .testimonial-body-text { 
@@ -763,7 +767,7 @@
       font-size: clamp(15px, 2vw, 16.5px); 
       line-height: 1.75; 
       color: var(--ink); 
-      margin-bottom: 20px; 
+      margin-bottom: 24px; 
     }
     
     .partner-voice-card .author-meta-name { 
@@ -779,6 +783,22 @@
       color: var(--terracotta); 
       font-weight: 600; 
       margin-top: 4px; 
+    }
+
+    /* Custom Styling for Swiper Pagination Dots to match Gold theme */
+    .testimonials-swiper-container .swiper-pagination-bullet {
+      background: var(--ink-muted);
+      opacity: 0.3;
+      width: 9px;
+      height: 9px;
+      transition: var(--transition-smooth);
+    }
+
+    .testimonials-swiper-container .swiper-pagination-bullet-active {
+      background: var(--gold) !important;
+      opacity: 1;
+      width: 24px;
+      border-radius: 5px;
     }
 
     /* ════════════════════════════════════════════════════════════════
@@ -996,10 +1016,6 @@
       font-weight: 500; 
       font-size: 14px; 
       margin-bottom: 20px; 
-    }
-    
-    .corporate-location-pin-anchor:hover { 
-      color: var(--cream); 
     }
     
     .corporate-location-pin-anchor svg { 
@@ -1692,34 +1708,59 @@
 
   <section class="section section--cream">
     <div class="wrap">
-      <div style="text-align:center; max-width:700px; margin:0 auto 40px;">
+      <div style="text-align:center; max-width:700px; margin:0 auto 20px;">
         <span class="section-eyebrow">Verified Proof</span>
         <h2>Partner Voices</h2>
         <p class="lead" style="margin:12px auto 0; font-size:16.5px;">Trusted by independent interior designers, premium hotel networks, and lifestyle home retailers nationwide.</p>
       </div>
-      <div class="partner-voices-grid">
-        <div class="partner-voice-card">
-          <p class="testimonial-body-text">"As a small interior design studio in Bengaluru, finding a wholesale handloom partner willing to adjust to micro-project scale volume parameters was a huge challenge. Nivrá tailored our target inventory runs flawlessly without a single compromise on material feel."</p>
-          <div>
-            <div class="author-meta-name">Arjun Shetty</div>
-            <div class="author-trust-line">Boutique Interior Studio, Bengaluru</div>
+      
+      <div class="swiper testimonials-swiper-container">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <div class="partner-voice-card">
+              <p class="testimonial-body-text">"As a small interior design studio in Bengaluru, finding a wholesale handloom partner willing to adjust to micro-project scale volume parameters was a huge challenge. Nivrá tailored our target inventory runs flawlessly without a single compromise on material feel."</p>
+              <div>
+                <div class="author-meta-name">Arjun Shetty</div>
+                <div class="author-trust-line">Boutique Interior Studio, Bengaluru</div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="partner-voice-card">
-          <p class="testimonial-body-text">"The structured wholesale operational system and flat factory rates work beautifully for our high volume runs. Their delivery consistency makes them our standard supply source for premium event staging."</p>
-          <div>
-            <div class="author-meta-name">Bhaskar Jain</div>
-            <div class="author-trust-line">Home Furnishing Network, Indore</div>
+
+          <div class="swiper-slide">
+            <div class="partner-voice-card">
+              <p class="testimonial-body-text">"The structured wholesale operational system and flat factory rates work beautifully for our high volume runs. Their delivery consistency makes them our standard supply source for premium event staging."</p>
+              <div>
+                <div class="author-meta-name">Bhaskar Jain</div>
+                <div class="author-trust-line">Home Furnishing Network, Indore</div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="partner-voice-card">
-          <p class="testimonial-body-text">"The depth of their product line and reliable colorfastness levels give our procurement department total confidence. Their B2B management team answers the phone whenever we need support."</p>
-          <div>
-            <div class="author-meta-name">Amit Neema</div>
-            <div class="author-trust-line">Hospitality &amp; Decor Retailer, Pune</div>
+
+          <div class="swiper-slide">
+            <div class="partner-voice-card">
+              <p class="testimonial-body-text">"The depth of their product line and reliable colorfastness levels give our procurement department total confidence. Their B2B management team answers the phone whenever we need support."</p>
+              <div>
+                <div class="author-meta-name">Amit Neema</div>
+                <div class="author-trust-line">Hospitality &amp; Decor Retailer, Pune</div>
+              </div>
+            </div>
           </div>
+
+          <div class="swiper-slide">
+            <div class="partner-voice-card">
+              <p class="testimonial-body-text">"The structured wholesale operational system and flat factory rates work beautifully for our high volume runs. Their delivery consistency makes them our standard supply source for premium event staging."</p>
+              <div>
+                <div class="author-meta-name">Bhaskar Jain</div>
+                <div class="author-trust-line">Home Furnishing Network, Indore</div>
+              </div>
+            </div>
+          </div>
+          
         </div>
+        <div class="swiper-pagination"></div>
       </div>
+
     </div>
   </section>
 
@@ -1843,7 +1884,7 @@
           </div>
           <div class="corporate-comms-row">
             <div class="visual-icon-frame">✉</div>
-            <a href="mailto:nivrabytheporwals@gmail.com" class="comms-anchor">nivrabytheporwals@gmail.com</a>
+            <a href="mailto:partnerenquiry@nivrabyporwals.com" class="comms-anchor">partnerenquiry@nivrabyporwals.com</a>
           </div>
         </div>
       </div>
@@ -1999,12 +2040,14 @@
         <div>
           <h3 id="lightboxContentTitle">Product Title</h3>
           <div class="modal-classification-line" id="lightboxContentClassification">Category Segment</div>
-          <p class="modal-paragraph-content" id="lightboxContentDescription">Complete descriptive verification matrix text regarding material configuration.</p>
+          <p class="modal-paragraph-content" id="lightboxContentDescription">Complete descriptive verification material configuration.</p>
         </div>
         <a href="#lead-engine-section" class="btn btn--ink" id="lightboxDirectActionCta" style="width:100%; text-align:center;">Request Pricing Profile</a>
       </div>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
   <script>
     // 1. MOBILE MENU SCROLL INTERACTION FRAMEWORK
@@ -2159,6 +2202,40 @@
       });
       document.getElementById('lightboxDirectActionCta').addEventListener('click', executeModalCloseSequence);
     }
+
+    // 6. INITIALIZE PARTNER VOICES SWIPER (OPTIMIZED WITH INFINITE LOOP & AUTO SCROLL)
+    const testimonialsSwiper = new Swiper('.testimonials-swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      grabCursor: true,
+      
+      // 1. Infinite Loop Feature Activation
+      loop: true, 
+      
+      // 2. Auto Scroll / Autoplay Feature Configuration
+      autoplay: {
+        delay: 3000,                  // 3 seconds m automatic next slide chalegi
+        disableOnInteraction: false,   // User manually swipe kare tab bhi auto-scroll band nahi hoga
+        pauseOnMouseEnter: true        // Mouse card par hover hone par slide temporary ruk jayegi (Better UX)
+      },
+      
+      pagination: {
+        el: '.testimonials-swiper-container .swiper-pagination',
+        clickable: true,
+      },
+      
+      // Responsive Breakpoints Map
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 32
+        }
+      }
+    });
   </script>
 </body>
 </html>
