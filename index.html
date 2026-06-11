@@ -265,8 +265,6 @@
       display: flex; 
       flex-direction: column; 
       line-height: 1; 
-      position: relative;
-      z-index: 10002; /* Sidebar se upar dikhne ke liye */
     }
     
     .brand-mark-wrapper .brand-name { 
@@ -323,55 +321,20 @@
       width: 100%; 
     }
     
-    /* ATTRACTIVE MORPHING HAMBURGER BUTTON STRUCTURE */
     .mobile-hamburger-trigger { 
       display: none; 
       background: none; 
-      border: none;
+      border: 1px solid rgba(198,162,78,0.3); 
       color: var(--cream-text); 
-      width: 44px;
-      height: 44px;
+      border-radius: 6px; 
+      padding: 8px 12px; 
       cursor: pointer; 
-      position: relative;
-      z-index: 10002; /* Sidebar interface se strict layer upar */
+      transition: var(--transition-smooth);
     }
-
-    .hamburger-icon-box {
-      width: 24px;
-      height: 16px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .hamburger-line {
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background-color: currentColor;
-      transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1), 
-                  background-color 0.4s ease, 
-                  top 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-    }
-    .hamburger-line-1 { top: 0; }
-    .hamburger-line-2 { top: 7px; }
-    .hamburger-line-3 { top: 14px; }
-
-    /* Animated Cross State Rules Triggered via class */
-    .mobile-hamburger-trigger.is-active-toggle .hamburger-line-1 {
-      top: 7px;
-      transform: rotate(135deg);
-      background-color: var(--gold-soft);
-    }
-    .mobile-hamburger-trigger.is-active-toggle .hamburger-line-2 {
-      transform: scale(0);
-      opacity: 0;
-    }
-    .mobile-hamburger-trigger.is-active-toggle .hamburger-line-3 {
-      top: 7px;
-      transform: rotate(-135deg);
-      background-color: var(--gold-soft);
+    
+    .mobile-hamburger-trigger:hover {
+      background-color: rgba(255,255,255,0.05);
+      border-color: var(--gold);
     }
 
     /* ════════════════════════════════════════════════════════════════
@@ -1442,56 +1405,27 @@
     }
     
     @media (max-width: 768px) {
-      /* HIGH-GRADE FULL SCREEN OVERLAY MOBILE SIDEBAR */
       .nav-links-wrapper { 
-        display: flex; 
-        position: fixed; 
-        top: 0; 
+        display: none; 
+        position: absolute; 
+        top: 100%; 
         left: 0; 
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(36, 23, 16, 0.98); 
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
+        right: 0; 
+        background-color: var(--espresso); 
+        border-bottom: 1px solid var(--line-dark); 
         flex-direction: column; 
-        justify-content: center;
-        align-items: center;
-        gap: 12px; 
-        padding: 40px 24px;
-        transform: translateX(100%); /* Right side hidden layout anchor */
-        transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-        z-index: 10001;
+        gap: 0; 
+        padding: 8px 0; 
       }
-
-      /* Active layout slide animation */
       .nav-links-wrapper.is-open-state { 
-        transform: translateX(0);
+        display: flex; 
       }
-
       .nav-links-wrapper a { 
         width: 100%; 
-        max-width: 280px;
         text-align: center; 
-        padding: 16px 0; 
-        font-size: 18px; /* Slightly emphasized layout font size on mobile overlays */
-        border-bottom: 1px solid rgba(255,255,255,0.04); 
-        transform: translateY(20px);
-        opacity: 0;
-        transition: transform 0.4s ease, opacity 0.4s ease;
+        padding: 14px 0; 
+        border-bottom: 1px solid rgba(255,255,255,0.02); 
       }
-
-      /* Menu nodes staggered listing load animation sequence rules */
-      .nav-links-wrapper.is-open-state a {
-        transform: translateY(0);
-        opacity: 1;
-      }
-      .nav-links-wrapper.is-open-state a:nth-child(1) { transition-delay: 0.1s; }
-      .nav-links-wrapper.is-open-state a:nth-child(2) { transition-delay: 0.15s; }
-      .nav-links-wrapper.is-open-state a:nth-child(3) { transition-delay: 0.2s; }
-      .nav-links-wrapper.is-open-state a:nth-child(4) { transition-delay: 0.25s; }
-      .nav-links-wrapper.is-open-state a:nth-child(5) { transition-delay: 0.3s; }
-      .nav-links-wrapper.is-open-state a:nth-child(6) { transition-delay: 0.35s; }
-
       .mobile-hamburger-trigger { 
         display: block; 
       }
@@ -1527,17 +1461,15 @@
       <nav class="nav-links-wrapper" id="corporateMenuElement">
         <a href="#legacy-section">Our Legacy</a>
         <a href="#why-partner-section">Why Partner</a>
-        <a href="#product-matrix-section">Products</a>
+        <a href="#product-matrix-section">Product</a>
         <a href="#sourcing-path-section">Sourcing Path</a>
         <a href="#faq-matrix-section">Technical FAQ</a>
         <a href="#lead-engine-section">Contact</a>
       </nav>
       <button class="mobile-hamburger-trigger" id="hamburgerMobileTrigger" aria-label="Toggle Global Navigation Menu">
-        <div class="hamburger-icon-box">
-          <span class="hamburger-line hamburger-line-1"></span>
-          <span class="hamburger-line hamburger-line-2"></span>
-          <span class="hamburger-line hamburger-line-3"></span>
-        </div>
+        <svg width="24" height="20" viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 2h20M2 10h20M2 18h20"/>
+        </svg>
       </button>
     </div>
   </header>
@@ -2138,42 +2070,17 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
   <script>
-    // 1. MOBILE MENU FULL-SCREEN SIDEBAR INTUITIVE SYSTEM INTERACTION SCRIPT
+    // 1. MOBILE MENU SCROLL INTERACTION FRAMEWORK
     const mobileTrigger = document.getElementById('hamburgerMobileTrigger');
     const menuWrapperElement = document.getElementById('corporateMenuElement');
     
     if (mobileTrigger && menuWrapperElement) {
       mobileTrigger.addEventListener('click', (event) => {
         event.stopPropagation();
-        // Hamburger bars morph to dynamic 'X' cross layout safely
-        mobileTrigger.classList.toggle('is-active-toggle');
-        // Full screen screen sidebar sliding toggle state
         menuWrapperElement.classList.toggle('is-open-state');
-        
-        // Strict body scroll lock configuration on absolute layouts overflow
-        if(menuWrapperElement.classList.contains('is-open-state')) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = '';
-        }
       });
-
-      // Close menu system dynamically whenever an explicit target link is hit
-      document.querySelectorAll('.nav-links-wrapper a').forEach(linkNode => {
-        linkNode.addEventListener('click', () => {
-          mobileTrigger.classList.remove('is-active-toggle');
-          menuWrapperElement.classList.remove('is-open-state');
-          document.body.style.overflow = '';
-        });
-      });
-      
-      // Auto-collapse navigation frameworks safely if click falls outside boundaries
-      document.addEventListener('click', (clickOutEvent) => {
-        if (!menuWrapperElement.contains(clickOutEvent.target) && !mobileTrigger.contains(clickOutEvent.target)) {
-          mobileTrigger.classList.remove('is-active-toggle');
-          menuWrapperElement.classList.remove('is-open-state');
-          document.body.style.overflow = '';
-        }
+      document.addEventListener('click', () => {
+        menuWrapperElement.classList.remove('is-open-state');
       });
     }
 
@@ -2321,16 +2228,23 @@
       slidesPerView: 1,
       spaceBetween: 20,
       grabCursor: true,
+      
+      // 1. Infinite Loop Feature Activation
       loop: true, 
+      
+      // 2. Auto Scroll / Autoplay Feature Configuration
       autoplay: {
-        delay: 3000,                  
-        disableOnInteraction: false,   
-        pauseOnMouseEnter: true        
+        delay: 3000,                  // 3 seconds m automatic next slide chalegi
+        disableOnInteraction: false,   // User manually swipe kare tab bhi auto-scroll band nahi hoga
+        pauseOnMouseEnter: true        // Mouse card par hover hone par slide temporary ruk jayegi (Better UX)
       },
+      
       pagination: {
         el: '.testimonials-swiper-container .swiper-pagination',
         clickable: true,
       },
+      
+      // Responsive Breakpoints Map
       breakpoints: {
         768: {
           slidesPerView: 2,
