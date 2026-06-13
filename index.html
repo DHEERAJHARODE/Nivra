@@ -1,2534 +1,2254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Wholesale Handloom Bedding &amp; Premium Home Furnishings | Nivrá by Porwals</title>
-  <meta name="description" content="Nivrá by Porwals is a premier B2B handloom manufacturing supplier based in Indore, India. Specializing in high-volume production of premium bedsheets, quilts, comforters, custom linen, towels, and hand-woven dhurries for retailers, distributors, interior designers, decorators, and global hospitality chains. Over 45 years of heritage.">
-  <meta name="keywords" content="Nivra by Porwals, wholesale handloom bedding, bulk home furnishings indore, B2B textile supplier india, wholesale bedsheets manufacturer, premium comforters bulk, hospitality linen distributors, handwoven dhurries factory, export quality textile india">
-  <meta name="robots" content="index, follow">
+<title>Wholesale Handloom Bedding & Premium Home Furnishings | Nivrá by Porwals</title>
+<meta name="description" content="Nivrá by Porwals is a premier B2B handloom manufacturing supplier based in Indore, India. Specializing in high-volume production of premium bedsheets, quilts, comforters, curtains, towels, and hand-woven dhurries for retailers, distributors, interior designers, decorators, and global hospitality chains. Over 45 years of heritage.">
+<meta name="keywords" content="Nivrá by Porwals, wholesale handloom bedding, bulk home furnishings indore, B2B textile supplier india, wholesale bedsheets manufacturer, premium comforters bulk, hospitality linen distributors, handwoven dhurries factory, export quality textile india">
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FBF8F3;
+    --deep-brown: #2C1A0E;
+    --terracotta: #B5522A;
+    --gold: #C49A3C;
+    --gold-soft: #D8BC7C;
+    --sage: #7A8C6E;
+    --linen: #E8DFD0;
+    --charcoal: #3D3530;
+    --espresso-card: #34241A;
+    --line-light: #DDCDB4;
+    --line-dark: #473529;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  section { position: relative; padding: clamp(50px, 7vw, 90px) 0; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ══════════════════════════════
+     SECTION 1 — HERO / LOGO
+  ══════════════════════════════ */
+  #hero {
+    min-height: 100vh;
+    background: var(--deep-brown);
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 20px 60px;
+  }
+
+  .hero-weave {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(196,154,60,0.08) 39px, rgba(196,154,60,0.08) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(196,154,60,0.08) 39px, rgba(196,154,60,0.08) 40px);
+    animation: weaveDrift 20s linear infinite;
+  }
+
+  @keyframes weaveDrift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(40px, 40px); }
+  }
+
+  .hero-diagonal {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: clamp(60px, 10vw, 120px);
+    background: var(--warm-white);
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 950px;
+    padding: 2rem;
+    animation: fadeUp 1.2s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-brand-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-brand-wrapper .hero-brand-name {
+    font-family: "Fraunces", "Cormorant Garamond", serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 300;
+    color: var(--cream);
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  .hero-brand-wrapper .hero-brand-subtext {
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.75rem, 2vw, 1.1rem);
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+
+  #hero h1 {
+    font-family: "Fraunces", "Cormorant Garamond", serif;
+    font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+    color: var(--cream);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-seo-subline {
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.95rem, 2vw, 1.25rem);
+    color: var(--gold-soft);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    color: rgba(245,240,232,0.65);
+    letter-spacing: 0.05em;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-weight: bold;
+  }
+
+  .hero-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: -1;
+  }
+
+  .hero-cta:hover { color: var(--deep-brown); }
+  .hero-cta:hover::before { transform: scaleX(1); }
+
+  .hero-cta--solid {
+    background: var(--gold);
+    color: var(--deep-brown);
+  }
+  .hero-cta--solid::before {
+    background: var(--warm-white);
+  }
+  .hero-cta--solid:hover {
+    color: var(--deep-brown);
+    border-color: var(--warm-white);
+  }
+
+  /* ── TRUST POINTS STRIP ── */
+  .trust-metrics-strip {
+    background-color: #1A100A;
+    border-bottom: 1px solid var(--line-dark);
+    padding: 16px 0;
+    color: rgba(245,240,232,0.6);
+    position: relative;
+    z-index: 5;
+  }
   
-  <meta property="og:title" content="Wholesale Handloom Bedding &amp; Premium Home Furnishings | Nivrá by Porwals">
-  <meta property="og:description" content="Authentic B2B textile supply systems connecting direct factory pricing, generational craftsmanship, and strict quality control protocols across India and global markets.">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Nivrá by Porwals B2B Portal">
+  .trust-metrics-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: clamp(11px, 1.5vw, 13.5px);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  
+  .metric-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .metric-pill::before {
+    content: "✦";
+    color: var(--gold);
+    font-size: 10px;
+  }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  /* ══════════════════════════════
+     SECTION 2 — LEGACY
+  ══════════════════════════════ */
+  #legacy {
+    padding: clamp(60px, 8vw, 100px) 0;
+    background: var(--warm-white);
+    overflow: hidden;
+  }
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+  .legacy-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
 
-  <style>
-    /* ════════════════════════════════════════════════════════════════
-       DESIGN TOKENS & DESIGN SYSTEM RECONCILIATION VIA SYSTEM VARIABLES
-       ════════════════════════════════════════════════════════════════ */
-    :root {
-      /* Base Neutrals & Accent Palette */
-      --cream: #FBF6EC;
-      --warm-white: #FBF8F3;
-      --parchment: #F3EADA;
-      --deep-brown: #2C1A0E;
-      --espresso: #241710;
-      --espresso-2: #2F1E14;
-      --espresso-card: #34241A;
-      --espresso-light: #4A3525;
-      --terracotta: #B5522A;
-      --terracotta-hover: #984220;
-      --gold: #C6A24E;
-      --gold-soft: #D8BC7C;
-      --gold-dark: #A58235;
-      --sage: #7A8C6E;
-      --linen: #E8DFD0;
-      --charcoal: #3D3530;
-      --ink: #2B1E14;
-      --cream-text: #EEE3D3;
-      --cream-muted: #C7B79F;
-      --ink-muted: #6A5742;
-      
-      /* Structural System Boundaries */
-      --line-dark: #473529;
-      --line-light: #DDCDB4;
-      --maxw: 1280px;
-      --r-large: 12px;
-      --r-medium: 8px;
-      --r-small: 4px;
-      --transition-smooth: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      --transition-snap: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  @media (max-width: 768px) {
+    .legacy-layout { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .legacy-visual {
+    position: relative;
+  }
+
+  .legacy-frame {
+    position: relative;
+    background: var(--linen);
+    padding: clamp(1.5rem, 3vw, 3rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 500px) {
+    .legacy-frame { grid-template-columns: 1fr 1fr; }
+  }
+
+  .legacy-frame::before {
+    content: '';
+    position: absolute;
+    top: -12px; left: -12px;
+    right: 12px; bottom: -12px;
+    border: 2px solid var(--gold);
+    z-index: 0;
+  }
+
+  .stat-block {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 1.5rem;
+    background: var(--warm-white);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 300;
+    color: var(--terracotta);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.6;
+    margin-top: 0.8rem;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    display: block;
+    font-weight: 600;
+  }
+
+  .legacy-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    color: var(--deep-brown);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .legacy-text h2 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .legacy-text .legacy-tagline-small {
+    font-size: 13px;
+    color: var(--terracotta);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+  }
+
+  .legacy-text p {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.9;
+    color: var(--charcoal);
+    opacity: 0.75;
+    margin-bottom: 1.2rem;
+  }
+
+  .legacy-divider {
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+    margin: 1.5rem 0;
+  }
+
+  .legacy-text .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    text-decoration: none;
+    margin-top: 1.5rem;
+    transition: gap 0.3s ease;
+    font-weight: 500;
+  }
+
+  .legacy-text .cta-link:hover { gap: 1.4rem; }
+
+  /* ── WHY PARTNER WITH US SECTION ── */
+  #why-partner {
+    padding: clamp(60px, 8vw, 100px) 0;
+    background: var(--cream);
+  }
+
+  .why-partner-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 45px;
+  }
+
+  .why-partner-header h2 {
+    font-family: "Fraunces", "Cormorant Garamond", serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    color: var(--deep-brown);
+    margin-bottom: 18px;
+    font-weight: 400;
+  }
+
+  .why-partner-header p {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.75;
+    color: var(--charcoal);
+    opacity: 0.85;
+  }
+
+  .value-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 35px;
+  }
+
+  .value-proposition-card {
+    background-color: var(--warm-white);
+    padding: clamp(24px, 4vw, 40px);
+    border-radius: 8px;
+    border: 1px solid var(--line-light);
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .value-proposition-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(43,30,20,0.06);
+    border-color: var(--gold);
+  }
+
+  .value-proposition-card h3 {
+    font-family: "Fraunces", "Cormorant Garamond", serif;
+    font-size: clamp(19px, 2.5vw, 22px);
+    color: var(--deep-brown);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .value-proposition-card p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--charcoal);
+    opacity: 0.8;
+  }
+
+  /* ══════════════════════════════
+     SECTION 3 — PRODUCTS
+  ══════════════════════════════ */
+  #products {
+    padding: clamp(60px, 8vw, 100px) 0;
+    background: var(--deep-brown);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #products::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(196,154,60,0.04) 0, rgba(196,154,60,0.04) 1px, transparent 1px, transparent 50%);
+    background-size: 20px 20px;
+  }
+
+  .products-inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: clamp(40px, 6vw, 70px);
+  }
+
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+  }
+
+  .section-header h2 em { font-style: italic; color: var(--gold); }
+  .section-header p {
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    color: rgba(245,240,232,0.6);
+    margin-top: 1rem;
+    letter-spacing: 0.05em;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .products-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .product-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 3/4;
+    background: #ffffff; 
+    border-radius: 6px;
+    transform: translateZ(0);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .product-illustration {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 8px;
+  }
+  
+  .product-card:hover .product-image {
+    transform: scale(1.03);
+  }
+
+  .product-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, 
+                  rgba(25, 12, 5, 0.96) 0%, 
+                  rgba(25, 12, 5, 0.82) 35%, 
+                  rgba(25, 12, 5, 0.4) 65%, 
+                  rgba(25, 12, 5, 0.15) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: clamp(1.2rem, 2.5vw, 2rem);
+    transition: background 0.4s ease;
+  }
+
+  .product-card:hover .product-overlay {
+    background: linear-gradient(to top, 
+                  rgba(25, 12, 5, 0.98) 0%, 
+                  rgba(25, 12, 5, 0.9) 45%, 
+                  rgba(25, 12, 5, 0.6) 75%, 
+                  rgba(25, 12, 5, 0.3) 100%);
+  }
+
+  .product-category {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold) !important; 
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+    font-weight: 500;
+    color: var(--cream) !important;
+    line-height: 1.25;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  }
+
+  .product-desc {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.9) !important;
+    margin-top: 0.8rem;
+    line-height: 1.6;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+  }
+
+  @media (hover: none) {
+    .product-desc { max-height: 120px; opacity: 1; margin-bottom: 1rem; }
+    .product-link { opacity: 1 !important; transform: translateY(0) !important; }
+  }
+
+  .product-card:hover .product-desc {
+    max-height: 120px;
+    opacity: 1;
+  }
+
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease 0.1s;
+    text-decoration: none;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+
+  .product-card:hover .product-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── ASSOCIATED BRANDS ALIGNMENT BAR ── */
+  .associated-brands-banner { 
+    background-color: var(--cream); 
+    border-top: 1px solid var(--line-light); 
+    border-bottom: 1px solid var(--line-light); 
+    padding: clamp(24px, 4vw, 40px) 0; 
+    text-align: center;
+  }
+  
+  .associated-brands-banner h3 {
+    font-family: "Fraunces", "Cormorant Garamond", serif;
+    font-size: clamp(20px, 3vw, 26px);
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 400;
+    color: var(--deep-brown);
+  }
+  
+  .associated-brands-flex { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: clamp(20px, 6vw, 60px); 
+  }
+  
+  .associated-brand-text-logo { 
+    font-family: "Jost", sans-serif; 
+    font-size: clamp(14px, 2vw, 17px); 
+    font-weight: 600; 
+    letter-spacing: 0.2em; 
+    text-transform: uppercase; 
+    color: var(--charcoal); 
+    opacity: 0.7; 
+  }
+
+  /* ── SOURCING JOURNEY / HOW IT WORKS ── */
+  #how-it-works {
+    background: var(--warm-white);
+    padding: clamp(60px, 8vw, 100px) 0;
+    border-bottom: 1px solid var(--line-light);
+  }
+
+  .operational-steps-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 24px; 
+    margin-top: 40px; 
+  }
+  
+  .operational-step-card { 
+    background-color: rgba(255,255,255,0.7); 
+    padding: clamp(24px, 3vw, 35px); 
+    border-radius: 8px; 
+    border: 1px solid var(--line-light); 
+  }
+  
+  .operational-step-card .step-numeric-flag { 
+    font-family: "Fraunces", serif; 
+    font-size: clamp(36px, 5vw, 44px); 
+    color: var(--gold); 
+    font-weight: 600; 
+    margin-bottom: 8px; 
+    line-height: 1;
+  }
+  
+  .operational-step-card h3 { 
+    font-size: 18px; 
+    color: var(--deep-brown); 
+    margin-bottom: 8px; 
+  }
+  
+  .operational-step-card p { 
+    font-size: 14px; 
+    line-height: 1.55; 
+    color: var(--charcoal); 
+    opacity: 0.8;
+  }
+
+  /* ── QUALITY ASSURANCE SEGMENT ── */
+  #quality-heritage {
+    background-color: #1C120C;
+    color: rgba(245,240,232,0.8);
+    padding: clamp(60px, 8vw, 100px) 0;
+  }
+
+  .assurance-split-box { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: clamp(35px, 5vw, 60px); 
+    align-items: center; 
+  }
+  @media (max-width: 900px) { .assurance-split-box { grid-template-columns: 1fr; } }
+  
+  .assurance-narrative h2 { 
+    font-family: "Fraunces", "Cormorant Garamond", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem); 
+    color: var(--cream); 
+    margin-bottom: 20px; 
+    font-weight: 400;
+  }
+  
+  .assurance-narrative p { 
+    font-size: clamp(14.5px, 1.8vw, 16px); 
+    line-height: 1.8; 
+    color: rgba(245,240,232,0.65); 
+    margin-bottom: 16px; 
+  }
+  
+  .assurance-matrix-list { 
+    background-color: rgba(255,255,255,0.02); 
+    border: 1px solid var(--line-dark); 
+    padding: clamp(24px, 4vw, 40px); 
+    border-radius: 8px; 
+  }
+  
+  .assurance-matrix-list h3 { 
+    font-family: 'Fraunces', serif; 
+    font-size: clamp(22px, 3vw, 26px); 
+    color: var(--gold-soft); 
+    margin-bottom: 16px; 
+    font-weight: 400;
+  }
+  
+  .assurance-matrix-list ul { 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 14px; 
+    font-size: 15px; 
+    color: rgba(245,240,232,0.7); 
+  }
+  
+  .assurance-matrix-list ul li { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+  }
+  
+  .assurance-matrix-list ul li span.check-glyph { 
+    color: var(--gold); 
+    font-weight: bold; 
+  }
+
+  /* ══════════════════════════════
+     SECTION 4 — TESTIMONIALS
+  ══════════════════════════════ */
+  #testimonials { padding: clamp(60px, 8vw, 100px) 0; background: var(--cream); overflow: hidden; position: relative; }
+  .testimonials-bg-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Cormorant Garamond', serif; font-size: clamp(8rem, 18vw, 22rem); font-weight: 300; color: rgba(196,154,60,0.05); white-space: nowrap; pointer-events: none; }
+  .testimonials-inner { position: relative; z-index: 2; }
+  .testimonials-inner .section-header h2 { color: var(--deep-brown); }
+  .testimonials-inner .section-header p { color: var(--charcoal); opacity: 0.7; }
+  .testimonials-swiper { width: 100%; padding-bottom: 50px; }
+  .swiper-slide { height: auto; display: flex; }
+  .testi-card { width: 100%; background: var(--warm-white); padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 3vw, 2.5rem); position: relative; transition: transform 0.4s ease, box-shadow 0.4s ease; border-radius: 6px; display: flex; flex-direction: column; box-shadow: 0 5px 20px rgba(0,0,0,0.02); }
+  .testi-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+  .testi-card.featured { background: var(--deep-brown); }
+  .quote-icon-subline { font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 1rem; display: block; }
+  .testi-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 1.5vw, 1.15rem); font-style: italic; line-height: 1.75; color: var(--charcoal); margin-bottom: 2rem; flex-grow: 1; }
+  .testi-card.featured .testi-text { color: var(--cream); font-size: clamp(1.05rem, 1.5vw, 1.25rem); }
+  .testi-author { display: flex; align-items: center; gap: 1rem; border-top: 1px solid rgba(44,26,14,0.08); padding-top: 1.5rem; margin-top: auto; }
+  .testi-card.featured .testi-author { border-top-color: rgba(245,240,232,0.15); }
+  .author-avatar { width: 45px; height: 45px; border-radius: 50%; background: var(--linen); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--terracotta); flex-shrink: 0; }
+  .testi-card.featured .author-avatar { background: rgba(245,240,232,0.1); color: var(--gold); }
+  .author-name { font-size: 0.9rem; font-weight: 500; color: var(--deep-brown); letter-spacing: 0.05em; }
+  .testi-card.featured .author-name { color: var(--cream); }
+  .author-company { font-size: 0.7rem; color: var(--charcoal); opacity: 0.6; letter-spacing: 0.05em; margin-top: 0.3rem; line-height: 1.3; }
+  .testi-card.featured .author-company { color: var(--gold); opacity: 0.9; }
+  .stars { color: var(--gold); font-size: 0.7rem; letter-spacing: 0.25em; margin-bottom: 1.2rem; }
+  .swiper-pagination-bullet { background: var(--deep-brown); opacity: 0.2; }
+  .swiper-pagination-bullet-active { background: var(--terracotta); opacity: 1; }
+
+  /* ── OVERSEAS BUYERS MATRIX ── */
+  #overseas-buyers {
+    background-color: #241710;
+    color: rgba(245,240,232,0.8);
+    padding: clamp(60px, 8vw, 100px) 0;
+  }
+  .international-trade-box { 
+    background-color: var(--espresso-card); 
+    border: 1px solid var(--line-dark); 
+    border-radius: 8px; 
+    padding: clamp(24px, 5vw, 45px); 
+    margin-top: 35px; 
+  }
+  .international-trade-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    gap: 32px; 
+  }
+  .international-trade-item h4 { 
+    font-family: "Fraunces", serif;
+    font-size: 19px; 
+    color: var(--gold-soft); 
+    margin-bottom: 8px; 
+    font-weight: 400;
+  }
+  .international-trade-item p { 
+    font-size: 14px; 
+    color: rgba(245,240,232,0.6); 
+    line-height: 1.6; 
+  }
+
+  /* ── LOW-INTENT DIGITAL CATALOGUE CAPTURE ── */
+  #catalogue-capture {
+    background: var(--warm-white);
+    padding: clamp(50px, 6vw, 80px) 0;
+  }
+  .lead-capture-shield { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    background-color: var(--cream); 
+    border: 1px solid var(--line-light); 
+    border-radius: 8px; 
+    padding: clamp(30px, 6vw, 50px) clamp(20px, 5vw, 40px); 
+    text-align: center; 
+  }
+  .lead-capture-shield h3 { 
+    font-family: "Fraunces", serif;
+    font-size: clamp(22px, 3.5vw, 28px); 
+    color: var(--deep-brown); 
+    margin-bottom: 12px; 
+    font-weight: 400;
+  }
+  .lead-capture-shield p { 
+    font-size: 15px; 
+    color: var(--charcoal); 
+    opacity: 0.8;
+    margin-bottom: 24px; 
+  }
+  .lead-capture-inline-form { 
+    display: flex; 
+    max-width: 550px; 
+    margin: 0 auto; 
+    gap: 12px; 
+  }
+  .lead-capture-inline-form input.capture-input { 
+    flex: 1; 
+    padding: 14px 20px; 
+    border-radius: 4px; 
+    border: 1px solid var(--line-light); 
+    font-family: inherit; 
+    font-size: 14.5px; 
+    outline: none; 
+    background-color: #FFF;
+    width: 100%;
+  }
+  .lead-capture-inline-form input.capture-input:focus { border-color: var(--gold); }
+  .capture-response-message { display: none; margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--terracotta); }
+  @media (max-width: 600px) { .lead-capture-inline-form { flex-direction: column; } }
+
+  /* ── TECHNICAL FAQ ACCORDION MATRIX ── */
+  #faq-matrix {
+    padding: clamp(60px, 8vw, 100px) 0;
+    background: var(--cream);
+  }
+  .accordion-matrix-container { 
+    max-width: 850px; 
+    margin: 35px auto 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 14px; 
+  }
+  .accordion-matrix-item { 
+    background-color: var(--warm-white); 
+    border: 1px solid var(--line-light); 
+    border-radius: 6px; 
+    overflow: hidden; 
+  }
+  .accordion-matrix-trigger { 
+    width: 100%; 
+    padding: 20px 24px; 
+    background: none; 
+    border: none; 
+    text-align: left; 
+    font-family: "Fraunces", serif; 
+    font-size: clamp(16px, 2.5vw, 19px); 
+    font-weight: 500; 
+    color: var(--deep-brown); 
+    cursor: pointer; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 16px; 
+  }
+  .accordion-matrix-trigger::after { content: "+"; font-family: 'Jost', sans-serif; font-size: 22px; color: var(--gold); transition: transform 0.3s ease; }
+  .accordion-matrix-item.active-state .accordion-matrix-trigger::after { content: "−"; }
+  .accordion-matrix-panel { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .accordion-matrix-content { padding: 0 24px 20px; font-size: 14.5px; line-height: 1.65; color: var(--charcoal); opacity: 0.85; }
+
+  /* ══════════════════════════════
+     SECTION 5 — CONTACT & FORM
+  ══════════════════════════════ */
+  #contact { padding: clamp(60px, 8vw, 100px) 0 0; background: var(--warm-white); }
+  .contact-split { display: grid; grid-template-columns: 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
+  @media (min-width: 900px) { .contact-split { grid-template-columns: 1fr 1.2fr; } }
+  .contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 300; color: var(--deep-brown); line-height: 1.1; margin-bottom: 1.5rem; }
+  .contact-left h2 em { font-style: italic; color: var(--terracotta); }
+  .contact-left p { font-size: clamp(0.9rem, 1.5vw, 1rem); line-height: 1.9; color: var(--charcoal); opacity: 0.8; max-width: 450px; }
+  .contact-info { margin-top: 3rem; }
+  .contact-info-item { display: flex; gap: 1.2rem; margin-bottom: 1.8rem; align-items: flex-start; }
+  .contact-info-icon { width: 45px; height: 45px; background: var(--linen); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border-radius: 4px; color: var(--terracotta); }
+  .contact-info-icon svg { width: 18px; height: 18px; fill: currentColor; }
+  .contact-info-text { font-size: 0.9rem; line-height: 1.6; color: var(--charcoal); opacity: 0.8; }
+  .contact-info-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+
+  .contact-form-container { background: var(--deep-brown); padding: clamp(2rem, 5vw, 4rem); position: relative; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); min-height: 600px; display: flex; flex-direction: column; justify-content: center; }
+  .contact-form-container::before { content: ''; position: absolute; top: 12px; left: 12px; right: -12px; bottom: -12px; border: 1px solid var(--gold); z-index: -1; opacity: 0.3; border-radius: 4px; }
+  @media (max-width: 600px) { .contact-form-container::before { top: 6px; left: 6px; right: -6px; bottom: -6px; } }
+  #enquiryForm { transition: opacity 0.4s ease, visibility 0.4s ease; }
+  .form-row { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 600px) { .form-row { grid-template-columns: 1fr 1fr; } }
+  .form-group { margin-bottom: 1.5rem; position: relative; }
+  .form-group label { display: block; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(245,240,232,0.2); padding: 0.8rem 0; color: var(--cream); font-family: 'Jost', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.3s ease; -webkit-appearance: none; border-radius: 0; }
+  .form-group select { cursor: pointer; }
+  .form-group select option { background: var(--deep-brown); color: var(--cream); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(245,240,232,0.3); font-size: 0.9rem; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-bottom-color: var(--gold); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  /* PHONE FIELD DESIGN */
+  .phone-field-group { display: flex; gap: 10px; }
+  .phone-field-group select { width: 90px; flex-shrink: 0; }
+
+  /* VALIDATION STYLING */
+  .form-group.invalid-state input, .form-group.invalid-state select, .form-group.invalid-state textarea { border-bottom-color: var(--terracotta); background-color: rgba(181,82,42,0.05); }
+  .form-error-msg { display: none; color: var(--terracotta); font-size: 11px; font-weight: 500; margin-top: 4px; letter-spacing: 0.02em; }
+  .form-group.invalid-state .form-error-msg { display: block; }
+
+  .form-submit { width: 100%; padding: 1.2rem; background: var(--gold); border: none; color: var(--deep-brown); font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; margin-top: 1rem; border-radius: 2px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .form-submit:hover:not(:disabled) { background: var(--terracotta); color: var(--cream); }
+  .form-submit:active:not(:disabled) { transform: scale(0.98); }
+  .form-submit:disabled { opacity: 0.8; cursor: not-allowed; }
+  .spinner { display: none; width: 18px; height: 18px; border: 2px solid rgba(44,26,14,0.2); border-top-color: var(--deep-brown); border-radius: 50%; animation: spin 0.8s linear infinite; }
+  .form-submit.is-loading .spinner { display: block; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .success-state { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; opacity: 0; visibility: hidden; transition: opacity 0.5s ease, visibility 0.5s ease; }
+  .success-state.active { opacity: 1; visibility: visible; }
+  .checkmark-wrapper { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .checkmark { width: 100%; height: 100%; border-radius: 50%; display: block; stroke-width: 2.5; stroke: var(--gold); stroke-miterlimit: 10; box-shadow: inset 0px 0px 0px var(--gold); animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both; }
+  .checkmark__circle { stroke-dasharray: 166; stroke-dashoffset: 166; stroke-width: 2.5; stroke-miterlimit: 10; stroke: var(--gold); fill: none; animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards; }
+  .checkmark__check { transform-origin: 50% 50%; stroke-dasharray: 48; stroke-dashoffset: 48; animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards; }
+  @keyframes stroke { 100% { stroke-dashoffset: 0; } }
+  @keyframes scale { 0%, 100% { transform: none; } 50% { transform: scale3d(1.1, 1.1, 1); } }
+  .success-state h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--cream); margin-bottom: 0.8rem; font-weight: 300; }
+  .success-state p { font-size: 0.95rem; color: rgba(245,240,232,0.7); line-height: 1.6; max-width: 300px; }
+
+  /* 4-COLUMN CORPORATE FOOTER SYSTEM */
+  .corporate-landscape-footer { 
+    background-color: var(--deep-brown); 
+    color: rgba(245,240,232,0.6); 
+    border-top: 1px solid rgba(245,240,232,0.05); 
+    padding: clamp(40px, 8vw, 80px) 0 40px; 
+    font-size: 14px; 
+  }
+  .landscape-footer-grid { 
+    display: grid; 
+    grid-template-columns: 1.5fr repeat(3, 1fr); 
+    gap: 40px; 
+    margin-bottom: 40px; 
+  }
+  @media (max-width: 1024px) { .landscape-footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .landscape-footer-grid { grid-template-columns: 1fr; } }
+  .landscape-footer-column h4 { 
+    font-size: 13px; 
+    font-weight: 600; 
+    letter-spacing: 0.15em; 
+    text-transform: uppercase; 
+    color: var(--cream); 
+    margin-bottom: 16px; 
+  }
+  .landscape-footer-column p { line-height: 1.6; margin-bottom: 14px; }
+  .landscape-footer-links-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .landscape-footer-links-list a { color: rgba(245,240,232,0.6); text-decoration: none; transition: all 0.3s; }
+  .landscape-footer-links-list a:hover { color: var(--gold-soft); padding-left: 4px; }
+  .landscape-footer-seo-sentence { text-align: center; font-style: italic; font-size: 13.5px; color: var(--gold-soft); letter-spacing: 0.03em; border-top: 1px solid rgba(245,240,232,0.05); border-bottom: 1px solid rgba(245,240,232,0.05); padding: 20px 0; margin-bottom: 24px; }
+  .landscape-footer-bottom-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 12.5px; }
+  .landscape-footer-socials-matrix { display: flex; align-items: center; gap: 14px; }
+  .landscape-footer-socials-matrix a { width: 34px; height: 34px; background-color: rgba(255,255,255,0.03); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(245,240,232,0.6); text-decoration: none; font-weight: bold; font-size: 12px; transition: all 0.3s; }
+  .landscape-footer-socials-matrix a:hover { background-color: var(--gold); color: var(--deep-brown); transform: translateY(-2px); }
+
+  /* ════════════════════════════════════════════════════════════════
+     COMPLETE NEW NAV STYLING (TRANSPARENT WITH SMOOTH SCROLL EFFECT)
+     ════════════════════════════════════════════════════════════════ */
+  nav { 
+    position: fixed; 
+    top: 0; left: 0; right: 0; 
+    z-index: 9999; 
+    padding: 1.5rem clamp(1.5rem, 4vw, 3rem); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: transparent; 
+    border-bottom: 1px solid rgba(198,162,78,0); 
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+  }
+  
+  nav.scrolled { 
+    background-color: rgba(36, 23, 16, 0.95); 
+    padding: 1rem clamp(1.5rem, 4vw, 3rem); 
+    border-bottom: 1px solid rgba(198,162,78,0.15); 
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
+  }
+
+  .nav-brand-container { 
+    display: flex; 
+    flex-direction: column; 
+    line-height: 1; 
+    text-decoration: none;
+    position: relative; 
+    z-index: 100001; 
+  }
+  
+  .nav-brand-container .brand-name { 
+    font-family: "Fraunces", "Cormorant Garamond", serif; 
+    font-size: clamp(28px, 5vw, 36px); 
+    font-weight: 400; 
+    color: var(--cream); 
+    letter-spacing: .02em; 
+    text-transform: none;
+  }
+  
+  .nav-brand-container .brand-subtext { 
+    font-family: "Jost", sans-serif;
+    font-size: clamp(9px, 1.5vw, 11px); 
+    letter-spacing: .38em; 
+    text-transform: uppercase; 
+    color: var(--gold); 
+    margin-top: 4px; 
+    font-weight: 500;
+  }
+  
+  .nav-links { 
+    display: flex; 
+    gap: clamp(16px, 3vw, 32px); 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    align-items: center;
+  }
+  
+  .nav-links a { 
+    font-family: "Jost", sans-serif;
+    font-size: 13.5px; 
+    font-weight: 500; 
+    letter-spacing: 0.1em; 
+    text-transform: uppercase; 
+    color: rgba(238, 227, 211, 0.85); 
+    text-decoration: none;
+    position: relative; 
+    padding: 8px 0; 
+    transition: all 0.35s ease;
+  }
+  
+  .nav-links a::after { 
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    bottom: 0; 
+    height: 2px; 
+    width: 0; 
+    background-color: var(--gold); 
+    transition: all 0.35s ease; 
+  }
+  
+  .nav-links a:hover { color: var(--gold-soft); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .mobile-menu-btn { 
+    display: none; 
+    background: none; 
+    border: 1px solid rgba(198,162,78,0.3); 
+    color: rgba(238, 227, 211, 0.9); 
+    cursor: pointer; 
+    z-index: 100001; 
+    padding: 8px 12px; 
+    border-radius: 6px;
+    transition: all 0.35s ease;
+  }
+  .mobile-menu-btn:hover { background-color: rgba(255,255,255,0.05); border-color: var(--gold); }
+
+  /* ─── NEW CLEAN SYSTEM FOR RESPONSIVE MOBILE SIDEBAR ─── */
+  @media (max-width: 800px) {
+    body.menu-open { overflow: hidden !important; }
+    .mobile-menu-btn { display: block; }
+    .mobile-menu-btn #icon-hamburger { display: block; }
+    .mobile-menu-btn #icon-close { display: none; }
+    .mobile-menu-btn.is-active #icon-hamburger { display: none; }
+    .mobile-menu-btn.is-active #icon-close { display: block; }
+
+    .nav-links {
+      position: fixed;
+      top: 0; bottom: 0; right: -100%;
+      width: 100vw; height: 100vh;
+      background: #2C1A0E; 
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+      z-index: 10000;
+      opacity: 0;
+      visibility: hidden;
     }
+    .nav-links.is-open { right: 0; opacity: 1; visibility: visible; }
+    .nav-links li { width: 100%; text-align: center; }
+    .nav-links a { display: block; padding: 1rem; font-size: 1.4rem; letter-spacing: 0.25em; color: var(--cream); }
+    .nav-links a:hover, .nav-links a:active { color: var(--gold); }
 
-    /* RESETS & PERFORMANCE INTERFACE LAYERS */
-    *, *::before, *::after { 
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box; 
-    }
-    
-    html { 
-      scroll-behavior: smooth; 
-      text-size-adjust: 100%;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-      font-family: 'Jost', 'Inter', sans-serif;
-      background-color: var(--warm-white);
-      color: var(--charcoal);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-      line-height: 1.5;
-    }
-
-    /* NOISE TEXTURE OVERLAY LAYER FOR RICH CRAFT VISUAL DEPTH */
-    body::before {
-      content: '';
+    .sidebar-overlay {
       position: fixed;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 10000;
-      opacity: 0.4;
+      background: rgba(0,0,0,0.5);
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
     }
+    .sidebar-overlay.is-visible { opacity: 1; visibility: visible; }
+  }
 
-    /* SEMANTIC LAYOUT STRUCTURAL UTILITIES */
-    section { 
-      position: relative; 
-      padding: clamp(50px, 8vw, 90px) 0;
-      overflow: hidden;
-    }
-    
-    a { 
-      color: inherit; 
-      text-decoration: none; 
-      transition: var(--transition-smooth);
-    }
-    
-    img { 
-      max-width: 100%; 
-      display: block; 
-      height: auto;
-    }
-    
-    button, input, select, textarea {
-      font-family: inherit;
-      font-size: inherit;
-      color: inherit;
-      background: none;
-      border: none;
-    }
+  /* ─── MOBILE PROPER CARDS & POPUP OPTIMIZATIONS ─── */
+  @media (max-width: 480px) {
+    .products-grid { grid-template-columns: 1fr !important; gap: 25px !important; }
+    .product-card { aspect-ratio: auto !important; height: 440px !important; display: flex; flex-direction: column; }
+    .product-illustration { height: 70% !important; background: #ffffff !important; display: flex; align-items: center; justify-content: center; }
+    .product-image { max-height: 90% !important; object-fit: contain !important; padding: 10px !important; }
+    .product-overlay { position: relative !important; height: 30% !important; background: var(--deep-brown) !important; padding: 1.2rem 1.2rem !important; display: flex; flex-direction: column; justify-content: center; opacity: 1 !important; }
+    .product-category { font-size: 0.7rem !important; margin-bottom: 0.3rem !important; text-shadow: none !important; }
+    .product-name { font-size: 1.25rem !important; line-height: 1.3 !important; text-shadow: none !important; white-space: normal !important; }
+    .product-desc { display: none !important; }
+    .product-link { opacity: 1 !important; transform: translateY(0) !important; margin-top: 0.5rem !important; font-size: 0.7rem !important; text-shadow: none !important; }
+    .modal-content { max-height: 90vh; overflow-y: auto; }
+    .modal-body { padding: 30px 15px 20px !important; gap: 20px !important; }
+    .modal-thumb { width: 60px; height: 60px; }
+  }
 
-    h1, h2, h3, h4, h5, h6 { 
-      font-family: "Fraunces", "Cormorant Garamond", serif; 
-      font-weight: 400; 
-      line-height: 1.25; 
-      letter-spacing: -0.01em; 
-      color: var(--espresso);
-    }
+  /* ── FIX POPUP DEFAULT VISIBILITY LAYER ── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 10, 5, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 15px;
+  }
 
-    .wrap { 
-      max-width: var(--maxw); 
-      margin: 0 auto; 
-      padding: 0 clamp(16px, 4vw, 32px); 
-    }
-    
-    .lead { 
-      font-size: clamp(16px, 2vw, 19px); 
-      max-width: 72ch; 
-      line-height: 1.75; 
-      font-weight: 300;
-    }
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 
-    /* THE SIGNATURE LOOM INTEGRITY GEOMETRY ASSET */
-    .loom-divider {
-      height: 8px; 
-      width: 100%;
-      background: repeating-linear-gradient(90deg, var(--gold) 0 3px, transparent 3px 12px);
-      opacity: 0.45;
-    }
-
-    .section-eyebrow {
-      display: inline-flex; 
-      align-items: center; 
-      gap: 12px;
-      font-family: "Jost", sans-serif; 
-      font-size: clamp(11px, 1.5vw, 13px); 
-      font-weight: 600;
-      letter-spacing: .25em; 
-      text-transform: uppercase; 
-      color: var(--gold-dark);
-      margin-bottom: 16px;
-    }
-    
-    .section-eyebrow::before {
-      content: ""; 
-      width: clamp(20px, 4vw, 32px); 
-      height: 2px;
-      background: repeating-linear-gradient(90deg, var(--gold) 0 4px, transparent 4px 8px);
-    }
-
-    /* MASTER DESIGN SYSTEM BACKGROUND VARIANTS */
-    .section--light { background-color: var(--parchment); color: var(--ink); }
-    .section--cream { background-color: var(--cream); color: var(--ink); }
-    .section--dark { background-color: var(--espresso); color: var(--cream-text); }
-    
-    .section--light .lead, .section--cream .lead { color: var(--ink-muted); }
-    .section--dark .lead { color: var(--cream-muted); }
-    .section--dark h1, .section--dark h2, .section--dark h3, .section--dark h4 { color: var(--cream); }
-
-    /* CORE BUTTON COMPONENT INFRASTRUCTURE */
-    .btn {
-      display: inline-flex; 
-      align-items: center; 
-      justify-content: center; 
-      gap: 12px; 
-      cursor: pointer;
-      font-family: "Jost", sans-serif; 
-      font-size: 13px; 
-      font-weight: 600; 
-      letter-spacing: .18em;
-      text-transform: uppercase; 
-      padding: 16px clamp(24px, 5vw, 36px); 
-      border-radius: 50px; 
-      border: 1px solid transparent;
-      box-shadow: 0 0 0 rgba(0,0,0,0);
-      transition: var(--transition-smooth);
-      width: auto;
-    }
-    @media (max-width: 480px) {
-      .btn { width: 100%; text-align: center; }
-    }
-    
-    .btn--gold { 
-      background-color: var(--gold); 
-      color: var(--espresso); 
-      font-weight: 700; 
-    }
-    
-    .btn--gold:hover { 
-      transform: translateY(-3px); 
-      background-color: var(--gold-soft); 
-      box-shadow: 0 8px 24px rgba(198,162,78,0.3); 
-    }
-    
-    .btn--ghost { 
-      background-color: transparent; 
-      border-color: rgba(238,227,211,0.4); 
-      color: var(--cream-text); 
-    }
-    
-    .btn--ghost:hover { 
-      border-color: var(--gold); 
-      color: var(--gold-soft); 
-      transform: translateY(-3px); 
-      background-color: rgba(255,255,255,0.02);
-    }
-    
-    .btn--ink { 
-      background-color: var(--ink); 
-      color: var(--cream); 
-      font-weight: 700; 
-    }
-    
-    .btn--ink:hover { 
-      transform: translateY(-3px); 
-      background-color: #3C2A1B; 
-      box-shadow: 0 8px 24px rgba(43,30,20,0.2);
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 1 — THE STICKY HEADER & BALANCED BRAND NAVIGATION BAR
-       ════════════════════════════════════════════════════════════════ */
-    header.nav-container {
-      position: sticky; 
-      top: 0; 
-      z-index: 2000;
-      background-color: rgba(36, 23, 16, 0.95); 
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(198,162,78,0.15);
-      transition: var(--transition-smooth);
-    }
-    
-    .nav-inner { 
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; 
-      height: clamp(70px, 10vw, 90px); 
-    }
-    
-    .brand-mark-wrapper { 
-      display: flex; 
-      flex-direction: column; 
-      line-height: 1; 
-    }
-    
-    .brand-mark-wrapper .brand-name { 
-      font-family: "Fraunces", serif; 
-      font-size: clamp(28px, 5vw, 36px); 
-      font-weight: 400; 
-      color: var(--cream); 
-      letter-spacing: .02em; 
-    }
-    
-    .brand-mark-wrapper .brand-subtext { 
-      font-family: "Jost", sans-serif;
-      font-size: clamp(9px, 1.5vw, 11px); 
-      letter-spacing: .38em; 
-      text-transform: uppercase; 
-      color: var(--gold); 
-      margin-top: 4px; 
-      font-weight: 500;
-    }
-    
-    .nav-links-wrapper { 
-      display: flex; 
-      align-items: center; 
-      gap: clamp(16px, 3vw, 32px); 
-    }
-    
-    .nav-links-wrapper a { 
-      font-family: "Jost", sans-serif;
-      font-size: 13.5px; 
-      font-weight: 500; 
-      letter-spacing: 0.1em; 
-      text-transform: uppercase; 
-      color: var(--cream-text); 
-      position: relative; 
-      padding: 8px 0; 
-    }
-    
-    .nav-links-wrapper a::after { 
-      content: ""; 
-      position: absolute; 
-      left: 0; 
-      bottom: 0; 
-      height: 2px; 
-      width: 0; 
-      background-color: var(--gold); 
-      transition: var(--transition-smooth); 
-    }
-    
-    .nav-links-wrapper a:hover { 
-      color: var(--gold-soft); 
-    }
-    
-    .nav-links-wrapper a:hover::after { 
-      width: 100%; 
-    }
-    
-    .mobile-hamburger-trigger { 
-      display: none; 
-      background: none; 
-      border: 1px solid rgba(198,162,78,0.3); 
-      color: var(--cream-text); 
-      border-radius: 6px; 
-      padding: 8px 12px; 
-      cursor: pointer; 
-      transition: var(--transition-smooth);
-    }
-    
-    .mobile-hamburger-trigger:hover {
-      background-color: rgba(255,255,255,0.05);
-      border-color: var(--gold);
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 2 — THE KEYWORD-OPTIMIZED HERO DESCRIPTIVE ENGINE
-       ════════════════════════════════════════════════════════════════ */
-    .hero-display-engine { 
-      position: relative; 
-      overflow: hidden; 
-      background: radial-gradient(130% 100% at 75% -10%, #3D2618 0%, var(--espresso) 70%); 
-      padding: clamp(100px, 15vw, 150px) 0 clamp(80px, 12vw, 130px); 
-      text-align: center; 
-    }
-    
-    .hero-display-engine::before {
-      content: ""; 
-      position: absolute; 
-      inset: 0; 
-      opacity: .07; 
-      pointer-events: none;
-      background: repeating-linear-gradient(90deg, #C6A24E 0 1px, transparent 1px 20px), 
-                  repeating-linear-gradient(0deg, #C6A24E 0 1px, transparent 1px 20px);
-    }
-    
-    .hero-layout-box { 
-      position: relative; 
-      z-index: 10; 
-      max-width: 950px; 
-      margin: 0 auto; 
-    }
-    
-    .hero-layout-box h1 { 
-      font-size: clamp(2.3rem, 6vw, 5.2rem); 
-      color: var(--cream); 
-      font-weight: 300; 
-      line-height: 1.15; 
-      margin-bottom: 20px; 
-      padding: 0 4px;
-    }
-    
-    .hero-layout-box .seo-brand-statement { 
-      font-family: 'Jost', sans-serif; 
-      font-size: clamp(0.95rem, 2.2vw, 1.5rem); 
-      color: var(--gold-soft); 
-      font-weight: 400; 
-      letter-spacing: 0.04em; 
-      margin-bottom: 12px; 
-      text-transform: uppercase;
-      padding: 0 8px;
-    }
-    
-    .hero-layout-box .design-tagline { 
-      font-family: "Fraunces", serif; 
-      font-style: italic; 
-      font-size: clamp(1rem, 2vw, 1.4rem); 
-      color: rgba(238,227,211,0.7); 
-      margin-bottom: 36px; 
-      font-weight: 300;
-    }
-    
-    .hero-cta-group { 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      gap: 16px; 
-      flex-wrap: wrap; 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 3 — HORIZONTAL PROOF & VALUE STRENGTH DATA STRIP
-       ════════════════════════════════════════════════════════════════ */
-    .trust-metrics-strip { 
-      background-color: #1A100A; 
-      border-bottom: 1px solid var(--line-dark); 
-      padding: 16px 0; 
-      color: var(--cream-muted); 
-    }
-    
-    .trust-metrics-flex { 
-      display: flex; 
-      justify-content: space-around; 
-      align-items: center; 
-      flex-wrap: wrap; 
-      gap: clamp(12px, 3vw, 24px); 
-      font-size: clamp(11px, 1.5vw, 13.5px); 
-      font-weight: 600; 
-      letter-spacing: 0.18em; 
-      text-transform: uppercase; 
-    }
-    
-    .metric-pill { 
-      display: flex; 
-      align-items: center; 
-      gap: 8px; 
-    }
-    
-    .metric-pill::before { 
-      content: "✦"; 
-      color: var(--gold); 
-      font-size: 10px; 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 4 — HISTORIC CHRONICLE SEGMENT
-       ════════════════════════════════════════════════════════════════ */
-    .legacy-grid-layout { 
-      display: grid; 
-      grid-template-columns: 1fr 1.15fr; 
-      gap: clamp(30px, 6vw, 70px); 
-      align-items: center; 
-    }
-    
-    .legacy-visual-shield { 
-      position: relative; 
-      background-color: var(--linen); 
-      padding: clamp(20px, 4vw, 48px); 
-      border-radius: var(--r-large); 
-      border: 1px solid var(--line-light); 
-    }
-    
-    .legacy-matrix-frame { 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      gap: clamp(12px, 3vw, 24px); 
-    }
-    
-    .legacy-stat-card { 
-      background-color: var(--warm-white); 
-      padding: clamp(25px, 4vw, 40px) 16px; 
-      text-align: center; 
-      border-radius: var(--r-medium); 
-      box-shadow: 0 6px 20px rgba(43,30,20,0.03); 
-      border: 1px solid rgba(198,162,78,0.18); 
-    }
-    
-    .legacy-stat-card .numeric-accent { 
-      font-family: "Fraunces", serif; 
-      font-size: clamp(32px, 5vw, 46px); 
-      color: var(--terracotta); 
-      font-weight: 500; 
-      line-height: 1;
-    }
-    
-    .legacy-stat-card .label-accent { 
-      font-size: clamp(10px, 1.2vw, 11.5px); 
-      letter-spacing: 0.14em; 
-      text-transform: uppercase; 
-      color: var(--ink-muted); 
-      margin-top: 8px; 
-      font-weight: 600;
-    }
-    
-    .legacy-text-shield h2 { 
-      font-size: clamp(1.8rem, 4vw, 3.5rem); 
-      color: var(--espresso); 
-      margin-bottom: 16px; 
-    }
-    
-    .legacy-text-shield p { 
-      font-size: clamp(15px, 2vw, 16.5px); 
-      line-height: 1.8; 
-      color: var(--ink-muted); 
-      margin-bottom: 20px; 
-      font-weight: 400;
-    }
-    
-    .partnership-transition-anchor { 
-      display: inline-flex; 
-      align-items: center; 
-      gap: 8px; 
-      font-size: 13.5px; 
-      font-weight: 600; 
-      letter-spacing: 0.15em; 
-      text-transform: uppercase; 
-      color: var(--terracotta); 
-      margin-top: 8px; 
-      transition: var(--transition-smooth); 
-    }
-    
-    .partnership-transition-anchor:hover { 
-      gap: 14px; 
-      color: var(--espresso); 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 5 — EXPLICIT VALUE PROP BLOCK
-       ════════════════════════════════════════════════════════════════ */
-    .value-cards-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-      gap: clamp(16px, 3vw, 32px); 
-      margin-top: clamp(30px, 5vw, 55px); 
-    }
-    
-    .value-proposition-card { 
-      background-color: var(--warm-white); 
-      padding: clamp(24px, 4vw, 40px); 
-      border-radius: var(--r-medium); 
-      border: 1px solid var(--line-light); 
-      transition: var(--transition-smooth); 
-    }
-    
-    .value-proposition-card:hover { 
-      transform: translateY(-5px); 
-      box-shadow: 0 16px 36px rgba(43,30,20,0.06); 
-      border-color: var(--gold);
-    }
-    
-    .value-proposition-card h3 { 
-      font-size: clamp(19px, 2.5vw, 22px); 
-      color: var(--espresso); 
-      margin-bottom: 12px; 
-    }
-    
-    .value-proposition-card p { 
-      font-size: clamp(14px, 1.8vw, 15px); 
-      line-height: 1.65; 
-      color: var(--ink-muted); 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 6 — THE COMPREHENSIVE PRODUCT GRID SEGMENT
-       ════════════════════════════════════════════════════════════════ */
-    .architectural-products-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); 
-      gap: clamp(20px, 3vw, 32px); 
-      margin-top: clamp(35px, 5vw, 60px); 
-    }
-    
-    .showcase-product-card { 
-      background-color: var(--espresso-card); 
-      border-radius: var(--r-large); 
-      overflow: hidden; 
-      border: 1px solid var(--line-dark); 
-      transition: var(--transition-smooth); 
-      cursor: pointer; 
-      position: relative; 
-    }
-    
-    .showcase-product-card:hover { 
-      transform: translateY(-6px); 
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
-      border-color: var(--gold-soft);
-    }
-    
-    .card-media-shell { 
-      aspect-ratio: 4/3; 
-      background-color: #3D2B20; 
-      position: relative; 
-      overflow: hidden; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-    }
-    
-    .card-media-shell img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-    }
-    
-    .showcase-product-card:hover .card-media-shell img { 
-      transform: scale(1.08); 
-    }
-    
-    .media-classification-badge { 
-      position: absolute; 
-      top: 16px; 
-      left: 16px; 
-      background-color: var(--gold); 
-      color: var(--espresso); 
-      font-size: 10px; 
-      font-weight: 600; 
-      letter-spacing: 0.12em; 
-      text-transform: uppercase; 
-      padding: 4px 10px; 
-      border-radius: 30px; 
-      z-index: 5; 
-    }
-    
-    .card-information-shell { 
-      padding: clamp(20px, 3vw, 30px); 
-    }
-    
-    .card-information-shell h3 { 
-      font-size: clamp(20px, 2.5vw, 24px); 
-      color: var(--cream); 
-      margin-bottom: 8px; 
-    }
-    
-    .card-information-shell .text-line-sub { 
-      font-family: "Jost", sans-serif;
-      font-size: 11.5px; 
-      color: var(--gold-soft); 
-      letter-spacing: 0.08em; 
-      margin-bottom: 12px; 
-      text-transform: uppercase; 
-      font-weight: 600; 
-    }
-    
-    .card-information-shell .paragraph-desc { 
-      font-size: 14px; 
-      color: var(--cream-muted); 
-      line-height: 1.6; 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 7 — SOURCING JOURNEY WORKFLOW PROGRESSION
-       ════════════════════════════════════════════════════════════════ */
-    .operational-steps-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-      gap: 24px; 
-      margin-top: clamp(30px, 4vw, 50px); 
-    }
-    
-    .operational-step-card { 
-      background-color: rgba(255,255,255,0.45); 
-      padding: clamp(24px, 3vw, 35px); 
-      border-radius: var(--r-medium); 
-      border: 1px solid var(--line-light); 
-      position: relative; 
-    }
-    
-    .operational-step-card .step-numeric-flag { 
-      font-family: "Fraunces", serif; 
-      font-size: clamp(36px, 5vw, 44px); 
-      color: var(--gold); 
-      opacity: 0.8; 
-      font-weight: 600; 
-      margin-bottom: 8px; 
-      line-height: 1;
-    }
-    
-    .operational-step-card h3 { 
-      font-size: 18px; 
-      color: var(--espresso); 
-      margin-bottom: 8px; 
-    }
-    
-    .operational-step-card p { 
-      font-size: 14px; 
-      line-height: 1.55; 
-      color: var(--ink-muted); 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 8 — QUALITY ASSURANCE & HERITAGE ATTRIBUTES
-       ════════════════════════════════════════════════════════════════ */
-    .assurance-split-box { 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      gap: clamp(35px, 5vw, 60px); 
-      align-items: center; 
-    }
-    
-    .assurance-narrative h2 { 
-      font-size: clamp(1.8rem, 4vw, 3.2rem); 
-      color: var(--cream); 
-      margin-bottom: 20px; 
-    }
-    
-    .assurance-narrative p { 
-      font-size: clamp(15px, 2vw, 16.5px); 
-      line-height: 1.8; 
-      color: var(--cream-muted); 
-      margin-bottom: 16px; 
-    }
-    
-    .assurance-matrix-list { 
-      background-color: rgba(255,255,255,0.02); 
-      border: 1px solid var(--line-dark); 
-      padding: clamp(24px, 4vw, 48px); 
-      border-radius: var(--r-large); 
-    }
-    
-    .assurance-matrix-list h3 { 
-      font-family: 'Fraunces', serif; 
-      font-size: clamp(22px, 3vw, 26px); 
-      color: var(--gold-soft); 
-      margin-bottom: 16px; 
-    }
-    
-    .assurance-matrix-list ul { 
-      list-style: none; 
-      display: flex; 
-      flex-direction: column; 
-      gap: 14px; 
-      font-size: 15px; 
-      color: var(--cream-muted); 
-    }
-    
-    .assurance-matrix-list ul li { 
-      display: flex; 
-      align-items: center; 
-      gap: 12px; 
-    }
-    
-    .assurance-matrix-list ul li span.check-glyph { 
-      color: var(--gold); 
-      font-weight: bold; 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 9 — SOCIAL PROOF / SWIPER TESTIMONIAL LINES (WITH AUTOPLAY)
-       ════════════════════════════════════════════════════════════════ */
-    .testimonials-swiper-container {
-      position: relative;
-      margin-top: clamp(30px, 4vw, 50px);
-      padding: 10px 0 50px;
-    }
-
-    .partner-voice-card { 
-      background-color: var(--warm-white); 
-      padding: clamp(24px, 4vw, 40px); 
-      border-radius: var(--r-medium); 
-      border: 1px solid var(--line-light); 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: space-between; 
-      height: 100%; 
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-      transition: var(--transition-smooth);
-    }
-    
-    .partner-voice-card .testimonial-body-text { 
-      font-family: "Fraunces", serif; 
-      font-style: italic; 
-      font-size: clamp(15px, 2vw, 16.5px); 
-      line-height: 1.75; 
-      color: var(--ink); 
-      margin-bottom: 24px; 
-    }
-    
-    .partner-voice-card .author-meta-name { 
-      font-size: 13.5px; 
-      font-weight: 700; 
-      color: var(--espresso); 
-      text-transform: uppercase; 
-      letter-spacing: 0.06em; 
-    }
-    
-    .partner-voice-card .author-trust-line { 
-      font-size: 12px; 
-      color: var(--terracotta); 
-      font-weight: 600; 
-      margin-top: 4px; 
-    }
-
-    /* Custom Styling for Swiper Pagination Dots to match Gold theme */
-    .testimonials-swiper-container .swiper-pagination-bullet {
-      background: var(--ink-muted);
-      opacity: 0.3;
-      width: 9px;
-      height: 9px;
-      transition: var(--transition-smooth);
-    }
-
-    .testimonials-swiper-container .swiper-pagination-bullet-active {
-      background: var(--gold) !important;
-      opacity: 1;
-      width: 24px;
-      border-radius: 5px;
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 10 — ASSOCIATED BRANDS ALIGNMENT BAR (CENTERED)
-       ════════════════════════════════════════════════════════════════ */
-    .associated-brands-banner { 
-      background-color: var(--cream); 
-      border-top: 1px solid var(--line-light); 
-      border-bottom: 1px solid var(--line-light); 
-      padding: clamp(24px, 4vw, 40px) 0; 
-      text-align: center;
-    }
-    
-    .associated-brands-banner h1 {
-      text-align: center;
-      margin-bottom: 24px;
-    }
-    
-    .associated-brands-flex { 
-      display: flex; 
-      flex-wrap: wrap; 
-      justify-content: center; 
-      align-items: center; 
-      gap: clamp(20px, 6vw, 80px); 
-    }
-    
-    .associated-brand-text-logo { 
-      font-family: "Jost", sans-serif; 
-      font-size: clamp(14px, 2vw, 17px); 
-      font-weight: 600; 
-      letter-spacing: 0.2em; 
-      text-transform: uppercase; 
-      color: var(--ink-muted); 
-      opacity: 0.7; 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 11 — OVERSEAS TRADE PIPELINE CONFIGURATION
-       ════════════════════════════════════════════════════════════════ */
-    .international-trade-box { 
-      background-color: var(--espresso-card); 
-      border: 1px solid var(--line-dark); 
-      border-radius: var(--r-large); 
-      padding: clamp(24px, 5vw, 55px); 
-      margin-top: clamp(24px, 4vw, 45px); 
-    }
-    
-    .international-trade-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-      gap: 32px; 
-      margin-top: clamp(20px, 3vw, 35px); 
-    }
-    
-    .international-trade-item h4 { 
-      font-size: 18px; 
-      color: var(--gold-soft); 
-      margin-bottom: 8px; 
-    }
-    
-    .international-trade-item p { 
-      font-size: 14px; 
-      color: var(--cream-muted); 
-      line-height: 1.6; 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 12 — CAPTURE BLOCK FOR LOW-INTENT VISITORS
-       ════════════════════════════════════════════════════════════════ */
-    .lead-capture-shield { 
-      max-width: 800px; 
-      margin: 0 auto; 
-      background-color: var(--parchment); 
-      border: 1px solid var(--line-light); 
-      border-radius: var(--r-large); 
-      padding: clamp(30px, 6vw, 55px) clamp(20px, 5vw, 45px); 
-      text-align: center; 
-    }
-    
-    .lead-capture-shield h3 { 
-      font-size: clamp(22px, 3.5vw, 28px); 
-      color: var(--espresso); 
-      margin-bottom: 12px; 
-    }
-    
-    .lead-capture-shield p { 
-      font-size: 15px; 
-      color: var(--ink-muted); 
-      margin-bottom: 24px; 
-    }
-    
-    .lead-capture-inline-form { 
-      display: flex; 
-      max-width: 550px; 
-      margin: 0 auto; 
-      gap: 12px; 
-    }
-    
-    .lead-capture-inline-form input.capture-input { 
-      flex: 1; 
-      padding: 16px 24px; 
-      border-radius: 40px; 
-      border: 1px solid var(--line-light); 
-      font-family: inherit; 
-      font-size: 14.5px; 
-      outline: none; 
-      background-color: #FFF;
-      width: 100%;
-    }
-    
-    .lead-capture-inline-form input.capture-input:focus { 
-      border-color: var(--gold); 
-    }
-    
-    .capture-response-message { 
-      display: none; 
-      margin-top: 16px; 
-      font-size: 14px; 
-      font-weight: 600; 
-      color: var(--terracotta); 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 13 — TECHNICAL FREQUENTLY ASKED ACCORDIONS
-       ════════════════════════════════════════════════════════════════ */
-    .accordion-matrix-container { 
-      max-width: 850px; 
-      margin: clamp(25px, 4vw, 45px) auto 0; 
-      display: flex; 
-      flex-direction: column; 
-      gap: 14px; 
-    }
-    
-    .accordion-matrix-item { 
-      background-color: var(--warm-white); 
-      border: 1px solid var(--line-light); 
-      border-radius: var(--r-medium); 
-      overflow: hidden; 
-      transition: var(--transition-smooth);
-    }
-    
-    .accordion-matrix-trigger { 
-      width: 100%; 
-      padding: clamp(16px, 3vw, 24px) clamp(20px, 4vw, 32px); 
-      background: none; 
-      border: none; 
-      text-align: left; 
-      font-family: "Fraunces", serif; 
-      font-size: clamp(16px, 2.5vw, 19px); 
-      font-weight: 500; 
-      color: var(--espresso); 
-      cursor: pointer; 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      gap: 16px; 
-    }
-    
-    .accordion-matrix-trigger::after { 
-      content: "+"; 
-      font-family: "Jost", sans-serif; 
-      font-size: 22px; 
-      color: var(--gold); 
-      transition: var(--transition-smooth); 
-    }
-    
-    .accordion-matrix-item.active-state .accordion-matrix-trigger::after { 
-      content: "−"; 
-      transform: rotate(180deg);
-    }
-    
-    .accordion-matrix-panel { 
-      max-height: 0; 
-      overflow: hidden; 
-      transition: max-height 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-    }
-    
-    .accordion-matrix-content { 
-      padding: 0 clamp(20px, 4vw, 32px) clamp(16px, 3vw, 24px); 
-      font-size: 14.5px; 
-      line-height: 1.65; 
-      color: var(--ink-muted); 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 14 — RIGOROUS INTAKE GENERATIONAL LEAD ENGINE
-       ════════════════════════════════════════════════════════════════ */
-    .lead-engine-split-layout { 
-      display: grid; 
-      grid-template-columns: 1fr 1.35fr; 
-      gap: clamp(35px, 5vw, 60px); 
-    }
-    
-    .lead-engine-corporate-panel { 
-      background-color: var(--espresso-card); 
-      border: 1px solid var(--line-dark); 
-      border-radius: var(--r-large); 
-      padding: clamp(24px, 4vw, 45px); 
-      color: var(--cream-text); 
-    }
-    
-    .lead-engine-corporate-panel h3 { 
-      font-size: clamp(22px, 3vw, 26px); 
-      color: var(--cream); 
-      margin-bottom: 20px; 
-    }
-    
-    .corporate-postal-address { 
-      font-style: normal; 
-      font-size: 15px; 
-      line-height: 1.75; 
-      color: var(--cream-muted); 
-      margin-bottom: 28px; 
-    }
-    
-    .corporate-location-pin-anchor { 
-      display: inline-flex; 
-      align-items: center; 
-      gap: 10px; 
-      color: var(--gold-soft); 
-      font-weight: 500; 
-      font-size: 14px; 
-      margin-bottom: 20px; 
-    }
-    
-    .corporate-location-pin-anchor svg { 
-      fill: currentColor; 
-      width: 18px; 
-      height: 18px; 
-    }
-    
-    .corporate-comms-matrix { 
-      display: flex; 
-      flex-direction: column; 
-      gap: 16px; 
-      margin-bottom: 20px; 
-    }
-    
-    .corporate-comms-row { 
-      display: flex; 
-      align-items: center; 
-      gap: 12px; 
-      font-size: 15px; 
-      word-break: break-word;
-    }
-    
-    .corporate-comms-row .visual-icon-frame { 
-      width: 36px; 
-      height: 36px; 
-      background-color: rgba(255,255,255,0.04); 
-      border-radius: 50%; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      color: var(--gold); 
-      flex-shrink: 0;
-    }
-    
-    .corporate-comms-row a:hover { 
-      color: var(--gold-soft); 
-    }
-
-    .lead-engine-form-card { 
-      background-color: var(--warm-white); 
-      border: 1px solid var(--line-light); 
-      border-radius: var(--r-large); 
-      padding: clamp(20px, 4vw, 45px); 
-      box-shadow: 0 12px 36px rgba(43,30,20,0.04); 
-    }
-    
-    .lead-engine-form-grid { 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      gap: clamp(16px, 3vw, 24px); 
-    }
-    
-    .lead-engine-field-box { 
-      display: flex; 
-      flex-direction: column; 
-      gap: 6px; 
-    }
-    
-    .lead-engine-field-box--span-all { 
-      grid-column: span 2; 
-    }
-    
-    .lead-engine-field-box label { 
-      font-size: 12px; 
-      font-weight: 600; 
-      letter-spacing: 0.1em; 
-      text-transform: uppercase; 
-      color: var(--espresso); 
-    }
-    
-    .lead-engine-field-box label .required-signpost { 
-      color: var(--terracotta); 
-      margin-left: 3px; 
-    }
-
-    /* COUNTRY CODE PHONE INPUT SYSTEM */
-    .phone-input-group {
-      display: flex;
-      gap: 8px;
-    }
-
-    .phone-input-group select.country-code-select {
-      width: 110px;
-      flex-shrink: 0;
-    }
-    
-    .lead-engine-field-box input, 
-    .lead-engine-field-box select, 
-    .lead-engine-field-box textarea {
-      width: 100%; 
-      padding: 12px 16px; 
-      border-radius: 6px; 
-      border: 1px solid var(--line-light);
-      font-family: inherit; 
-      font-size: 15px; 
-      background-color: #FFFFFF; 
-      color: var(--ink); 
-      outline: none; 
-      transition: var(--transition-smooth);
-    }
-    
-    .lead-engine-field-box input:focus, 
-    .lead-engine-field-box select:focus, 
-    .lead-engine-field-box textarea:focus { 
-      border-color: var(--gold); 
-      box-shadow: 0 0 0 3px rgba(198,162,78,0.1);
-    }
-    
-    .lead-engine-field-box.invalid-state input, 
-    .lead-engine-field-box.invalid-state select, 
-    .lead-engine-field-box.invalid-state textarea { 
-      border-color: var(--terracotta); 
-      background-color: #FFF9F8; 
-    }
-    
-    .lead-engine-field-box .error-signpost-message { 
-      display: none; 
-      font-size: 11px; 
-      font-weight: 500; 
-      color: var(--terracotta); 
-      margin-top: 4px; 
-    }
-    
-    .lead-engine-field-box.invalid-state .error-signpost-message { 
-      display: block; 
-    }
-    
-    .lead-engine-global-status { 
-      display: none; 
-      margin-top: 24px; 
-      padding: 16px; 
-      border-radius: 6px; 
-      font-size: 14.5px; 
-      font-weight: 500; 
-      text-align: center; 
-      line-height: 1.6;
-    }
-    
-    .lead-engine-global-status.success-state { 
-      display: block; 
-      background-color: #E8F5E9; 
-      color: #2E7D32; 
-      border: 1px solid #C8E6C9; 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       SECTION 15 — LANDSCAPE 4-COLUMN COMMERCIAL ACCESS FOOTER
-       ════════════════════════════════════════════════════════════════ */
-    footer.corporate-landscape-footer { 
-      background-color: var(--espresso); 
-      color: var(--cream-muted); 
-      border-top: 1px solid var(--line-dark); 
-      padding: clamp(40px, 8vw, 80px) 0 40px; 
-      font-size: 14px; 
-    }
-    
-    .landscape-footer-grid { 
-      display: grid; 
-      grid-template-columns: 1.6fr repeat(3, 1fr); 
-      gap: clamp(30px, 5vw, 48px); 
-      margin-bottom: 40px; 
-    }
-    
-    .landscape-footer-column h4 { 
-      font-size: 13px; 
-      font-weight: 600; 
-      letter-spacing: 0.15em; 
-      text-transform: uppercase; 
-      color: var(--cream); 
-      margin-bottom: 16px; 
-    }
-    
-    .landscape-footer-column p { 
-      line-height: 1.6; 
-      margin-bottom: 14px; 
-    }
-    
-    .landscape-footer-links-list { 
-      list-style: none; 
-      display: flex; 
-      flex-direction: column; 
-      gap: 10px; 
-    }
-    
-    .landscape-footer-links-list a { 
-      color: var(--cream-muted); 
-    }
-    
-    .landscape-footer-links-list a:hover { 
-      color: var(--gold-soft); 
-      padding-left: 4px;
-    }
-    
-    .landscape-footer-seo-sentence { 
-      grid-column: span 4; 
-      border-top: 1px solid var(--line-dark); 
-      border-bottom: 1px solid var(--line-dark); 
-      padding: 20px 0; 
-      text-align: center; 
-      font-style: italic; 
-      font-size: 13.5px; 
-      color: var(--gold-soft); 
-      letter-spacing: 0.03em; 
-    }
-    
-    .landscape-footer-bottom-bar { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      flex-wrap: wrap; 
-      gap: 20px; 
-      padding-top: 24px; 
-      border-top: 1px solid rgba(255,255,255,0.03); 
-      font-size: 12.5px; 
-    }
-    
-    .landscape-footer-socials-matrix { 
-      display: flex; 
-      align-items: center; 
-      gap: 14px; 
-    }
-    
-    .landscape-footer-socials-matrix a.social-asset-link { 
-      width: 34px; 
-      height: 34px; 
-      background-color: rgba(255,255,255,0.03); 
-      border-radius: 50%; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      color: var(--cream-muted); 
-    }
-    
-    .landscape-footer-socials-matrix a.social-asset-link:hover { 
-      background-color: var(--gold); 
-      color: var(--espresso); 
-      transform: translateY(-2px);
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       PRODUCT LIGHTBOX DETAIL POPUP WINDOW (MODAL ARCHITECTURE)
-       ════════════════════════════════════════════════════════════════ */
-    .lightbox-modal-shell { 
-      position: fixed; 
-      inset: 0; 
-      background-color: rgba(24, 15, 10, 0.85); 
-      backdrop-filter: blur(10px); 
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 5000; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      opacity: 0; 
-      pointer-events: none; 
-      transition: opacity 0.35s ease; 
-      padding: clamp(12px, 4vw, 24px); 
-    }
-    
-    .lightbox-modal-shell.is-active-state { 
-      opacity: 1; 
-      pointer-events: auto; 
-    }
-    
-    .lightbox-modal-box { 
-      background-color: var(--warm-white); 
-      width: 100%; 
-      max-width: 900px; 
-      border-radius: var(--r-large); 
-      overflow: hidden; 
-      display: grid; 
-      grid-template-columns: 1.15fr 1fr; 
-      border: 1px solid var(--line-light); 
-      position: relative; 
-      max-height: 90vh; 
-      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-    }
-    
-    .lightbox-modal-close-trigger { 
-      position: absolute; 
-      top: 16px; 
-      right: 16px; 
-      background-color: var(--espresso); 
-      color: var(--cream); 
-      border: none; 
-      width: 36px; 
-      height: 36px; 
-      border-radius: 50%; 
-      font-size: 22px; 
-      cursor: pointer; 
-      z-index: 15; 
-      display: grid; 
-      place-items: center; 
-      transition: var(--transition-smooth);
-    }
-    
-    .lightbox-modal-close-trigger:hover {
-      background-color: var(--terracotta);
-      transform: rotate(90deg);
-    }
-    
-    .lightbox-modal-gallery-zone { 
-      background-color: #3D2B20; 
-      padding: clamp(16px, 3vw, 24px); 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center; 
-      gap: 14px; 
-    }
-    
-    .lightbox-modal-main-view { 
-      width: 100%; 
-      aspect-ratio: 4/3; 
-      object-fit: cover; 
-      border-radius: 6px; 
-      transition: opacity 0.2s ease; 
-    }
-    
-    .lightbox-modal-thumbnails-strip { 
-      display: flex; 
-      gap: 8px; 
-      width: 100%; 
-      overflow-x: auto; 
-      padding-bottom: 6px;
-      scrollbar-width: thin;
-    }
-    
-    .lightbox-modal-thumbnail-item { 
-      width: 60px; 
-      height: 45px; 
-      object-fit: cover; 
-      border-radius: 4px; 
-      cursor: pointer; 
-      opacity: 0.4; 
-      border: 2px solid transparent; 
-      transition: var(--transition-smooth);
-      flex-shrink: 0;
-    }
-    
-    .lightbox-modal-thumbnail-item.active-thumb-state { 
-      opacity: 1; 
-      border-color: var(--gold); 
-    }
-    
-    .lightbox-modal-details-zone { 
-      padding: clamp(20px, 5vw, 45px); 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: space-between; 
-      overflow-y: auto; 
-    }
-    
-    .lightbox-modal-details-zone h3 { 
-      font-size: clamp(22px, 3vw, 28px); 
-      color: var(--espresso); 
-      margin-bottom: 6px; 
-    }
-    
-    .lightbox-modal-details-zone .modal-classification-line { 
-      font-size: 12.5px; 
-      color: var(--terracotta); 
-      font-weight: 600; 
-      text-transform: uppercase; 
-      letter-spacing: 0.08em; 
-      margin-bottom: 16px; 
-    }
-    
-    .lightbox-modal-details-zone .modal-paragraph-content { 
-      font-size: 14.5px; 
-      line-height: 1.65; 
-      color: var(--ink-muted); 
-      margin-bottom: 24px; 
-    }
-
-    /* ════════════════════════════════════════════════════════════════
-       RESPONSIVE RESOLUTION DESIGN SYSTEM BREAKPOINTS
-       ════════════════════════════════════════════════════════════════ */
-    @media (max-width: 1024px) {
-      .legacy-grid-layout, .assurance-split-box, .lead-engine-split-layout { 
-        grid-template-columns: 1fr; 
-        gap: 40px; 
-      }
-      .landscape-footer-grid { 
-        grid-template-columns: 1fr 1fr; 
-        gap: 32px;
-      }
-      .landscape-footer-seo-sentence { 
-        grid-column: span 2; 
-      }
-      .lightbox-modal-box { 
-        grid-template-columns: 1fr; 
-        max-height: 85vh; 
-      }
-      .lightbox-modal-details-zone { 
-        padding: 24px; 
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .nav-links-wrapper { 
-        display: none; 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        right: 0; 
-        background-color: var(--espresso); 
-        border-bottom: 1px solid var(--line-dark); 
-        flex-direction: column; 
-        gap: 0; 
-        padding: 8px 0; 
-      }
-      .nav-links-wrapper.is-open-state { 
-        display: flex; 
-      }
-      .nav-links-wrapper a { 
-        width: 100%; 
-        text-align: center; 
-        padding: 14px 0; 
-        border-bottom: 1px solid rgba(255,255,255,0.02); 
-      }
-      .mobile-hamburger-trigger { 
-        display: block; 
-      }
-      .lead-engine-form-grid { 
-        grid-template-columns: 1fr; 
-        gap: 16px;
-      }
-      .lead-engine-field-box--span-all { 
-        grid-column: span 1; 
-      }
-      .landscape-footer-grid { 
-        grid-template-columns: 1fr; 
-        gap: 32px; 
-      }
-      .landscape-footer-seo-sentence { 
-        grid-column: span 1; 
-      }
-      .lead-capture-inline-form {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-  </style>
+  /* ── MODAL INNER STYLING CORE ── */
+  .modal-content {
+    background: var(--warm-white);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid var(--line-light);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.3);
+  }
+  .modal-close {
+    position: absolute;
+    top: 15px; right: 20px;
+    background: none; border: none;
+    font-size: 32px; color: var(--charcoal);
+    cursor: pointer; z-index: 10; opacity: 0.6;
+    transition: opacity 0.3s;
+  }
+  .modal-close:hover { opacity: 1; }
+  .modal-body {
+    padding: clamp(30px, 5vw, 50px);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  @media (min-width: 650px) {
+    .modal-body { grid-template-columns: 1.1fr 1fr; }
+  }
+  .modal-main-img-wrap {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid var(--line-light);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; padding: 15px;
+  }
+  .modal-main-img-wrap img {
+    max-width: 100%; max-height: 100%; object-fit: contain;
+    transition: opacity 0.2s ease;
+  }
+  .modal-thumbnails {
+    display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;
+  }
+  .modal-thumb {
+    width: 65px; height: 65px; object-fit: contain;
+    background: #fff; border: 1px solid var(--line-light);
+    padding: 4px; border-radius: 4px; cursor: pointer;
+    transition: all 0.3s; opacity: 0.5;
+  }
+  .modal-thumb:hover { opacity: 0.8; }
+  .modal-thumb.active { border-color: var(--gold); opacity: 1; box-shadow: 0 0 0 2px rgba(196,154,60,0.2); }
+  .modal-info { display: flex; flex-direction: column; justify-content: center; }
+  .modal-cat {
+    font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--terracotta); font-weight: 600; margin-bottom: 10px;
+  }
+  #modalProductTitle {
+    font-family: 'Fraunces', serif; font-size: clamp(24px, 3.5vw, 32px);
+    color: var(--deep-brown); line-height: 1.2; font-weight: 400; margin-bottom: 15px;
+  }
+  #modalProductDesc { font-size: 14.5px; line-height: 1.65; color: var(--charcoal); opacity: 0.8; margin-bottom: 30px; }
+  .modal-cta {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 14px 28px; background: var(--gold); color: var(--deep-brown);
+    font-size: 12px; font-weight: bold; letter-spacing: 0.2em; text-transform: uppercase;
+    text-decoration: none; border-radius: 4px; transition: all 0.3s; text-align: center;
+  }
+  .modal-cta:hover { background: var(--terracotta); color: #fff; }
+</style>
 </head>
 <body>
 
-  <header class="nav-container">
-    <div class="wrap nav-inner">
-      <a href="#" class="brand-mark-wrapper" aria-label="Nivrá by Porwals Corporate Home">
-        <span class="brand-name">Nivrá</span>
-        <span class="brand-subtext">by porwals</span>
-      </a>
-      <nav class="nav-links-wrapper" id="corporateMenuElement">
-        <a href="#legacy-section">Our Legacy</a>
-        <!-- <a href="#why-partner-section">Why Partner</a> -->
-        <a href="#product-matrix-section">Product</a>
-        <a href="#sourcing-path-section">Sourcing Path</a>
-        <a href="#faq-matrix-section">Technical FAQ</a>
-        <a href="#lead-engine-section">Contact</a>
-      </nav>
-      <button class="mobile-hamburger-trigger" id="hamburgerMobileTrigger" aria-label="Toggle Global Navigation Menu">
-        <svg width="24" height="20" viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M2 2h20M2 10h20M2 18h20"/>
-        </svg>
-      </button>
-    </div>
-  </header>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-  <section class="hero-display-engine">
-    <div class="wrap hero-layout-box">
-      <div class="seo-brand-statement">Nivrá by Porwals, home furnishings suppliers for retailers, distributors, dealers and designers</div>
-      <h1>Wholesale Handloom Bedding and Home Furnishings</h1>
-      <div class="design-tagline">Where ancestral craft meets contemporary living</div>
-      <div class="hero-cta-group">
-        <a href="#lead-engine-section" class="btn btn--gold">Partner with Us</a>
-        <a href="#capture-zone-section" class="btn btn--ghost">Download Catalogue</a>
-      </div>
-    </div>
-  </section>
+<nav id="navbar">
+  <a href="#hero" class="nav-brand-container" aria-label="Nivrá by Porwals Corporate Home">
+    <span class="brand-name">Nivrá</span>
+    <span class="brand-subtext">by porwals</span>
+  </a>
+  
+  <ul class="nav-links">
+    <li><a href="#legacy">Our Legacy</a></li>
+    <li><a href="#why-partner">Why Partner</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#testimonials">Partners</a></li>
+    <li><a href="#contact">Connect</a></li>
+  </ul>
 
-  <div class="trust-metrics-strip">
-    <div class="wrap trust-metrics-flex">
-      <div class="metric-pill">Established 1978</div>
-      <div class="metric-pill">Made in India</div>
-      <div class="metric-pill">Pan-India Delivery Matrix</div>
+  <button class="mobile-menu-btn" aria-label="Toggle Global Navigation Menu" id="menuToggleBtn">
+    <svg id="icon-hamburger" width="24" height="20" viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M2 2h20M2 10h20M2 18h20"/>
+    </svg>
+    <svg id="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+</nav>
+
+<section id="hero">
+  <div class="hero-weave"></div>
+  <div class="hero-inner">
+    <div class="hero-brand-wrapper">
+      <span class="hero-brand-name">Nivrá</span>
+      <span class="hero-brand-subtext">by porwals</span>
+    </div>
+    <h1>Wholesale Handloom Bedding and Home Furnishings</h1>
+    <div class="hero-seo-subline">Nivrá by Porwals, home furnishings suppliers for retailers, distributors, dealers and designers</div>
+    <p class="hero-tagline">Where ancestral craft meets contemporary living</p>
+    <div class="hero-cta-group">
+      <a href="#contact" class="hero-cta hero-cta--solid">Partner With Us</a>
+      <a href="#catalogue-capture" class="hero-cta">Download Catalogue</a>
     </div>
   </div>
+  <div class="hero-diagonal"></div>
+</section>
 
-  <section class="section section--light" id="legacy-section">
-    <div class="wrap legacy-grid-layout">
-      <div class="legacy-visual-shield">
-        <div class="legacy-matrix-frame">
-          <div class="legacy-stat-card">
-            <div class="numeric-accent">1978</div>
-            <div class="label-accent">Founded In</div>
-          </div>
-          <div class="legacy-stat-card">
-            <div class="numeric-accent">45+</div>
-            <div class="label-accent">Years Of Trade</div>
-          </div>
-        </div>
-      </div>
-      <div class="legacy-text-shield">
-        <span class="section-eyebrow">Our History</span>
-        <h2>A Trusted Wholesale Handloom Partner Since 1978</h2>
-        <div style="font-size:14px; color:var(--terracotta); font-weight:600; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:18px;">Threads woven through generations of mastery</div>
-        <p>Established in 1978, Nivrá by Porwals carries forward a family tradition deep in Indian textile craft. We stand at the intersection of timeless handloom heritage and the rigorous formatting demands of global commercial scale interior projects.</p>
-        <p>Today, we serve as a trusted B2B sourcing matrix for interior designers, hospitality labels, and major retail networks across Indore and cross-India states. Every order carries the fingerprint of its maker — a guarantee of authentic structural durability.</p>
-        <a href="#why-partner-section" class="partnership-transition-anchor">Explore Partnership &gt;&gt;&gt;</a>
-      </div>
-    </div>
-  </section>
+<div class="trust-metrics-strip">
+  <div class="wrap trust-metrics-flex">
+    <div class="metric-pill">Established 1978</div>
+    <div class="metric-pill">Made in India</div>
+    <div class="metric-pill">Pan-India Delivery Matrix</div>
+  </div>
+</div>
 
-  <!-- <section class="section section--cream" id="why-partner-section">
-    <div class="wrap">
-      <div style="text-align: center; max-width:750px; margin:0 auto 45px;">
-        <span class="section-eyebrow">The B2B Advantage</span>
-        <h2 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); color: var(--espresso); margin-bottom:18px;">Why Buy From Nivrá by Porwals</h2>
-        <p class="lead" style="margin: 0 auto;">When you source from Nivrá, you work directly with a family that has been in handloom and home furnishings for generations. You get prices that come straight from the source, a wide and ready range, and a team that understands both retail and wholesale workflows.</p>
-      </div>
-      <div class="value-cards-grid">
-        <div class="value-proposition-card">
-          <h3>Premium Quality Products</h3>
-          <p>Every piece is checked by hand before it ships. Decades in the trade mean we know good fabric, structural finishing, and deep color fastness, so your customers keep coming back.</p>
+<section id="legacy">
+  <div class="wrap legacy-layout">
+    <div class="legacy-visual">
+      <div class="legacy-frame">
+        <div class="stat-block">
+          <div class="stat-number">1978</div>
+          <div class="stat-label">Founded In</div>
         </div>
-        <div class="value-proposition-card">
-          <h3>Best Wholesale Pricing</h3>
-          <p>We source and manufacture directly, passing the raw structural savings on to your ledger. Get genuine factory commercial metrics that protect your healthy retail margins.</p>
-        </div>
-        <div class="value-proposition-card">
-          <h3>Attractive Margins</h3>
-          <p>Our structures are meticulously mapped to protect independent dealers and commercial buyers alike, offering robust headroom for profitability across all distribution lines.</p>
+        <div class="stat-block">
+          <div class="stat-number">45+</div>
+          <div class="stat-label">Years of Craft</div>
         </div>
       </div>
     </div>
-  </section> -->
+    <div class="legacy-text">
+      <p class="section-label">Our History</p>
+      <h2>A Trusted Wholesale Handloom Partner Since 1978</h2>
+      <div class="legacy-tagline-small">Threads woven through generations of mastery</div>
+      <div class="legacy-divider"></div>
+      <p>Established in 1978, Nivrá by Porwals carries forward a family tradition deep in Indian textile craft. We stand at the intersection of timeless handloom heritage and the rigorous demands of global commercial interior projects.</p>
+      <p>Today, we serve as a trusted B2B sourcing matrix for interior designers, hospitality labels, and major retail networks across Indore and cross-India states. Every order carries the fingerprint of its maker — a guarantee of authentic structural durability.</p>
+      <a href="#why-partner" class="cta-link">Explore Partnership >>></a>
+    </div>
+  </div>
+</section>
 
-  <section class="section section--dark" id="product-matrix-section">
-    <div class="loom-divider" style="position:absolute; top:0; left:0;"></div>
-    <div class="wrap">
-      <div style="text-align:center; max-width:750px; margin:0 auto 50px;">
-        <span class="section-eyebrow">Our Range</span>
-        <h2 style="color:var(--cream); font-size: clamp(2.2rem, 4.5vw, 3.2rem);">Crafted for Distinguished Spaces</h2>
-        <p style="color:var(--cream-muted); margin-top:12px; font-size:15.5px;">Minimum order quantities available for wholesale and project sourcing. Custom colorways and weave patterns available on request.</p>
+<section id="why-partner">
+  <div class="wrap">
+    <div class="why-partner-header">
+      <p class="section-label">The B2B Advantage</p>
+      <h2>Why Buy From Nivrá by Porwals</h2>
+      <p>When you source from Nivrá, you work directly with a family that has been in handloom and home furnishings for generations. You get prices straight from the source, a wide ready range, and a team that understands corporate workflows.</p>
+    </div>
+    <div class="value-cards-grid">
+      <div class="value-proposition-card">
+        <h3>Premium Quality Products</h3>
+        <p>Every piece is checked by hand before it ships. Decades in the trade mean we know fabric finishing and deep color fastness so your customers keep coming back.</p>
       </div>
-      
-      <div class="architectural-products-grid">
+      <div class="value-proposition-card">
+        <h3>Best Wholesale Pricing</h3>
+        <p>We source and manufacture directly, passing the raw operational savings to your ledger. Get genuine factory commercial metrics that protect your healthy retail margins.</p>
+      </div>
+      <div class="value-proposition-card">
+        <h3>Attractive Margins</h3>
+        <p>Our structures are meticulously mapped to protect independent dealers and commercial buyers alike, offering robust headroom for structural profitability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap products-inner">
+    <div class="section-header">
+      <p class="section-label" style="color:var(--gold)">Our Range</p>
+      <h2>Wholesale Bedding, Comforters, Curtains, Pillows, and Home Furnishings</h2>
+      <p>Source premium bedsheets, comforters, curtains, towels, dhurries and a kids range in bulk. Minimum order quantities available for wholesale and project sourcing. Custom colorways and weave patterns on request.</p>
+    </div>
+    
+    <div class="products-grid">
         
-        <div class="showcase-product-card" data-modal-title="Blooming Spring Pink Bedsheet" data-modal-category="Bedding" data-modal-description="Woven from top-tier long-staple cotton yarn for maximum luxury and regular laundering durability. Features heavy elastic edge fitting and high breathability optimized for premium architectural settings." data-modal-images='["./Porwal Images/kingsize fitted bedsheet/onbed.png","./Porwal Images/kingsize fitted bedsheet/kingsize bedseet 1.png","./Porwal Images/kingsize fitted bedsheet/packing.png"]'>
-          <div class="card-media-shell">
-            <span class="media-classification-badge">Bedding</span>
-            <img src="./Porwal Images/kingsize fitted bedsheet/onbed.png" alt="Blooming Spring Pink Bedsheet Master Asset View">
-          </div>
-          <div class="card-information-shell">
-            <div class="text-line-sub">Bedding</div>
-            <h3>Premium Cotton King Size Fitted Bedsheet</h3>
-            <p class="paragraph-desc">Soft comfort. Perfect Fit. Elegant Floral Design</p>
-          </div>
+      <div class="product-card" 
+           data-cat="Bedding" 
+           data-title="Premium Cotton King Size Fitted Bedsheet" 
+           data-desc="Woven from top-tier long-staple cotton yarn for maximum luxury and regular laundering durability. Features heavy elastic edge fitting and high breathability optimized for premium architectural settings."
+           data-images="./Porwal Images/premium cotton king size fittef bedsheet/kingsize bedsheet.png, ./Porwal Images/premium cotton king size fittef bedsheet/onbed.png, ./Porwal Images/premium cotton king size fittef bedsheet/packing.png">
+        <div class="product-illustration">
+          <img src="./Porwal Images/premium cotton king size fittef bedsheet/kingsize bedsheet.png" alt="Premium Fitted Bedsheet" class="product-image">
         </div>
-
-        <div class="showcase-product-card" data-modal-title="Premium Soft &amp; Breathable Comforter" data-modal-category="Soft Furnishings" data-modal-description="Engineered with lightweight, breathable polyester fabric and uniform thermal micro-fill insulation architecture. Wrapped in tasteful and subtle minimal floral patterns." data-modal-images='["./Porwal Images/comfoorter/onbed.png","./Porwal Images/comfoorter/img.png","./Porwal Images/comfoorter/packing.png"]'>
-          <div class="card-media-shell">
-            <span class="media-classification-badge">Soft Furnishings</span>
-            <img src="./Porwal Images/comfoorter/onbed.png" alt="Premium Soft Comforter Master Design Line">
-          </div>
-          <div class="card-information-shell">
-            <div class="text-line-sub">Soft Furnishings</div>
-            <h3>Premium Soft &amp; Breathable Comforter</h3>
-            <p class="paragraph-desc">Elegant Floral Design Contemporary Comfort. All-Season Luxury</p>
-          </div>
+        <div class="product-overlay">
+          <span class="product-category">Bedding</span>
+          <h3 class="product-name">Premium Cotton King Size Fitted Bedsheet</h3>
+          <p class="product-desc">Soft comfort. Perfect Fit. Elegant Floral Design</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
         </div>
+      </div>
 
-        <div class="showcase-product-card" data-modal-title="Peach Floral King Size Fitted Bedsheet" data-modal-category="Luxury Bedding" data-modal-description="High-density premium cotton weave presenting structural elegance, heavy elastic edge fitting, and skin-friendly soft texture. Tailored for premium showrooms and interior decorators." data-modal-images='["./Porwal Images/cotton kingsize bedsheet/onbed.png","./Porwal Images/cotton kingsize bedsheet/kingsize bedsheet.png","./Porwal Images/cotton kingsize bedsheet/packing.png"]'>
-          <div class="card-media-shell">
-            <span class="media-classification-badge">Luxury Bedding</span>
-            <img src="./Porwal Images/cotton kingsize bedsheet/onbed.png" alt="Peach Floral King Size Bedsheet Luxury Line Profile">
-          </div>
-          <div class="card-information-shell">
-            <div class="text-line-sub">Luxury Bedding</div>
-            <h3>Premium Cotton King Size Fitted Bedsheet</h3>
-            <p class="paragraph-desc">Soft Comfort Perfect Fit. Elegant Floral Design</p>
-          </div>
+      <div class="product-card"
+           data-cat="Soft Furnishings" 
+           data-title="Premium Soft & Breathable Comforter" 
+           data-desc="Engineered with lightweight, breathable fabric and uniform thermal micro-fill insulation architecture. Wrapped in tasteful and subtle minimal floral patterns."
+           data-images="./Porwal Images/comfoorter/img.png, ./Porwal Images/comfoorter/onbed.png, ./Porwal Images/comfoorter/packing.png">
+        <div class="product-illustration">
+          <img src="./Porwal Images/comfoorter/img.png" alt="Premium Comforter" class="product-image">
         </div>
-
-        <div class="showcase-product-card" data-modal-title="Premium Quilted Floral Comforter" data-modal-category="Soft Furnishings" data-modal-description="Features detailed lock-stitch quilting lines that prevent fill shifting over long-term processing. Cotton blend material designed with traditional navy flower and peach vine motif structures." data-modal-images='["./Porwal Images/floral/floral.jpg","./Porwal Images/floral/floral1.png","./Porwal Images/floral/floral2.png"]'>
-          <div class="card-media-shell">
-            <span class="media-classification-badge">Soft Furnishings</span>
-            <img src="./Porwal Images/floral/floral.jpg" alt="Premium Quilted Comforter Luxury Unit Model">
-          </div>
-          <div class="card-information-shell">
-            <div class="text-line-sub">Soft Furnishings Variant</div>
-            <h3>Premium Quilted Floral Comforter</h3>
-            <p class="paragraph-desc">Detailed Design Contemporary Comfort. All-Season Luxury</p>
-          </div>
+        <div class="product-overlay">
+          <span class="product-category">Soft Furnishings</span>
+          <h3 class="product-name">Premium Soft & Breathable Comforter</h3>
+          <p class="product-desc">Elegant Floral Design Contemporary Comfort. All-Season Luxury</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
         </div>
+      </div>
 
-        <div class="showcase-product-card" data-modal-title="Soft &amp; Cozy Kids Comforter" data-modal-category="Kids Collection" data-modal-description="Naturally soft polyester fabric structured gentle and kind on young skin. Features dynamic kid-friendly cartoon prints with durable hand wash care parameters." data-modal-images='["./Porwal Images/kids bed.png"]'>
-          <div class="card-media-shell">
-            <span class="media-classification-badge">Kids Collection</span>
-            <img src="./Porwal Images/kids bed.png" alt="Soft & Cozy Kids Comforter Profile">
-          </div>
-          <div class="card-information-shell">
-            <div class="text-line-sub">Kids Collection</div>
-            <h3>Soft &amp; Cozy Kids Comforter</h3>
-            <p class="paragraph-desc">Single Bed (60 × 90 Inches). Dynamic Superhero Design (Spider-Man). Lightweight comfort ideal for controlled AC temperatures.</p>
-          </div>
+      <div class="product-card"
+           data-cat="Luxury Bedding" 
+           data-title="Luxury Peach Floral King Size Fitted Bedsheet" 
+           data-desc="High-density premium cotton weave presenting structural elegance, heavy elastic edge fitting, and skin-friendly soft texture. Tailored for premium showrooms and interior decorators."
+           data-images="./Porwal Images/cotton kingsize bedsheet/kingsize bedsheet.png, ./Porwal Images/cotton kingsize bedsheet/onbed.png, ./Porwal Images/cotton kingsize bedsheet/packing.png">
+        <div class="product-illustration">
+          <img src="./Porwal Images/cotton kingsize bedsheet/kingsize bedsheet.png" alt="Peach Floral King Size Bedsheet" class="product-image">
         </div>
-
-        <div class="showcase-product-card" data-modal-title="Traditional Block Print Fitted Bedsheet" data-modal-category="Bedding" data-modal-description="Premium cotton setup with geometric block-print style motifs and elegant checkered borders. Fitted mattress boundaries configured for neat aesthetics." data-modal-images='["./Porwal Images/kingsize fitted bedsheet 1/openart-gpt-image-2-edit-1_1779703741206_68b89252.jpg","./Porwal Images/kingsize fitted bedsheet 1/Gemini_Generated_Image_1mbpt51mbpt51mbp.png","./Porwal Images/kingsize fitted bedsheet 1/openart-gpt-image-2-edit-1_1779703514973_2ba8f36c.png"]'>
-          <div class="card-media-shell">
-            <span class="media-classification-badge">Bedding</span>
-            <img src="./Porwal Images/kingsize fitted bedsheet 1/openart-gpt-image-2-edit-1_1779703741206_68b89252.jpg" alt="Traditional Block Print Bedsheet Spec Model">
-          </div>
-          <div class="card-information-shell">
-            <div class="text-line-sub">Bedding</div>
-            <h3>Blooming Spring Pink Bedsheet</h3>
-            <p class="paragraph-desc">King Size elasticated fitted sheet layout. Elegant block floral layout ideal for boutique setups and retail stores.</p>
-          </div>
+        <div class="product-overlay">
+          <span class="product-category">Luxury Bedding</span>
+          <h3 class="product-name">Peach Floral King Size Fitted Bedsheet</h3>
+          <p class="product-desc">Soft Comfort Perfect Fit. Elegant Floral Design</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
         </div>
+      </div>
 
-        <div class="showcase-product-card" data-modal-title="Traditional Classic Flat Bedsheet" data-modal-category="Dhurries &amp; Bedding" data-modal-description="Flat normal bedsheet drape layout configured with premium cotton fibers. Woven with rich traditional multi-border structures for high tensile performance." data-modal-images='["./Porwal Images/normal bed.jpg"]'>
-          <div class="card-media-shell">
-            <span class="media-classification-badge">Bedding Range</span>
-            <img src="./Porwal Images/normal bed.jpg" alt="Traditional Classic Flat Bedsheet View">
-          </div>
-          <div class="card-information-shell">
-            <div class="text-line-sub">Bedding Range / Heritage</div>
-            <h3>Traditional Classic Flat Bedsheet</h3>
-            <p class="paragraph-desc">Classic loose drape flat design setup. Exceptional structural tensile performance and high durability parameters for premium projects.</p>
-          </div>
+      <div class="product-card"
+           data-cat="Soft Furnishings" 
+           data-title="Premium Quilted Floral Comforter" 
+           data-desc="Features detailed lock-stitch quilting lines that prevent fill shifting over long-term processing. Cotton blend material designed with traditional navy flower and peach vine motif structures."
+           data-images="./Porwal Images/floral/floral.jpg, ./Porwal Images/floral/floral1.png, ./Porwal Images/floral/floral2.png">
+        <div class="product-illustration">
+          <img src="./Porwal Images/floral/floral.jpg" alt="Quilted Floral Comforter" class="product-image">
         </div>
+        <div class="product-overlay">
+          <span class="product-category">Soft Furnishings</span>
+          <h3 class="product-name">Premium Quilted Floral Comforter</h3>
+          <p class="product-desc">Detailed Design Contemporary Comfort. All-Season Luxury</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
 
+      <div class="product-card"
+           data-cat="Kids Collection" 
+           data-title="Soft & Cozy Kids Comforter (Spider-Man)" 
+           data-desc="Naturally soft fabric structured gentle and kind on young skin. Features dynamic kid-friendly cartoon prints with durable wash care parameters."
+           data-images="./Porwal Images/kids bed.png">
+        <div class="product-illustration">
+          <img src="./Porwal Images/kids bed.png" alt="Kids Cartoon Comforter" class="product-image">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Kids Collection</span>
+          <h3 class="product-name">Soft & Cozy Kids Comforter</h3>
+          <p class="product-desc">Single Bed Sizing. Lightweight comfort ideal for controlled AC temperatures.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+      <div class="product-card"
+           data-cat="Curtains" 
+           data-title="Premium Light-Filtering Room Curtains" 
+           data-desc="Tailored architectural curtain drapes with reinforced eyelet parameters. Offers structural alignment and balanced ambient light filtering for boutique hotels and modern residential spaces."
+           data-images="./Porwal Images/kingsize fitted bedsheet 2/kingsize bed.png">
+        <div class="product-illustration">
+          <img src="./Porwal Images/kingsize fitted bedsheet 2/kingsize bed.png" alt="Premium Curtains View" class="product-image" style="filter: hue-rotate(45deg);">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Curtains</span>
+          <h3 class="product-name">Premium Light-Filtering Curtains</h3>
+          <p class="product-desc">Premium drapes designed elegantly for hotel lounges and modern living spaces.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+      <div class="product-card"
+           data-cat="Towels & Bath Linen" 
+           data-title="High-Absorbency Heavy Pile Bath Towels" 
+           data-desc="Long-loop premium combed cotton bath linens engineered specifically for heavy institucional laundering cycles. High tensile warp thread build-up guarantees performance."
+           data-images="./Porwal Images/kingsize fitted bedsheet 1/openart-gpt-image-2-edit-1_1779703741206_68b89252.jpg">
+        <div class="product-illustration">
+          <img src="./Porwal Images/kingsize fitted bedsheet 1/openart-gpt-image-2-edit-1_1779703741206_68b89252.jpg" alt="Bath Linen View" class="product-image" style="filter: grayscale(1);">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Towels & Bath Linen</span>
+          <h3 class="product-name">High-Absorbency Premium Towels</h3>
+          <p class="product-desc">Heavy pile institucional quality face and body bath linen ensembles.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+      <div class="product-card"
+           data-cat="Dhurries & Rugs" 
+           data-title="Handloomed Reversible Heritage Dhurries" 
+           data-desc="Authentic tight flat-weave geometrical dhurries crafted on traditional country wood looms. Fully reversible design layout built for severe high-traffic interior projects."
+           data-images="./Porwal Images/kingsize fitted bedsheet/kingsize bedseet 1.png">
+        <div class="product-illustration">
+          <img src="./Porwal Images/kingsize fitted bedsheet/kingsize bedseet 1.png" alt="Handloomed Dhurrie" class="product-image" style="filter: saturate(0.5);">
+        </div>
+        <div class="product-overlay">
+          <span class="product-category">Dhurries & Rugs</span>
+          <h3 class="product-name">Handloomed Reversible Dhurries</h3>
+          <p class="product-desc">High-integrity flat weaves reflecting generational patterns and geometric trims.</p>
+          <a href="#contact" class="product-link">Enquire Now →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="associated-brands-banner">
+  <div class="wrap">
+    <h3>Brands We Are Associated With</h3>
+    <div class="associated-brands-flex">
+      <div class="associated-brand-text-logo">Trident</div>
+      <div class="associated-brand-text-logo">Welspun</div>
+      <div class="associated-brand-text-logo">Bombay Dyeing</div>
+      <div class="associated-brand-text-logo">Spaces</div>
+      <div class="associated-brand-text-logo">Florida</div>
+      <div class="associated-brand-text-logo">Signature</div>
+      <div class="associated-brand-text-logo">D'Decor</div>
+    </div>
+  </div>
+</div>
+
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="section-header" style="margin-bottom: 20px;">
+      <p class="section-label">Clear Operations</p>
+      <h2>Sourcing With Us Is Simple</h2>
+    </div>
+    <div class="operational-steps-grid">
+      <div class="operational-step-card">
+        <div class="step-numeric-flag">01</div>
+        <h3>Send your enquiry</h3>
+        <p>Share your products of interest, the quantities you need and your target city details.</p>
+      </div>
+      <div class="operational-step-card">
+        <div class="step-numeric-flag">02</div>
+        <h3>Get a quote & samples</h3>
+        <p>We share comprehensive wholesale pricing frameworks and arrange verified design samples.</p>
+      </div>
+      <div class="operational-step-card">
+        <div class="step-numeric-flag">03</div>
+        <h3>Confirm your order</h3>
+        <p>Approve production timelines, final quantities, core colorways, and custom sizing choices.</p>
+      </div>
+      <div class="operational-step-card">
+        <div class="step-numeric-flag">04</div>
+        <h3>We dispatch, you track</h3>
+        <p>We wrap securely, handle freight dispatch, and pass over end-to-end trace tracking metrics.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section section--light" id="sourcing-path-section">
-    <div class="wrap">
-      <div style="text-align:center; max-width:700px; margin:0 auto 45px;">
-        <span class="section-eyebrow">Clear Operations</span>
-        <h2>Sourcing With Us Is Simple</h2>
+<section id="quality-heritage">
+  <div class="wrap assurance-split-box">
+    <div class="assurance-narrative">
+      <p class="section-label" style="color: var(--gold-soft);">Production Control</p>
+      <h2>Trust Woven Into Every Thread</h2>
+      <p>Since 1978, the Porwals name has stood for handloom and home furnishings you can rely on, built on a family craft that goes back generations. That experience shows in the final products you receive.</p>
+      <p>Every single order is carefully checked by hand before dispatch. Fabrics are selected for optimal texture feel and structural durability, colorways are rigorously tested for rubbing fastness, and cargo is packed securely to travel safely over cross-country channels. You gain a completely transparent supply chain.</p>
+    </div>
+    <div class="assurance-matrix-list">
+      <h3>Everything Under One Roof</h3>
+      <ul>
+        <li><span class="check-glyph">✔</span> Bedsheets and pillow covers, including fitted king-size sets.</li>
+        <li><span class="check-glyph">✔</span> AC comforters and quilts for all seasons.</li>
+        <li><span class="check-glyph">✔</span> Curtains for bedrooms, living rooms and doorways.</li>
+        <li><span class="check-glyph">✔</span> High-Absorbed Towels and bath linen.</li>
+        <li><span class="check-glyph">✔</span> Handloomed Reversible Dhurries and rugs.</li>
+        <li><span class="check-glyph">✔</span> Custom project orders, built precisely to your layout brief.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="testimonials-bg-text">Trust</div>
+  <div class="wrap testimonials-inner">
+    <div class="section-header">
+      <p class="section-label">Verified Proof</p>
+      <h2>Trusted by Retailers, Distributors and Designers Across India</h2>
+      <p>Decades in the handloom trade, with thousands of orders shipped to buyers across India.</p>
+    </div>
+
+    <div class="swiper testimonials-swiper">
+      <div class="swiper-wrapper">
+  
+        <div class="swiper-slide">
+          <div class="testi-card featured">
+            <div class="stars">★★★★★</div>
+            <span class="quote-icon-subline">Repeat Wholesale Buyer</span>
+            <p class="testi-text">It's a wholesale shop, fixed rate good for bulk purchase or for wedding or similar kind of shopping.</p>
+            <div class="testi-author">
+              <div class="author-avatar">B</div>
+              <div>
+                <div class="author-name">Bhaskar Jain</div>
+                <div class="author-company">Bulk Buyer Client, Indore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <span class="quote-icon-subline">Retail Partner</span>
+            <p class="testi-text">Variety Collection, Quality Products & Reasonable Price. Must Visit.</p>
+            <div class="testi-author">
+              <div class="author-avatar">A</div>
+              <div>
+                <div class="author-name">Amit Neema</div>
+                <div class="author-company">Retail Partner, Indore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testi-card featured">
+            <div class="stars">★★★★★</div>
+            <span class="quote-icon-subline">Home Décor Store Owner</span>
+            <p class="testi-text">We run a home décor store in Pune and have been placing wholesale orders with Nivrá for the past 14 months. Our customers constantly ask where we source our high quality bedding from — that itself says everything.</p>
+            <div class="testi-author">
+              <div class="author-avatar">S</div>
+              <div>
+                <div class="author-name">Sneha Deshpande</div>
+                <div class="author-company">Owner, Ghar Sajawat Store, Pune</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <span class="quote-icon-subline">Interior Designer</span>
+            <p class="testi-text">As a small interior design studio in Bangalore, finding a wholesale handloom supplier who works with boutique order sizes was always a challenge. Nivrá accommodated our quantities without compromising on quality.</p>
+            <div class="testi-author">
+              <div class="author-avatar">A</div>
+              <div>
+                <div class="author-name">Arjun Shetty</div>
+                <div class="author-company">Founder, Mitti Interiors, Bengaluru</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="operational-steps-grid">
-        <div class="operational-step-card">
-          <div class="step-numeric-flag">01</div>
-          <h3>Send your enquiry</h3>
-          <p>Share your products of interest, the quantities you need and your target city details.</p>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="overseas-buyers">
+  <div class="wrap">
+    <div style="max-width:750px;">
+      <p class="section-label" style="color: var(--gold-soft);">Global Operations Matrix</p>
+      <h2>Buying From Outside India?</h2>
+      <p style="color: rgba(245,240,232,0.65); margin-top: 12px; font-size: 15.5px;">In full structural alignment with our strategic international growth parameters (including our dedicated USA pipeline), we deliver rigid B2B support layers for overseas trade accounts.</p>
+    </div>
+    <div class="international-trade-box">
+      <div class="international-trade-grid">
+        <div class="international-trade-item">
+          <h4>Foreign Currency Quotes</h4>
+          <p>Get seamless pricing sheets rendered in USD or native regional currency values for transparent trade review.</p>
         </div>
-        <div class="operational-step-card">
-          <div class="step-numeric-flag">02</div>
-          <h3>Get a quote &amp; samples</h3>
-          <p>We share comprehensive wholesale pricing frameworks and arrange verified design samples.</p>
+        <div class="international-trade-item">
+          <h4>Full Custom Clearance Data</h4>
+          <p>Every commercial invoice, cargo manifest, and origin certificate is filed smoothly to prevent port delays.</p>
         </div>
-        <div class="operational-step-card">
-          <div class="step-numeric-flag">03</div>
-          <h3>Confirm your order</h3>
-          <p>Approve production timelines, final quantities, core colorways, and custom sizing options.</p>
-        </div>
-        <div class="operational-step-card">
-          <div class="step-numeric-flag">04</div>
-          <h3>We dispatch, you track</h3>
-          <p>We wrap securely, handle freight dispatch, and pass over end-to-end trace tracking metrics.</p>
+        <div class="international-trade-item">
+          <h4>Secure Sea/Air Packaging</h4>
+          <p>Consolidated multi-wall heavy carton configurations constructed specifically to protect fabrics from maritime humidity.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section section--dark" style="background-color:#1C120C;">
-    <div class="wrap assurance-split-box">
-      <div class="assurance-narrative">
-        <span class="section-eyebrow">Production Control</span>
-        <h2>Trust Woven Into Every Thread</h2>
-        <p>Since 1978, the Porwals name has stood for handloom and home furnishings you can rely on, built on a family craft that goes back generations. That experience shows in the final products you receive.</p>
-        <p>Every single order is carefully checked by hand before dispatch. Fabrics are selected for optimal texture feel and structural durability, colorways are rigorously tested for rubbing fastness, and cargo is packed securely to travel safely over cross-country channels. You gain a completely transparent supply chain and direct account team responsiveness.</p>
+<section id="catalogue-capture">
+  <div class="wrap">
+    <div class="lead-capture-shield">
+      <h3>Get the Latest Catalogue and Offers</h3>
+      <p>Not ready to file a custom procurement enquiry yet? Download our complete digital handloom product catalog and seasonal design index directly to your inbox. WhatsApp works well for Indian buyers alongside email.</p>
+      <form class="lead-capture-inline-form" id="catalogConversionFormElement" onsubmit="executeCatalogConversionProtocol(event)">
+        <input type="email" id="conversionEmailInput" class="capture-input" placeholder="Enter corporate email address" required aria-label="Corporate Email Address">
+        <button type="submit" class="hero-cta hero-cta--solid" style="border: none; cursor: pointer;">Get Catalogue</button>
+      </form>
+      <div class="capture-response-message" id="conversionStatusReportingBox"></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq-matrix">
+  <div class="wrap">
+    <div style="text-align:center; max-width:650px; margin:0 auto;">
+      <p class="section-label">Clear Answers</p>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="accordion-matrix-container">
+      <div class="accordion-matrix-item">
+        <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">What is the minimum order quantity?</button>
+        <div class="accordion-matrix-panel">
+          <div class="accordion-matrix-content">Our minimum procurement quantities are exceptionally flexible, specifically tailored to support first-time distribution partners. Tell us the product and we will confirm the minimum for it.</div>
+        </div>
       </div>
-      <div class="assurance-matrix-list">
-        <h3>Everything Under One Roof</h3>
-        <ul>
-          <li><span class="check-glyph">✔</span> Wholesale Bedding &amp; Structured Sheets</li>
-          <li><span class="check-glyph">✔</span> Fine Institutional Soft Furnishings</li>
-          <li><span class="check-glyph">✔</span> Certified Light-Filtering Curtain Lines</li>
-          <li><span class="check-glyph">✔</span> High-Absorgency Heavy Pile Bath Linens</li>
-          <li><span class="check-glyph">✔</span> Handloomed Reversible Dhurries &amp; Rugs</li>
+      <div class="accordion-matrix-item">
+        <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">Who can buy from Nivrá?</button>
+        <div class="accordion-matrix-panel">
+          <div class="accordion-matrix-content">We cater exclusively to trade entities: authorized dealers, commercial distributors, independent shop retailers, verified home-based boutique sellers, e-commerce managers, corporate interior designers, and institutional hospitality procurement groups.</div>
+        </div>
+      </div>
+      <div class="accordion-matrix-item">
+        <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">Do you offer custom colors and sizes?</button>
+        <div class="accordion-matrix-panel">
+          <div class="accordion-matrix-content">Yes. Custom commercial colorways, accurate panel dimensions, and custom structural pattern weaves are produced upon request to support verified contract project quantities.</div>
+        </div>
+      </div>
+      <div class="accordion-matrix-item">
+        <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">Which areas do you ship to?</button>
+        <div class="accordion-matrix-panel">
+          <div class="accordion-matrix-content">We ship across the entire Indian subcontinent and directly to select overseas trade target markets. Final logistics and freight rates are dependent on your target delivery city, which is collected in the intake engine to keep calculations highly accurate.</div>
+        </div>
+      </div>
+      <div class="accordion-matrix-item">
+        <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">How do I start a wholesale enquiry?</button>
+        <div class="accordion-matrix-panel">
+          <div class="accordion-matrix-content">Simply complete the optimized commercial intake engine below, choosing your specific operational business alignment. Our dedicated B2B account desk will return comprehensive pricing matrices within 24 hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-split">
+    <div class="contact-left">
+      <p class="section-label">Let's Work Together</p>
+      <h2>Get Wholesale Prices and Bulk Quotes</h2>
+      <p>Tell us what you need and your city, and our B2B team will send pricing within 24 hours. Minimum order quantities are flexible for first-time buyers.</p>
+      
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Office</div>
+            <div class="contact-info-text">
+              <a href="https://maps.google.com/?q=29/1+Chippa+Bakhal+Road+Malharganj+Indore" style="text-decoration: none; color: inherit;" target="_blank">
+                29/1, Chippa Bakhal Road,<br>
+                Malharganj, Indore<br>
+                Madhya Pradesh - 452002
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 10a19.79 19.79 0 01-3.07-8.67A2 2 0 013.61 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Phone</div>
+            <div class="contact-info-text"><a href="tel:+917869916333" style="text-decoration: none; color: inherit;">+91 78699 16333</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-text"><a href="mailto:nivrabytheporwals@gmail.com" style="text-decoration: none; color: inherit;">nivrabytheporwals@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-container">
+      
+      <div class="success-state" id="successState">
+        <div class="checkmark-wrapper">
+          <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+          </svg>
+        </div>
+        <h3>Thank You</h3>
+        <p>Your enquiry has been successfully submitted. We will be in touch within 24 hours.</p>
+      </div>
+
+      <form id="enquiryForm" novalidate onsubmit="handleValidationAndSubmit(event)">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name*</label>
+            <input type="text" id="form-first-name" name="First Name" required data-rule="alpha">
+            <div class="form-error-msg">Please enter a valid first name (letters only).</div>
+          </div>
+          <div class="form-group">
+            <label>Last Name*</label>
+            <input type="text" id="form-last-name" name="Last Name" required data-rule="alpha">
+            <div class="form-error-msg">Please enter a valid last name (letters only).</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Company Name</label>
+          <input type="text" id="form-company-name" name="Company Name">
+        </div>
+        <div class="form-group">
+          <label>Business Email*</label>
+          <input type="email" id="form-business-email" name="Business Email" required data-rule="email">
+          <div class="form-error-msg">Please enter a valid corporate email architecture.</div>
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number*</label>
+          <div class="phone-field-group">
+            <select id="form-country-code" aria-label="Country Code">
+              <option value="+91" selected>IN (+91)</option>
+              <option value="+1">US (+1)</option>
+              <option value="+44">UK (+44)</option>
+              <option value="+971">AE (+971)</option>
+              <option value="+61">AU (+61)</option>
+            </select>
+            <input type="tel" id="form-phone" name="Phone Number" required data-rule="numeric" placeholder="Digits only">
+          </div>
+          <div class="form-error-msg">Please enter a valid phone number (7-15 digits).</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>City / Hub*</label>
+            <input type="text" id="form-city" name="City Hub" required>
+            <div class="form-error-msg">City value is required to evaluate courier logistics.</div>
+          </div>
+          
+          <div class="form-group">
+            <label>Country*</label>
+            <select id="form-country" name="Country" required>
+              <option value="" disabled selected>Select Country</option>
+              <option value="India">India</option>
+              <option value="United States">United States</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Australia">Australia</option>
+            </select>
+            <div class="form-error-msg">Please choose your destination market bounds.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Business Type*</label>
+          <select id="form-business-type" name="Business Type" required>
+            <option value="" disabled selected>Select type</option>
+            <option value="Authorized Dealer">Authorized Dealer</option>
+            <option value="Commercial Distributor">Commercial Distributor</option>
+            <option value="Shop Retailer">Shop Retailer</option>
+            <option value="Home-based Seller">Home-based Seller</option>
+            <option value="E-commerce">E-commerce Manager</option>
+            <option value="Interior Designer">Interior Designer / Decorator</option>
+            <option value="Hospitality Brand">Hospitality Brand / Hotel Network</option>
+          </select>
+          <div class="form-error-msg">Please classify your primary operational alignment.</div>
+        </div>
+        
+        <div class="form-group">
+          <label>Products of Interest*</label>
+          <select id="form-products-interest" name="Products of Interest" required>
+            <option value="" disabled selected>Select category</option>
+            <option value="Bedsheets & Pillow Covers">Bedding (Bedsheets & Pillowcases)</option>
+            <option value="AC Comforters & Quilts">Soft Furnishings (Comforters & Quilts)</option>
+            <option value="Kids Comforter Collections">Kids Collection</option>
+            <option value="Curtains">Curtains & Drapes</option>
+            <option value="Towels">Towels & Bath Linen</option>
+            <option value="Dhurries & Rugs">Dhurries & Rugs</option>
+            <option value="Multiple">Multiple Categories</option>
+          </select>
+          <div class="form-error-msg">Please specify a targeted inventory line.</div>
+        </div>
+        <div class="form-group">
+          <label>Message / Sourcing Requirements*</label>
+          <textarea id="form-message" name="Message" required placeholder="Detail your required volumes or target structural metrics..."></textarea>
+          <div class="form-error-msg">Please provide your target sourcing parameters.</div>
+        </div>
+        
+        <button type="submit" class="form-submit" id="submitBtn">
+          <span class="btn-text">Send Sourcing Enquiry</span>
+          <span class="spinner"></span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<footer class="corporate-landscape-footer">
+  <div class="wrap">
+    <div class="landscape-footer-grid">
+      <div class="landscape-footer-column">
+        <h4 style="font-family:'Fraunces', serif; font-size:22px; text-transform:none; letter-spacing:0; margin-bottom:14px;">Nivrá by Porwals</h4>
+        <p>Premium B2B handloom manufacturing and home furnishing logistics matrices configured safely for scale commercial distribution channels since 1978.</p>
+      </div>
+      <div class="landscape-footer-column">
+        <h4>Quick Links</h4>
+        <ul class="landscape-footer-links-list">
+          <li><a href="#legacy">Our Legacy</a></li>
+          <li><a href="#why-partner">Why Partner</a></li>
+          <li><a href="#products">Product Range</a></li>
+          <li><a href="#how-it-works">Sourcing Journey</a></li>
+          <li><a href="#faq-matrix">Technical FAQ</a></li>
         </ul>
       </div>
-    </div>
-  </section>
-
-  <section class="section section--cream">
-    <div class="wrap">
-      <div style="text-align:center; max-width:700px; margin:0 auto 20px;">
-        <span class="section-eyebrow">Verified Proof</span>
-        <h2>Partner Voices</h2>
-        <p class="lead" style="margin:12px auto 0; font-size:16.5px;">Trusted by independent interior designers, premium hotel networks, and lifestyle home retailers nationwide.</p>
+      <div class="landscape-footer-column">
+        <h4>Categories</h4>
+        <ul class="landscape-footer-links-list">
+          <li><a href="#products">Bedding Collections</a></li>
+          <li><a href="#products">Soft Furnishings</a></li>
+          <li><a href="#products">Luxury Linens</a></li>
+          <li><a href="#products">Curtains & Drapes</a></li>
+          <li><a href="#products">Dhurries & Fine Rugs</a></li>
+        </ul>
       </div>
-      
-      <div class="swiper testimonials-swiper-container">
-        <div class="swiper-wrapper">
-          
-          <div class="swiper-slide">
-            <div class="partner-voice-card">
-              <p class="testimonial-body-text">"As a small interior design studio in Bengaluru, finding a wholesale handloom partner willing to adjust to micro-project scale volume parameters was a huge challenge. Nivrá tailored our target inventory runs flawlessly without a single compromise on material feel."</p>
-              <div>
-                <div class="author-meta-name">Arjun Shetty</div>
-                <div class="author-trust-line">Boutique Interior Studio, Bengaluru</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="partner-voice-card">
-              <p class="testimonial-body-text">"The structured wholesale operational system and flat factory rates work beautifully for our high volume runs. Their delivery consistency makes them our standard supply source for premium event staging."</p>
-              <div>
-                <div class="author-meta-name">Bhaskar Jain</div>
-                <div class="author-trust-line">Home Furnishing Network, Indore</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="partner-voice-card">
-              <p class="testimonial-body-text">"The depth of their product line and reliable colorfastness levels give our procurement department total confidence. Their B2B management team answers the phone whenever we need support."</p>
-              <div>
-                <div class="author-meta-name">Amit Neema</div>
-                <div class="author-trust-line">Hospitality &amp; Decor Retailer, Pune</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="partner-voice-card">
-              <p class="testimonial-body-text">"As a small interior design studio in Bengaluru, finding a wholesale handloom partner willing to adjust to micro-project scale volume parameters was a huge challenge. Nivrá tailored our target inventory runs flawlessly without a single compromise on material feel."</p>
-              <div>
-                <div class="author-meta-name">Arjun Shetty</div>
-                <div class="author-trust-line">Boutique Interior Studio, Bengaluru</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="partner-voice-card">
-              <p class="testimonial-body-text">"The structured wholesale operational system and flat factory rates work beautifully for our high volume runs. Their delivery consistency makes them our standard supply source for premium event staging."</p>
-              <div>
-                <div class="author-meta-name">Bhaskar Jain</div>
-                <div class="author-trust-line">Home Furnishing Network, Indore</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="partner-voice-card">
-              <p class="testimonial-body-text">"The depth of their product line and reliable colorfastness levels give our procurement department total confidence. Their B2B management team answers the phone whenever we need support."</p>
-              <div>
-                <div class="author-meta-name">Amit Neema</div>
-                <div class="author-trust-line">Hospitality &amp; Decor Retailer, Pune</div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="associated-brands-banner">
-    <div class="wrap">
-      <h1>Brands we are associated with</h1>
-      <div class="associated-brands-flex">
-        <div class="associated-brand-text-logo">Trident</div>
-        <div class="associated-brand-text-logo">Welspun</div>
-        <div class="associated-brand-text-logo">Bombay Dyeing</div>
-        <div class="associated-brand-text-logo">Spaces</div>
-        <div class="associated-brand-text-logo">Florida</div>
-        <div class="associated-brand-text-logo">Signature</div>
-        <div class="associated-brand-text-logo">D'Decor</div>
-      </div>
-    </div>
-  </div>
-
-  <section class="section section--dark" style="background-color:var(--espresso-2);">
-    <div class="wrap">
-      <div style="max-width:750px;">
-        <span class="section-eyebrow">Global Operations Matrix</span>
-        <h2>For Overseas Buyers</h2>
-        <p style="color:var(--cream-muted); font-size:16.5px; margin-top:12px;">In full structural alignment with our strategic international growth parameters (including our dedicated USA pipeline), we deliver rigid B2B support layers for overseas trade accounts.</p>
-      </div>
-      <div class="international-trade-box">
-        <div class="international-trade-grid">
-          <div class="international-trade-item">
-            <h4>Foreign Currency Quotes</h4>
-            <p>Get seamless pricing sheets rendered in USD or native regional currency values for transparent trade review.</p>
-          </div>
-          <div class="international-trade-item">
-            <h4>Full Custom Clearance Data</h4>
-            <p>Every commercial invoice, cargo manifest, and origin certificate is filed smoothly to prevent ocean port delays.</p>
-          </div>
-          <div class="international-trade-item">
-            <h4>Secure Sea/Air Packaging</h4>
-            <p>Consolidated multi-wall heavy carton configurations constructed specifically to protect fabrics from maritime humidity.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--light" id="capture-zone-section" style="background-color:var(--warm-white);">
-    <div class="wrap">
-      <div class="lead-capture-shield">
-        <h3>Access the Complete B2B Portfolio</h3>
-        <p>Not ready to file a custom procurement enquiry yet? Download our complete digital handloom product catalog and seasonal design index directly to your inbox.</p>
-        <form class="lead-capture-inline-form" id="catalogConversionFormElement" onsubmit="executeCatalogConversionProtocol(event)">
-          <input type="email" id="conversionEmailInput" class="capture-input" placeholder="Enter corporate email address" required aria-label="Corporate Email Address Placement">
-          <button type="submit" class="btn btn--ink" style="border-radius:40px;">Get Catalogue</button>
-        </form>
-        <div class="capture-response-message" id="conversionStatusReportingBox"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--cream" id="faq-matrix-section">
-    <div class="wrap">
-      <div style="text-align:center; max-width:650px; margin:0 auto;">
-        <span class="section-eyebrow">Clear Answers</span>
-        <h2>Frequently Asked Questions</h2>
-      </div>
-      <div class="accordion-matrix-container">
-        <div class="accordion-matrix-item">
-          <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">What is the minimum order quantity?</button>
-          <div class="accordion-matrix-panel">
-            <div class="accordion-matrix-content">Our minimum procurement quantities are exceptionally flexible, specifically tailored to support first-time distribution partners. Simply detail your desired collection lines in the lead block and our desk will confirm volume specs.</div>
-          </div>
-        </div>
-        <div class="accordion-matrix-item">
-          <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">Who can buy from Nivrá?</button>
-          <div class="accordion-matrix-panel">
-            <div class="accordion-matrix-content">We cater exclusively to trade entities: authorized dealers, commercial distributors, independent shop retailers, verified home-based boutique sellers, e-commerce managers, corporate interior designers, and institutional hospitality procurement groups.</div>
-          </div>
-        </div>
-        <div class="accordion-matrix-item">
-          <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">Do you offer custom colors and sizes?</button>
-          <div class="accordion-matrix-panel">
-            <div class="accordion-matrix-content">Yes. Custom commercial colorways, accurate panel dimensions, and custom structural pattern weaves are produced upon request to support verified contract project quantities.</div>
-          </div>
-        </div>
-        <div class="accordion-matrix-item">
-          <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">Which areas do you ship to?</button>
-          <div class="accordion-matrix-panel">
-            <div class="accordion-matrix-content">We ship across the entire Indian subcontinent and directly to select overseas trade target markets. Final logistics and freight rates are dependent on your target delivery city, which is collected in the intake engine to keep calculations highly accurate.</div>
-          </div>
-        </div>
-        <div class="accordion-matrix-item">
-          <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">How do I start a wholesale enquiry?</button>
-          <div class="accordion-matrix-panel">
-            <div class="accordion-matrix-content">Simply complete the optimized commercial intake engine below, choosing your specific operational business alignment. Our dedicated B2B account desk will return comprehensive pricing matrices within 24 hours.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--light" id="lead-engine-section">
-    <div class="wrap lead-engine-split-layout">
-      <div class="lead-engine-corporate-panel">
-        <span class="section-eyebrow" style="color:var(--gold-soft);">Corporate Office</span>
-        <h3>Get Wholesale Prices &amp; Bulk Quotes</h3>
-        <p style="color:var(--cream-muted); font-size:15.5px; margin-bottom:28px;">Tell us what you need and your city, and our B2B team will send custom pricing sheets within 24 hours. Minimum order quantities are flexible for first-time buyers.</p>
-        
-        <div class="corporate-location-pin-anchor">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span>Registered Location Matrix</span>
-        </div>
-        
-        <address class="corporate-postal-address">
+      <div class="landscape-footer-column">
+        <h4>Contact</h4>
+        <p style="font-size: 13px; line-height: 1.5; margin-bottom: 10px;">
           29/1, Chippa Bakhal Road,<br>
-          Malharganj, Indore<br>
-          Madhya Pradesh - 452002
-        </address>
-        
-        <div class="corporate-comms-matrix">
-          <div class="corporate-comms-row">
-            <div class="visual-icon-frame">☏</div>
-            <a href="tel:+917869916333" class="comms-anchor">+91 78699 16333</a>
-          </div>
-          <div class="corporate-comms-row">
-            <div class="visual-icon-frame">✉</div>
-            <a href="mailto:nivrabytheporwals@gmail.com" class="comms-anchor">nivrabytheporwals@gmail.com</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lead-engine-form-card">
-        <form id="corporateLeadEngineForm" onsubmit="executeFormValidationProtocol(event)" novalidate>
-          <div class="lead-engine-form-grid">
-            <div class="lead-engine-field-box">
-              <label for="input-first-name">First Name<span class="required-signpost">*</span></label>
-              <input type="text" id="input-first-name" required data-validation-rule="alpha-only" autocomplete="given-name">
-              <div class="error-signpost-message">Please enter a valid first name (letters only).</div>
-            </div>
-            <div class="lead-engine-field-box">
-              <label for="input-last-name">Last Name<span class="required-signpost">*</span></label>
-              <input type="text" id="input-last-name" required data-validation-rule="alpha-only" autocomplete="family-name">
-              <div class="error-signpost-message">Please enter a valid last name (letters only).</div>
-            </div>
-            <div class="lead-engine-field-box">
-              <label for="input-company-name">Company Name</label>
-              <input type="text" id="input-company-name" autocomplete="organization">
-            </div>
-            <div class="lead-engine-field-box">
-              <label for="input-corporate-email">Corporate Email<span class="required-signpost">*</span></label>
-              <input type="email" id="input-corporate-email" required data-validation-rule="email-structure" autocomplete="email">
-              <div class="error-signpost-message">Please enter a valid corporate email address.</div>
-            </div>
-            
-            <div class="lead-engine-field-box">
-              <label for="input-phone-number">Phone Number<span class="required-signpost">*</span></label>
-              <div class="phone-input-group">
-                <select id="select-country-code" class="country-code-select" aria-label="Country Code">
-                  <option value="+91" selected>IN (+91)</option>
-                  <option value="+1">US (+1)</option>
-                  <option value="+44">UK (+44)</option>
-                  <option value="+971">AE (+971)</option>
-                  <option value="+61">AU (+61)</option>
-                  <option value="+1">CA (+1)</option>
-                  <option value="+966">SA (+966)</option>
-                  <option value="+65">SG (+65)</option>
-                  <option value="+27">ZA (+27)</option>
-                  <option value="+49">DE (+49)</option>
-                  <option value="+33">FR (+33)</option>
-                  <option value="+81">JP (+81)</option>
-                  <option value="+7">RU (+7)</option>
-                  <option value="+86">CN (+86)</option>
-                  <option value="+55">BR (+55)</option>
-                </select>
-                <input type="tel" id="input-phone-number" required data-validation-rule="numeric-only" placeholder="Digits only" autocomplete="tel">
-              </div>
-              <div class="error-signpost-message">Please enter a valid phone number (7-15 digits).</div>
-            </div>
-
-            <div class="lead-engine-field-box">
-              <label for="input-city-hub">City / Hub<span class="required-signpost">*</span></label>
-              <input type="text" id="input-city-hub" required autocomplete="address-level2">
-              <div class="error-signpost-message">City value is required to evaluate logistics shipping parameters.</div>
-            </div>
-            
-            <div class="lead-engine-field-box">
-              <label for="select-market-country">Country<span class="required-signpost">*</span></label>
-              <select id="select-market-country" required autocomplete="country">
-                <option value="" disabled selected>Select Country</option>
-                <option value="AF">Afghanistan</option>
-                <option value="AX">Åland Islands</option>
-                <option value="AL">Albania</option>
-                <option value="DZ">Algeria</option>
-                <option value="AS">American Samoa</option>
-                <option value="AD">Andorra</option>
-                <option value="AO">Angola</option>
-                <option value="AI">Anguilla</option>
-                <option value="AQ">Antarctica</option>
-                <option value="AG">Antigua and Barbuda</option>
-                <option value="AR">Argentina</option>
-                <option value="AM">Armenia</option>
-                <option value="AW">Aruba</option>
-                <option value="AU">Australia</option>
-                <option value="AT">Austria</option>
-                <option value="AZ">Azerbaijan</option>
-                <option value="BS">Bahamas</option>
-                <option value="BH">Bahrain</option>
-                <option value="BD">Bangladesh</option>
-                <option value="BB">Barbados</option>
-                <option value="BY">Belarus</option>
-                <option value="BE">Belgium</option>
-                <option value="BZ">Belize</option>
-                <option value="BJ">Benin</option>
-                <option value="BM">Bermuda</option>
-                <option value="BT">Bhutan</option>
-                <option value="BO">Bolivia</option>
-                <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
-                <option value="BA">Bosnia and Herzegovina</option>
-                <option value="BW">Botswana</option>
-                <option value="BV">Bouvet Island</option>
-                <option value="BR">Brazil</option>
-                <option value="IO">British Indian Ocean Territory</option>
-                <option value="BN">Brunei Darussalam</option>
-                <option value="BG">Bulgaria</option>
-                <option value="BF">Burkina Faso</option>
-                <option value="BI">Burundi</option>
-                <option value="CV">Cabo Verde</option>
-                <option value="KH">Cambodia</option>
-                <option value="CM">Cameroon</option>
-                <option value="CA">Canada</option>
-                <option value="KY">Cayman Islands</option>
-                <option value="CF">Central African Republic</option>
-                <option value="TD">Chad</option>
-                <option value="CL">Chile</option>
-                <option value="CN">China</option>
-                <option value="CX">Christmas Island</option>
-                <option value="CC">Cocos (Keeling) Islands</option>
-                <option value="CO">Colombia</option>
-                <option value="KM">Comoros</option>
-                <option value="CD">Congo (Democratic Republic)</option>
-                <option value="CG">Congo (Republic)</option>
-                <option value="CK">Cook Islands</option>
-                <option value="CR">Costa Rica</option>
-                <option value="CI">Côte d'Ivoire</option>
-                <option value="HR">Croatia</option>
-                <option value="CU">Cuba</option>
-                <option value="CW">Curaçao</option>
-                <option value="CY">Cyprus</option>
-                <option value="CZ">Czechia</option>
-                <option value="DK">Denmark</option>
-                <option value="DJ">Djibouti</option>
-                <option value="DM">Dominica</option>
-                <option value="DO">Dominican Republic</option>
-                <option value="EC">Ecuador</option>
-                <option value="EG">Egypt</option>
-                <option value="SV">El Salvador</option>
-                <option value="GQ">Equatorial Guinea</option>
-                <option value="ER">Eritrea</option>
-                <option value="EE">Estonia</option>
-                <option value="SZ">Eswatini</option>
-                <option value="ET">Ethiopia</option>
-                <option value="FK">Falkland Islands</option>
-                <option value="FO">Faroe Islands</option>
-                <option value="FJ">Fiji</option>
-                <option value="FI">Finland</option>
-                <option value="FR">France</option>
-                <option value="GF">French Guiana</option>
-                <option value="PF">French Polynesia</option>
-                <option value="TF">French Southern Territories</option>
-                <option value="GA">Gabon</option>
-                <option value="GM">Gambia</option>
-                <option value="GE">Georgia</option>
-                <option value="DE">Germany</option>
-                <option value="GH">Ghana</option>
-                <option value="GI">Gibraltar</option>
-                <option value="GR">Greece</option>
-                <option value="GL">Greenland</option>
-                <option value="GD">Grenada</option>
-                <option value="GP">Guadeloupe</option>
-                <option value="GU">Guam</option>
-                <option value="GT">Guatemala</option>
-                <option value="GG">Guernsey</option>
-                <option value="GN">Guinea</option>
-                <option value="GW">Guinea-Bissau</option>
-                <option value="GY">Guyana</option>
-                <option value="HT">Haiti</option>
-                <option value="HM">Heard Island and McDonald Islands</option>
-                <option value="VA">Holy See</option>
-                <option value="HN">Honduras</option>
-                <option value="HK">Hong Kong</option>
-                <option value="HU">Hungary</option>
-                <option value="IS">Iceland</option>
-                <option value="IN" selected>India</option>
-                <option value="ID">Indonesia</option>
-                <option value="IR">Iran</option>
-                <option value="IQ">Iraq</option>
-                <option value="IE">Ireland</option>
-                <option value="IM">Isle of Man</option>
-                <option value="IL">Israel</option>
-                <option value="IT">Italy</option>
-                <option value="JM">Jamaica</option>
-                <option value="JP">Japan</option>
-                <option value="JE">Jersey</option>
-                <option value="JO">Jordan</option>
-                <option value="KZ">Kazakhstan</option>
-                <option value="KE">Kenya</option>
-                <option value="KI">Kiribati</option>
-                <option value="KP">North Korea</option>
-                <option value="KR">South Korea</option>
-                <option value="KW">Kuwait</option>
-                <option value="KG">Kyrgyzstan</option>
-                <option value="LA">Laos</option>
-                <option value="LV">Latvia</option>
-                <option value="LB">Lebanon</option>
-                <option value="LS">Lesotho</option>
-                <option value="LR">Liberia</option>
-                <option value="LY">Libya</option>
-                <option value="LI">Liechtenstein</option>
-                <option value="LT">Lithuania</option>
-                <option value="LU">Luxembourg</option>
-                <option value="MO">Macao</option>
-                <option value="MG">Madagascar</option>
-                <option value="MW">Malawi</option>
-                <option value="MY">Malaysia</option>
-                <option value="MV">Maldives</option>
-                <option value="ML">Mali</option>
-                <option value="MT">Malta</option>
-                <option value="MH">Marshall Islands</option>
-                <option value="MQ">Martinique</option>
-                <option value="MR">Mauritania</option>
-                <option value="MU">Mauritius</option>
-                <option value="YT">Mayotte</option>
-                <option value="MX">Mexico</option>
-                <option value="FM">Micronesia</option>
-                <option value="MD">Moldova</option>
-                <option value="MC">Monaco</option>
-                <option value="MN">Mongolia</option>
-                <option value="ME">Montenegro</option>
-                <option value="MS">Montserrat</option>
-                <option value="MA">Morocco</option>
-                <option value="MZ">Mozambique</option>
-                <option value="MM">Myanmar</option>
-                <option value="NA">Namibia</option>
-                <option value="NR">Nauru</option>
-                <option value="NP">Nepal</option>
-                <option value="NL">Netherlands</option>
-                <option value="NC">New Caledonia</option>
-                <option value="NZ">New Zealand</option>
-                <option value="NI">Nicaragua</option>
-                <option value="NE">Niger</option>
-                <option value="NG">Nigeria</option>
-                <option value="NU">Niue</option>
-                <option value="NF">Norfolk Island</option>
-                <option value="MK">North Macedonia</option>
-                <option value="MP">Northern Mariana Islands</option>
-                <option value="NO">Norway</option>
-                <option value="OM">Oman</option>
-                <option value="PK">Pakistan</option>
-                <option value="PW">Palau</option>
-                <option value="PS">Palestine</option>
-                <option value="PA">Panama</option>
-                <option value="PG">Papua New Guinea</option>
-                <option value="PY">Paraguay</option>
-                <option value="PE">Peru</option>
-                <option value="PH">Philippines</option>
-                <option value="PN">Pitcairn</option>
-                <option value="PL">Poland</option>
-                <option value="PT">Portugal</option>
-                <option value="PR">Puerto Rico</option>
-                <option value="QA">Qatar</option>
-                <option value="RE">Réunion</option>
-                <option value="RO">Romania</option>
-                <option value="RU">Russia</option>
-                <option value="RW">Rwanda</option>
-                <option value="BL">Saint Barthélemy</option>
-                <option value="SH">Saint Helena</option>
-                <option value="KN">Saint Kitts and Nevis</option>
-                <option value="LC">Saint Lucia</option>
-                <option value="MF">Saint Martin</option>
-                <option value="PM">Saint Pierre and Miquelon</option>
-                <option value="VC">Saint Vincent and the Grenadines</option>
-                <option value="WS">Samoa</option>
-                <option value="SM">San Marino</option>
-                <option value="ST">Sao Tome and Principe</option>
-                <option value="SA">Saudi Arabia</option>
-                <option value="SN">Senegal</option>
-                <option value="RS">Serbia</option>
-                <option value="SC">Seychelles</option>
-                <option value="SL">Sierra Leone</option>
-                <option value="SG">Singapore</option>
-                <option value="SX">Sint Maarten</option>
-                <option value="SK">Slovakia</option>
-                <option value="SI">Slovenia</option>
-                <option value="SB">Solomon Islands</option>
-                <option value="SO">Somalia</option>
-                <option value="ZA">South Africa</option>
-                <option value="GS">South Georgia</option>
-                <option value="SS">South Sudan</option>
-                <option value="ES">Spain</option>
-                <option value="LK">Sri Lanka</option>
-                <option value="SD">Sudan</option>
-                <option value="SR">Suriname</option>
-                <option value="SJ">Svalbard and Jan Mayen</option>
-                <option value="SE">Sweden</option>
-                <option value="CH">Switzerland</option>
-                <option value="SY">Syria</option>
-                <option value="TW">Taiwan</option>
-                <option value="TJ">Tajikistan</option>
-                <option value="TZ">Tanzania</option>
-                <option value="TH">Thailand</option>
-                <option value="TL">Timor-Leste</option>
-                <option value="TG">Togo</option>
-                <option value="TK">Tokelau</option>
-                <option value="TO">Tonga</option>
-                <option value="TT">Trinidad and Tobago</option>
-                <option value="TN">Tunisia</option>
-                <option value="TR">Turkey</option>
-                <option value="TM">Turkmenistan</option>
-                <option value="TC">Turks and Caicos Islands</option>
-                <option value="TV">Tuvalu</option>
-                <option value="UG">Uganda</option>
-                <option value="UA">Ukraine</option>
-                <option value="AE">United Arab Emirates</option>
-                <option value="GB">United Kingdom</option>
-                <option value="UM">US Minor Outlying Islands</option>
-                <option value="US">United States</option>
-                <option value="UY">Uruguay</option>
-                <option value="UZ">Uzbekistan</option>
-                <option value="VU">Vanuatu</option>
-                <option value="VE">Venezuela</option>
-                <option value="VN">Vietnam</option>
-                <option value="VG">Virgin Islands (British)</option>
-                <option value="VI">Virgin Islands (U.S.)</option>
-                <option value="WF">Wallis and Futuna</option>
-                <option value="EH">Western Sahara</option>
-                <option value="YE">Yemen</option>
-                <option value="ZM">Zambia</option>
-                <option value="ZW">Zimbabwe</option>
-              </select>
-              <div class="error-signpost-message">Please select a valid destination market.</div>
-            </div>
-
-            <div class="lead-engine-field-box">
-              <label for="select-business-alignment">Business Segment Alignment<span class="required-signpost">*</span></label>
-              <select id="select-business-alignment" required>
-                <option value="" disabled selected>Select Business Type</option>
-                <option value="dealer">Authorized Dealer</option>
-                <option value="distributor">Commercial Distributor</option>
-                <option value="retailer">Shop Retailer</option>
-                <option value="home-based">Home-based Seller</option>
-                <option value="ecommerce">E-commerce Seller</option>
-                <option value="designer">Interior Designer / Decorator</option>
-                <option value="hospitality">Hospitality Brand / Hotel Network</option>
-              </select>
-              <div class="error-signpost-message">Please classify your primary operational model.</div>
-            </div>
-            <div class="lead-engine-field-box lead-engine-field-box--span-all">
-              <label for="select-product-matrix">Primary Products of Interest<span class="required-signpost">*</span></label>
-              <select id="select-product-matrix" required>
-                <option value="" disabled selected>Select Product Category</option>
-                <option value="bedding">Bedding (Bedsheets &amp; Pillowcases)</option>
-                <option value="soft-furnishings">Soft Furnishings (Comforters &amp; Quilts)</option>
-                <option value="luxury-bedding">Luxury Bedding (High Thread Count Range)</option>
-                <option value="kids">Kids Collection</option>
-                <option value="curtains">Curtains &amp; Drapes</option>
-                <option value="towels">Towels &amp; Bath Linen</option>
-                <option value="dhurries">Dhurries &amp; Rugs</option>
-              </select>
-              <div class="error-signpost-message">Please specify a collection matrix.</div>
-            </div>
-            <div class="lead-engine-field-box lead-engine-field-box--span-all">
-              <label for="textarea-specifications">Volume Requirements / Specifications<span class="required-signpost">*</span></label>
-              <textarea id="textarea-specifications" rows="5" required placeholder="Please enter your target volume or custom specifications here..."></textarea>
-              <div class="error-signpost-message">Please detail your required sourcing parameters.</div>
-            </div>
-          </div>
-          <button type="submit" class="btn btn--ink lead-engine-field-box--span-all" style="width:100%; margin-top:16px;">Submit Wholesale Enquiry</button>
-          <div class="lead-engine-global-status" id="formSubmissionReportingBox">Enquiry successfully verified. Our B2B management desk will route custom pricing matrices to your corporate inbox within 24 hours.</div>
-        </form>
+          Malharganj, Indore, MP - 452002
+        </p>
+        <p style="margin-bottom: 10px;"><a href="tel:+917869916333" style="color: inherit; text-decoration: none;">☏ +91 78699 16333</a></p>
+        <p><a href="mailto:nivrabytheporwals@gmail.com" style="color: inherit; text-decoration: none;">✉ nivrabytheporwals@gmail.com</a></p>
       </div>
     </div>
-  </section>
-
-  <footer class="corporate-landscape-footer">
-    <div class="wrap">
-      <div class="landscape-footer-grid">
-        <div class="landscape-footer-column">
-          <h4 style="font-family:'Fraunces', serif; font-size:22px; text-transform:none; letter-spacing:0; margin-bottom:14px;">Nivrá by Porwals</h4>
-          <p>Premium B2B handloom manufacturing and home furnishing logistics matrices configured safely for scale commercial distribution channels since 1978.</p>
-        </div>
-        <div class="landscape-footer-column">
-          <h4>Navigation</h4>
-          <ul class="landscape-footer-links-list">
-            <li><a href="#legacy-section">Our Legacy</a></li>
-            <li><a href="#why-partner-section">Why Partner With Us</a></li>
-            <li><a href="#product-matrix-section">Product Range</a></li>
-            <li><a href="#sourcing-path-section">Sourcing Journey</a></li>
-            <li><a href="#faq-matrix-section">Technical FAQ</a></li>
-          </ul>
-        </div>
-        <div class="landscape-footer-column">
-          <h4>Product Lines</h4>
-          <ul class="landscape-footer-links-list">
-            <li><a href="#product-matrix-section">Bedding Collections</a></li>
-            <li><a href="#product-matrix-section">Soft Furnishings</a></li>
-            <li><a href="#product-matrix-section">Luxury Linens</a></li>
-            <li><a href="#product-matrix-section">Curtains &amp; Drapes</a></li>
-            <li><a href="#product-matrix-section">Dhurries &amp; Fine Rugs</a></li>
-          </ul>
-        </div>
-        <div class="landscape-footer-column">
-          <h4>Corporate Support</h4>
-          <ul class="landscape-footer-links-list">
-            <li><a href="#lead-engine-section">Request B2B Access</a></li>
-            <li><a href="#capture-zone-section">Download Catalogue</a></li>
-            <li><a href="#faq-matrix-section">Shipping &amp; Logistics Map</a></li>
-            <li><a href="#faq-matrix-section">B2B Return Regulations</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="landscape-footer-seo-sentence">
-        Wholesale handloom bedding and home furnishings suppliers for retailers, distributors, dealers and designers.
-      </div>
-      
-      <div class="landscape-footer-bottom-bar">
-        <div>&copy; 2026 Nivrá by Porwals. All rights reserved. Managed B2B Sourcing Infrastructure.</div>
-        <div class="landscape-footer-socials-matrix">
-          <a href="https://wa.me/917869916333" class="social-asset-link" target="_blank" rel="noopener" aria-label="Connect with our WhatsApp Business Desk" title="WhatsApp Business Interface">
-            <span style="font-weight:700; font-size:14px;">WA</span>
-          </a>
-          <a href="#" class="social-asset-link" aria-label="LinkedIn Professional Network Profile"><span>In</span></a>
-          <a href="#" class="social-asset-link" aria-label="Instagram Corporate Lookbook Portfolio"><span>Ig</span></a>
-        </div>
-      </div>
+    
+    <div class="landscape-footer-seo-sentence">
+      Wholesale handloom bedding and home furnishings from Indore, India.
     </div>
-  </footer>
-
-  <div class="lightbox-modal-shell" id="globalLightboxModalSystem" role="dialog" aria-hidden="true">
-    <div class="lightbox-modal-box">
-      <button class="lightbox-modal-close-trigger" id="lightboxCloseTriggerElement" aria-label="Close Preview ModalWindow">&times;</button>
-      <div class="lightbox-modal-gallery-zone">
-        <img src="" alt="Active Dynamic Content Frame" class="lightbox-modal-main-view" id="lightboxMainContentDisplay">
-        <div class="lightbox-modal-thumbnails-strip" id="lightboxThumbnailsStripContainer"></div>
+    
+    <div class="landscape-footer-bottom-bar">
+      <div>© 2026 Nivrá by Porwals. All Rights Reserved.</div>
+      <div style="display: flex; gap: 15px;">
+        <a href="#faq-matrix" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+        <a href="#faq-matrix" style="color: inherit; text-decoration: none;">Returns</a>
+        <a href="#faq-matrix" style="color: inherit; text-decoration: none;">Shipping</a>
       </div>
-      <div class="lightbox-modal-details-zone">
-        <div>
-          <h3 id="lightboxContentTitle">Product Title</h3>
-          <div class="modal-classification-line" id="lightboxContentClassification">Category Segment</div>
-          <p class="modal-paragraph-content" id="lightboxContentDescription">Complete descriptive verification material configuration.</p>
-        </div>
-        <a href="#lead-engine-section" class="btn btn--ink" id="lightboxDirectActionCta" style="width:100%; text-align:center;">Request Pricing Profile</a>
+      <div class="landscape-footer-socials-matrix">
+        <a href="https://wa.me/917869916333" target="_blank" rel="noopener" aria-label="WhatsApp Business Interface">WA</a>
+        <a href="#" aria-label="LinkedIn Profile">In</a>
+        <a href="#" aria-label="Instagram Portfolio">Ig</a>
       </div>
     </div>
   </div>
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-
-  <script>
-    // 1. MOBILE MENU SCROLL INTERACTION FRAMEWORK
-    const mobileTrigger = document.getElementById('hamburgerMobileTrigger');
-    const menuWrapperElement = document.getElementById('corporateMenuElement');
-    
-    if (mobileTrigger && menuWrapperElement) {
-      mobileTrigger.addEventListener('click', (event) => {
-        event.stopPropagation();
-        menuWrapperElement.classList.toggle('is-open-state');
-      });
-      document.addEventListener('click', () => {
-        menuWrapperElement.classList.remove('is-open-state');
-      });
-    }
-
-    // 2. TECHNICAL ACCORDION PROFILE MANAGER
-    function evaluateAccordionStateTrigger(clickedButton) {
-      const activeItem = clickedButton.parentElement;
-      const disclosurePanel = clickedButton.nextElementSibling;
-      const currentlyActiveState = activeItem.classList.contains('active-state');
+<div id="productCatalogModal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close" id="closeCatalogBtn" aria-label="Close popup">×</button>
+    <div class="modal-body">
       
-      document.querySelectorAll('.accordion-matrix-item').forEach(itemElement => {
-        itemElement.classList.remove('active-state');
-        itemElement.querySelector('.accordion-matrix-panel').style.maxHeight = null;
-      });
-
-      if (!currentlyActiveState) {
-        activeItem.classList.add('active-state');
-        disclosurePanel.style.maxHeight = disclosurePanel.scrollHeight + "px";
-      }
-    }
-
-    // 3. LOW-INTENT CAPTURE EMAIL TRANSACTION HANDLER
-    function executeCatalogConversionProtocol(event) {
-      event.preventDefault();
-      const userEmailAddress = document.getElementById('conversionEmailInput').value.trim();
-      const responseReportingBox = document.getElementById('conversionStatusReportingBox');
+      <div class="modal-gallery">
+        <div class="modal-main-img-wrap">
+          <img id="modalMainImage" src="" alt="Catalog Main View">
+        </div>
+        <div id="modalThumbnailsContainer" class="modal-thumbnails"></div>
+      </div>
       
-      responseReportingBox.style.display = 'block';
-      if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(userEmailAddress)) {
-        responseReportingBox.style.color = '#2E7D32';
-        responseReportingBox.textContent = "Thank you. Your direct B2B catalog access link is on its way to your inbox.";
-        document.getElementById('catalogConversionFormElement').reset();
-      } else {
-        responseReportingBox.style.color = 'var(--terracotta)';
-        responseReportingBox.textContent = "Please provide a valid corporate email structure.";
-      }
-    }
+      <div class="modal-info">
+        <span id="modalProductCat" class="modal-cat">Category</span>
+        <h3 id="modalProductTitle">Product Title</h3>
+        <p id="modalProductDesc">Product description will display perfectly here.</p>
+        <a href="#contact" id="modalEnquireBtn" class="modal-cta">Enquire For Bulk Sourcing</a>
+      </div>
 
-    // 4. ARCHITECTURAL VALIDATION ENGINE CONFIGURATIONS (STRICT REGEX MATRICES)
-    const verificationCoreRegexEngine = {
-      'alpha-only': stringValue => /^[A-Za-z\s.'-]{2,}$/.test(stringValue),
-      'email-structure': stringValue => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(stringValue),
-      'numeric-only': stringValue => /^[0-9\s-]{7,15}$/.test(stringValue) 
-    };
+    </div>
+  </div>
+</div>
 
-    function executeFormValidationProtocol(event) {
-      event.preventDefault();
-      const activeFormInstance = document.getElementById('corporateLeadEngineForm');
-      let overallFormIntegrityState = true;
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+// ── NAVBAR SCROLL ──
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── COMPLETELY NEW SIDEBAR ENGINE ──
+const menuToggleBtn = document.getElementById('menuToggleBtn');
+const navLinksContainer = document.querySelector('.nav-links');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+function openMobileMenu() {
+  menuToggleBtn.classList.add('is-active');
+  navLinksContainer.classList.add('is-open');
+  sidebarOverlay.classList.add('is-visible');
+  document.body.classList.add('menu-open');
+}
+
+function closeMobileMenu() {
+  menuToggleBtn.classList.remove('is-active');
+  navLinksContainer.classList.remove('is-open');
+  sidebarOverlay.classList.remove('is-visible');
+  document.body.classList.remove('menu-open');
+}
+
+menuToggleBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (navLinksContainer.classList.contains('is-open')) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+});
+
+sidebarOverlay.addEventListener('click', closeMobileMenu);
+
+// Modern Scroll Optimization Handling
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    if (window.innerWidth <= 800) {
+      e.preventDefault(); 
       
-      activeFormInstance.querySelectorAll('input, select, textarea').forEach(inputNode => {
-        const structuralFieldBox = inputNode.closest('.lead-engine-field-box');
-        if (!structuralFieldBox) return;
-        
-        let fieldValidityState = true;
-        const baselineCleanedValue = inputNode.value.trim();
-        
-        if (inputNode.hasAttribute('required') && !baselineCleanedValue) {
-          fieldValidityState = false;
-        }
-        
-        const targetedRuleToken = inputNode.getAttribute('data-validation-rule');
-        if (fieldValidityState && targetedRuleToken && baselineCleanedValue && verificationCoreRegexEngine[targetedRuleToken]) {
-          if (!verificationCoreRegexEngine[targetedRuleToken](baselineCleanedValue)) {
-            fieldValidityState = false;
-          }
-        }
-        
-        structuralFieldBox.classList.toggle('invalid-state', !fieldValidityState);
-        if (!fieldValidityState) overallFormIntegrityState = false;
-      });
-
-      if (overallFormIntegrityState) {
-        const displayReportingBox = document.getElementById('formSubmissionReportingBox');
-        displayReportingBox.style.display = 'block';
-        displayReportingBox.classList.add('success-state');
-        activeFormInstance.reset();
+      const targetSelector = this.getAttribute('href');
+      const targetElement = document.querySelector(targetSelector);
+      
+      closeMobileMenu();
+      
+      if (targetElement) {
         setTimeout(() => {
-          window.scrollTo({ top: displayReportingBox.offsetTop - 140, behavior: 'smooth' });
-        }, 50);
+          const headerHeight = 75; 
+          const elementTargetY = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          
+          window.scrollTo({
+            top: elementTargetY,
+            behavior: 'smooth'
+          });
+        }, 250); 
+      }
+    }
+  });
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 800) {
+    closeMobileMenu();
+  }
+});
+
+// ── INITIALIZE SWIPER FOR TESTIMONIALS ──
+const swiper = new Swiper('.testimonials-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 4500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    768: { slidesPerView: 2, spaceBetween: 30 },
+    1024: { slidesPerView: 3, spaceBetween: 30 }
+  }
+});
+
+// ── ACCORDION TRIGGER FUNCTION ──
+function evaluateAccordionStateTrigger(clickedButton) {
+  const activeItem = clickedButton.parentElement;
+  const disclosurePanel = clickedButton.nextElementSibling;
+  const currentlyActiveState = activeItem.classList.contains('active-state');
+  
+  document.querySelectorAll('.accordion-matrix-item').forEach(itemElement => {
+    itemElement.classList.remove('active-state');
+    itemElement.querySelector('.accordion-matrix-panel').style.maxHeight = null;
+  });
+
+  if (!currentlyActiveState) {
+    activeItem.classList.add('active-state');
+    disclosurePanel.style.maxHeight = disclosurePanel.scrollHeight + "px";
+  }
+}
+
+// ── CATALOGUE EMAIL SUBSCRIPTION ──
+function executeCatalogConversionProtocol(event) {
+  event.preventDefault();
+  const userEmailAddress = document.getElementById('conversionEmailInput').value.trim();
+  const responseReportingBox = document.getElementById('conversionStatusReportingBox');
+  
+  responseReportingBox.style.display = 'block';
+  if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(userEmailAddress)) {
+    responseReportingBox.style.color = '#2E7D32';
+    responseReportingBox.textContent = "Thank you. Your direct B2B catalog access link is on its way to your inbox.";
+    document.getElementById('catalogConversionFormElement').reset();
+  } else {
+    responseReportingBox.style.color = 'var(--terracotta)';
+    responseReportingBox.textContent = "Please provide a valid corporate email architecture.";
+  }
+}
+
+// ── RIGOROUS INTAKE REGEX FORM VALIDATION ──
+const verificationCoreRegexEngine = {
+  'alpha': val => /^[A-Za-z\s.'-]{2,}$/.test(val),
+  'email': val => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val),
+  'numeric': val => /^[0-9\s-]{7,15}$/.test(val)
+};
+
+function handleValidationAndSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('enquiryForm');
+  let isFormValid = true;
+
+  form.querySelectorAll('input, select, textarea').forEach(inputNode => {
+    const group = inputNode.closest('.form-group');
+    if (!group) return;
+
+    let isFieldValid = true;
+    const cleanValue = inputNode.value.trim();
+
+    if (inputNode.hasAttribute('required') && !cleanValue) {
+      isFieldValid = false;
+    }
+
+    const rule = inputNode.getAttribute('data-rule');
+    if (isFieldValid && rule && cleanValue && verificationCoreRegexEngine[rule]) {
+      if (!verificationCoreRegexEngine[rule](cleanValue)) {
+        isFieldValid = false;
       }
     }
 
-    // 5. INTERACTIVE PRODUCT GALLEY PREVIEW MODAL WINDOW CORE PROTOCOL
-    const modalShellNode = document.getElementById('globalLightboxModalSystem');
-    const modalCloseButtonNode = document.getElementById('lightboxCloseTriggerElement');
+    group.classList.toggle('invalid-state', !isFieldValid);
+    if (!isFieldValid) isFormValid = false;
+  });
 
-    if (modalShellNode && modalCloseButtonNode) {
-      document.querySelectorAll('.showcase-product-card').forEach(productCardElement => {
-        productCardElement.addEventListener('click', () => {
-          const contentTitle = productCardElement.getAttribute('data-modal-title');
-          const contentClassification = productCardElement.getAttribute('data-modal-category');
-          const contentDescription = productCardElement.getAttribute('data-modal-description');
-          const contentImagesArray = JSON.parse(productCardElement.getAttribute('data-modal-images') || '[]');
+  if (!isFormValid) return;
 
-          document.getElementById('lightboxContentTitle').textContent = contentTitle;
-          document.getElementById('lightboxContentClassification').textContent = contentClassification;
-          document.getElementById('lightboxContentDescription').textContent = contentDescription;
+  const btn = document.getElementById('submitBtn');
+  const btnText = btn.querySelector('.btn-text');
+  
+  btn.classList.add('is-loading');
+  btnText.textContent = 'Sending...';
+  btn.disabled = true;
 
-          const primeImageDisplayNode = document.getElementById('lightboxMainContentDisplay');
-          const thumbnailsStripContainerNode = document.getElementById('lightboxThumbnailsStripContainer');
-          thumbnailsStripContainerNode.innerHTML = '';
+  const formData = new FormData(form);
 
-          if (contentImagesArray.length > 0) {
-            primeImageDisplayNode.src = contentImagesArray[0];
-            contentImagesArray.forEach((imageUrlString, indexPosition) => {
-              const thumbnailImageNode = document.createElement('img');
-              thumbnailImageNode.src = imageUrlString;
-              thumbnailImageNode.alt = `${contentTitle} variant view asset ${indexPosition + 1}`;
-              thumbnailImageNode.classList.add('lightbox-modal-thumbnail-item');
-              if (indexPosition === 0) thumbnailImageNode.classList.add('active-thumb-state');
+  fetch('https://formsubmit.co/ajax/nivrabytheporwals@gmail.com', {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => response.json())
+  .then(data => {
+    form.style.opacity = '0';
+    form.style.visibility = 'hidden';
+    
+    setTimeout(() => {
+      form.style.display = 'none';
+      const successState = document.getElementById('successState');
+      successState.classList.add('active');
+      
+      form.reset();
+      btn.classList.remove('is-loading');
+      btnText.textContent = 'Send Sourcing Enquiry';
+      btn.disabled = false;
+    }, 400);
+  })
+  .catch(error => {
+    console.error('Error submitting form:', error);
+    btn.classList.remove('is-loading');
+    btnText.textContent = 'Error. Try Again.';
+    btn.disabled = false;
+    alert("There was an issue sending your message. Please try again later.");
+  });
+}
 
-              thumbnailImageNode.addEventListener('click', (thumbnailClickEvent) => {
-                thumbnailClickEvent.stopPropagation();
-                primeImageDisplayNode.style.opacity = '0.3';
-                setTimeout(() => {
-                  primeImageDisplayNode.src = imageUrlString;
-                  primeImageDisplayNode.style.opacity = '1';
-                }, 120);
-                document.querySelectorAll('.lightbox-modal-thumbnail-item').forEach(thumbNode => thumbNode.classList.remove('active-thumb-state'));
-                thumbnailImageNode.classList.add('active-thumb-state');
-              });
-              thumbnailsStripContainerNode.appendChild(thumbnailImageNode);
-            });
-          }
+// ── PRODUCT CATALOG POPUP LOGIC ──
+const catalogModal = document.getElementById('productCatalogModal');
+const closeCatalogBtn = document.getElementById('closeCatalogBtn');
+const modalMainImage = document.getElementById('modalMainImage');
+const modalThumbnailsContainer = document.getElementById('modalThumbnailsContainer');
+const modalProductCat = document.getElementById('modalProductCat');
+const modalProductTitle = document.getElementById('modalProductTitle');
+const modalProductDesc = document.getElementById('modalProductDesc');
+const modalEnquireBtn = document.getElementById('modalEnquireBtn');
 
-          modalShellNode.classList.add('is-active-state');
-          document.body.style.overflow = 'hidden';
+document.querySelectorAll('.product-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.classList.contains('product-link')) return;
+
+    const category = card.getAttribute('data-cat');
+    const title = card.getAttribute('data-title');
+    const desc = card.getAttribute('data-desc');
+    const imagesString = card.getAttribute('data-images');
+    const imagesArray = imagesString ? imagesString.split(',').map(img => img.trim()) : [];
+
+    modalProductCat.textContent = category;
+    modalProductTitle.textContent = title;
+    modalProductDesc.textContent = desc;
+    modalThumbnailsContainer.innerHTML = '';
+
+    if (imagesArray.length > 0) {
+      modalMainImage.src = imagesArray[0];
+
+      imagesArray.forEach((imgUrl, index) => {
+        const thumbImg = document.createElement('img');
+        thumbImg.src = imgUrl;
+        thumbImg.alt = `${title} view ${index + 1}`;
+        thumbImg.classList.add('modal-thumb');
+        if (index === 0) thumbImg.classList.add('active');
+
+        thumbImg.addEventListener('click', (thumbEvent) => {
+          thumbEvent.stopPropagation(); 
+          modalMainImage.style.opacity = '0.3';
+          setTimeout(() => {
+            modalMainImage.src = imgUrl;
+            modalMainImage.style.opacity = '1';
+          }, 150);
+          document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
+          thumbImg.classList.add('active');
         });
-      });
 
-      function executeModalCloseSequence() {
-        modalShellNode.classList.remove('is-active-state');
-        document.body.style.overflow = '';
-      }
-
-      modalCloseButtonNode.addEventListener('click', executeModalCloseSequence);
-      modalShellNode.addEventListener('click', (clickEvent) => {
-        if (clickEvent.target === modalShellNode) executeModalCloseSequence();
+        modalThumbnailsContainer.appendChild(thumbImg);
       });
-      document.getElementById('lightboxDirectActionCta').addEventListener('click', executeModalCloseSequence);
     }
 
-    // 6. INITIALIZE PARTNER VOICES SWIPER (OPTIMIZED WITH INFINITE LOOP & AUTO SCROLL)
-    const testimonialsSwiper = new Swiper('.testimonials-swiper-container', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      grabCursor: true,
-      
-      // 1. Infinite Loop Feature Activation
-      loop: true, 
-      
-      // 2. Auto Scroll / Autoplay Feature Configuration
-      autoplay: {
-        delay: 3000,                  // 3 seconds m automatic next slide chalegi
-        disableOnInteraction: false,   // User manually swipe kare tab bhi auto-scroll band nahi hoga
-        pauseOnMouseEnter: true        // Mouse card par hover hone par slide temporary ruk jayegi (Better UX)
-      },
-      
-      pagination: {
-        el: '.testimonials-swiper-container .swiper-pagination',
-        clickable: true,
-      },
-      
-      // Responsive Breakpoints Map
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 24
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 32
-        }
-      }
-    });
-  </script>
+    catalogModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeCatalogModal() {
+  catalogModal.classList.remove('active');
+  if (!navLinksContainer.classList.contains('is-open')) {
+    document.body.style.overflow = '';
+  }
+}
+
+closeCatalogBtn.addEventListener('click', closeCatalogModal);
+catalogModal.addEventListener('click', (e) => {
+  if (e.target === catalogModal) closeCatalogModal();
+});
+modalEnquireBtn.addEventListener('click', closeCatalogModal);
+</script>
+
 </body>
 </html>
