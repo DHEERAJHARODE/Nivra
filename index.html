@@ -28,7 +28,10 @@
     --line-light: #DDCDB4;
     --line-dark: #473529;
   }
-
+  .highlight-text {
+  color: #ffffff;
+  font-weight: 100; 
+  }
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   html { scroll-behavior: smooth; }
@@ -394,12 +397,22 @@
     margin: 0 auto 45px;
   }
 
-  .why-partner-header h2 {
-    font-family: "Fraunces", "Cormorant Garamond", serif;
-    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+ .why-partner-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
     color: var(--deep-brown);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  
+  .why-partner-header .why-partner-tagline-small {
+    font-size: 13px;
+    color: var(--terracotta);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
     margin-bottom: 18px;
-    font-weight: 400;
   }
 
   .why-partner-header p {
@@ -625,40 +638,96 @@
     transform: translateY(0);
   }
 
-  /* ── ASSOCIATED BRANDS ALIGNMENT BAR ── */
+  /* ── ASSOCIATED BRANDS ALIGNMENT BAR (INFINITE TICKER UPGRADE) ── */
   .associated-brands-banner { 
     background-color: var(--cream); 
     border-top: 1px solid var(--line-light); 
-    border-bottom: 1px solid var(--line-light); 
-    padding: clamp(24px, 4vw, 40px) 0; 
+   /* border-bottom: 5px solid var(--deep-brown);*/
+    padding: 10px 0 20px 0; /* Padding ko badhaya taaki height badi dikhe */
     text-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
   }
   
-  .associated-brands-banner h3 {
-    font-family: "Fraunces", "Cormorant Garamond", serif;
-    font-size: clamp(20px, 3vw, 26px);
+.associated-brands-banner h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
     text-align: center;
-    margin-bottom: 24px;
-    font-weight: 400;
-    color: var(--deep-brown);
+    line-height: 1.2;
+    margin-bottom: 45px; /* Spacing behtar karne ke liye bada margin */
+    color: #808080; 
+  }
+
+  /* Aur iske sath ye italic/gold combination add karein */
+  .associated-brands-banner h3 em {
+    font-style: italic;
+    color: var(--gold); 
+  }
+
+  .marquee-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    user-select: none;
+  }
+
+  /* Gradient masks to fade logos cleanly on the left and right edges */
+  .marquee-wrapper::before,
+  .marquee-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: clamp(30px, 8vw, 100px);
+    height: 100%;
+    z-index: 2;
+  }
+  .marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--cream), transparent);
+  }
+  .marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--cream), transparent);
   }
   
   .associated-brands-flex { 
     display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
     align-items: center; 
-    gap: clamp(20px, 6vw, 60px); 
+    justify-content: space-around;
+    gap: clamp(40px, 8vw, 80px); 
+    min-width: 100%;
+    flex-shrink: 0;
+    animation: marqueeTicker 25s linear infinite;
+  }
+
+  /* Pauses ticker movement beautifully when a client hovers over a logo */
+  .marquee-wrapper:hover .associated-brands-flex {
+    animation-play-state: paused;
   }
   
   .associated-brand-text-logo { 
     font-family: "Jost", sans-serif; 
-    font-size: clamp(14px, 2vw, 17px); 
+    font-size: clamp(15px, 2.2vw, 19px); 
     font-weight: 600; 
-    letter-spacing: 0.2em; 
+    letter-spacing: 0.22em; 
     text-transform: uppercase; 
     color: var(--charcoal); 
-    opacity: 0.7; 
+    opacity: 0.65; 
+    white-space: nowrap;
+    transition: opacity 0.3s, color 0.3s;
+  }
+
+  .associated-brand-text-logo:hover {
+    opacity: 1;
+    color: var(--terracotta);
+  }
+
+  @keyframes marqueeTicker {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
   }
 
   /* ── SOURCING JOURNEY / HOW IT WORKS ── */
@@ -706,7 +775,7 @@
 
   /* ── QUALITY ASSURANCE SEGMENT ── */
   #quality-heritage {
-    background-color: #1C120C;
+    background-color: #2C1A0E;
     color: rgba(245,240,232,0.8);
     padding: clamp(60px, 8vw, 100px) 0;
   }
@@ -799,7 +868,7 @@
 
   /* ── OVERSEAS BUYERS MATRIX ── */
   #overseas-buyers {
-    background-color: #241710;
+    background-color: #2C1A0E;
     color: rgba(245,240,232,0.8);
     padding: clamp(60px, 8vw, 100px) 0;
   }
@@ -1342,8 +1411,8 @@
       <h2>A Trusted Wholesale Handloom Partner Since 1978</h2>
       <div class="legacy-tagline-small">Threads woven through generations of mastery</div>
       <div class="legacy-divider"></div>
-      <p>Established in 1978, Nivrá by Porwals carries forward a family tradition deep in Indian textile craft. We stand at the intersection of timeless handloom heritage and the rigorous demands of global commercial interior projects.</p>
-      <p>Today, we serve as a trusted B2B sourcing matrix for interior designers, hospitality labels, and major retail networks across Indore and cross-India states. Every order carries the fingerprint of its maker — a guarantee of authentic structural durability.</p>
+      <p>Since 1978, Nivra has stood at the intersection of timeless Indian textile heritage and the evolving demands of global interiors.</p>
+      <p>Today, we are a trusted B2B sourcing partner for interior designers, hospitality brands, and retail chains across Indore and other states. Every piece carries the fingerprint of its maker — a guarantee of authenticity you cannot find in machine-made alternatives.</p>
       <a href="#why-partner" class="cta-link">Explore Partnership >>></a>
     </div>
   </div>
@@ -1376,9 +1445,11 @@
 <section id="products">
   <div class="wrap products-inner">
     <div class="section-header">
-      <p class="section-label" style="color:var(--gold)">Our Range</p>
-      <h2>Wholesale Bedding, Comforters, Curtains, Pillows, and Home Furnishings</h2>
-      <p>Source premium bedsheets, comforters, curtains, towels, dhurries and a kids range in bulk. Minimum order quantities available for wholesale and project sourcing. Custom colorways and weave patterns on request.</p>
+      <p class="section-label" style="color:var(--gold)">Product Categories</p>
+      <h2 class="some-class">
+      <span class="highlight-text">Crafted for <em>distinguished</em> spaces</span>
+      </h2>
+      <p>Minimum order quantities available for wholesale and project sourcing. Custom colorways and weave patterns on request.</p>
     </div>
     
     <div class="products-grid">
@@ -1516,9 +1587,18 @@
 </section>
 
 <div class="associated-brands-banner">
-  <div class="wrap">
-    <h3>Brands We Are Associated With</h3>
+  <h3>Brands We Are <em>Associated With</em></h3>
+  <div class="marquee-wrapper">
     <div class="associated-brands-flex">
+      <div class="associated-brand-text-logo">Trident</div>
+      <div class="associated-brand-text-logo">Welspun</div>
+      <div class="associated-brand-text-logo">Bombay Dyeing</div>
+      <div class="associated-brand-text-logo">Spaces</div>
+      <div class="associated-brand-text-logo">Florida</div>
+      <div class="associated-brand-text-logo">Signature</div>
+      <div class="associated-brand-text-logo">D'Decor</div>
+    </div>
+    <div class="associated-brands-flex" aria-hidden="true">
       <div class="associated-brand-text-logo">Trident</div>
       <div class="associated-brand-text-logo">Welspun</div>
       <div class="associated-brand-text-logo">Bombay Dyeing</div>
@@ -2529,7 +2609,7 @@ function handleValidationAndSubmit(e) {
     }
 
     group.classList.toggle('invalid-state', !isFieldValid);
-    if (!isFieldValid) isFormValid = false;
+    if (!isFormValid) isFormValid = false;
   });
 
   if (!isFormValid) return;
