@@ -604,10 +604,11 @@
   }
 
   /* ── ASSOCIATED BRANDS ALIGNMENT BAR ── */
+  /* ── ASSOCIATED BRANDS ALIGNMENT BAR ── */
   .associated-brands-banner { 
     background-color: var(--cream); 
     border-top: 1px solid var(--line-light); 
-    padding: 20px 0 30px 0; 
+    padding: 30px 0 40px 0; 
     text-align: center;
     overflow: hidden;
     position: relative;
@@ -634,6 +635,7 @@
     width: 100%;
     position: relative;
     user-select: none;
+    gap: clamp(50px, 8vw, 100px); /* Ensures equal gap between Set 1 and Set 2 */
   }
 
   .marquee-wrapper::before,
@@ -641,9 +643,10 @@
     content: "";
     position: absolute;
     top: 0;
-    width: clamp(30px, 8vw, 100px);
+    width: clamp(40px, 10vw, 120px);
     height: 100%;
     z-index: 2;
+    pointer-events: none;
   }
   .marquee-wrapper::before {
     left: 0;
@@ -657,9 +660,9 @@
   .associated-brands-flex { 
     display: flex; 
     align-items: center; 
-    justify-content: space-around;
-    gap: clamp(40px, 8vw, 80px); 
-    min-width: 100%;
+    /* justify-content hata diya hai taaki gap exactly kaam kare */
+    gap: clamp(50px, 8vw, 100px); /* Exactly same gap as wrapper */
+    min-width: max-content; /* Ensure items don't stretch or squeeze */
     flex-shrink: 0;
     animation: marqueeTicker 25s linear infinite;
   }
@@ -668,29 +671,26 @@
     animation-play-state: paused;
   }
   
-  .associated-brand-text-logo { 
-    font-family: "Jost", sans-serif; 
-    font-size: clamp(15px, 2.2vw, 19px); 
-    font-weight: 600; 
-    letter-spacing: 0.22em; 
-    text-transform: uppercase; 
-    color: var(--charcoal); 
-    opacity: 0.65; 
-    white-space: nowrap;
-    transition: opacity 0.3s, color 0.3s;
+  /* LOGO SIZING UPDATE */
+  .associated-brand-img {
+    height: clamp(60px, 10vw, 95px); /* Height kafi badha di hai (Max 95px) */
+    width: auto;
+    max-width: 250px; /* Max-width limit bhi badha di hai */
+    object-fit: contain;
+    opacity: 1; 
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
   }
 
-  /* Note for Developer: Replace these text blocks with <img> tags once brand logos are ready */
-  .associated-brand-text-logo:hover {
-    opacity: 1;
-    color: var(--terracotta);
+  .associated-brand-img:hover {
+    transform: scale(1.1); /* Hover effect thoda aur smooth aur bada kiya hai */
   }
 
   @keyframes marqueeTicker {
     0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
+    /* Transform calc update kiya hai gap ko handle karne ke liye */
+    100% { transform: translateX(calc(-100% - clamp(50px, 8vw, 100px))); }
   }
-
   /* ── SOURCING JOURNEY / HOW IT WORKS ── */
   #how-it-works {
     background: var(--warm-white);
@@ -1542,23 +1542,23 @@
 <div class="associated-brands-banner">
   <h3><span class="brand-highlight">Brands</span> We Are Associated With</h3>
   <div class="marquee-wrapper">
+    <!-- Set 1 for marquee -->
     <div class="associated-brands-flex">
-      <div class="associated-brand-text-logo">Trident</div>
-      <div class="associated-brand-text-logo">Welspun</div>
-      <div class="associated-brand-text-logo">Bombay Dyeing</div>
-      <div class="associated-brand-text-logo">Spaces</div>
-      <div class="associated-brand-text-logo">Florida</div>
-      <div class="associated-brand-text-logo">Signature</div>
-      <div class="associated-brand-text-logo">D'Decor</div>
+      <img src="./Brand logos/bombay-dyeing-vector-logo.png" alt="Bombay Dyeing" class="associated-brand-img">
+      <img src="./Brand logos/decor-logo-png_seeklogo-401197.png" alt="D'Decor" class="associated-brand-img">
+      <img src="./Brand logos/florida.png" alt="Florida" class="associated-brand-img">
+      <img src="./Brand logos/Spaces.png" alt="Spaces" class="associated-brand-img">
+      <img src="./Brand logos/trident logo.png" alt="Trident" class="associated-brand-img">
+      <img src="./Brand logos/Welspun-logo.jpg" alt="Welspun" class="associated-brand-img">
     </div>
-    <div class="associated-brands-flex" aria-hidden="true">
-      <div class="associated-brand-text-logo">Trident</div>
-      <div class="associated-brand-text-logo">Welspun</div>
-      <div class="associated-brand-text-logo">Bombay Dyeing</div>
-      <div class="associated-brand-text-logo">Spaces</div>
-      <div class="associated-brand-text-logo">Florida</div>
-      <div class="associated-brand-text-logo">Signature</div>
-      <div class="associated-brand-text-logo">D'Decor</div>
+    <!-- Set 2 for infinite scroll loop (Exact duplicate of Set 1) -->
+     <div class="associated-brands-flex" aria-hidden="true">
+      <img src="./Brand logos/bombay-dyeing-vector-logo.png" alt="Bombay Dyeing" class="associated-brand-img">
+      <img src="./Brand logos/decor-logo-png_seeklogo-401197.png" alt="D'Decor" class="associated-brand-img">
+      <img src="./Brand logos/florida.png" alt="Florida" class="associated-brand-img">
+      <img src="./Brand logos/Spaces.png" alt="Spaces" class="associated-brand-img">
+      <img src="./Brand logos/trident logo.png" alt="Trident" class="associated-brand-img">
+      <img src="./Brand logos/Welspun-logo.jpg" alt="Welspun" class="associated-brand-img">
     </div>
   </div>
 </div>
@@ -1566,7 +1566,7 @@
 <section id="how-it-works">
   <div class="wrap">
     <div class="section-header" style="margin-bottom: 20px;">
-      <p class="section-label">Clear Operations</p>
+      <p class="section-label" style="color: #C49A3C;">Clear Operations</p>
       <h2><span class="sourcing-highlight">Sourcing</span> With Us Is Simple</h2>
     </div>
     <div class="operational-steps-grid">
