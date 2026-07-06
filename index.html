@@ -14,6 +14,17 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style>
+        /* Chrome, Safari, Edge, Opera ke arrows hatane ke liye */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox ke liye */
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
   :root {
     --cream: #F5F0E8;
     --warm-white: #FBF8F3;
@@ -1391,7 +1402,7 @@
   <div class="wrap">
     <div class="why-partner-header">
       <p class="section-label">The B2B Advantage</p>
-      <h2>Why Buy From Nivrá by Porwals</h2>
+      <h2>Why Buy From Nivrá</h2>
       <p>When you source from Nivrá, you work directly with a family that has been in handloom and home furnishings for generations. You get prices that come straight from the source, a wide and ready range, and a team that understands both retail and wholesale.</p>
     </div>
     <div class="value-cards-grid">
@@ -1859,19 +1870,22 @@
         </div>
 
         <div class="form-group">
-          <label>Phone Number / WhatsApp*</label>
-          <div class="phone-field-group">
-            <select id="form-country-code" aria-label="Country Code">
-              <option value="+91" selected>IN (+91)</option>
-              <option value="+1">US (+1)</option>
-              <option value="+44">UK (+44)</option>
-              <option value="+971">AE (+971)</option>
-              <option value="+61">AU (+61)</option>
-            </select>
-            <input type="tel" id="form-phone" name="Phone Number" required data-rule="numeric" placeholder="Digits only">
-          </div>
-          <div class="form-error-msg">Please enter a valid phone number (7-15 digits).</div>
+        <label>Phone Number / WhatsApp*</label>
+        <div class="phone-field-group">
+          <select id="form-country-code" aria-label="Country Code">
+            <option value="+91" selected>IN (+91)</option>
+            <option value="+1">US (+1)</option>
+            <option value="+44">UK (+44)</option>
+            <option value="+971">AE (+971)</option>
+            <option value="+61">AU (+61)</option>
+          </select>
+          <!-- Yahan par oninput ka use karke 10 digits tak limit lagayi gayi hai -->
+          <input type="number" id="form-phone" name="Phone Number" required 
+                oninput="javascript: if (this.value.length > 10) this.value = this.value.slice(0, 10);" 
+                placeholder="10 digit number">
         </div>
+        <div class="form-error-msg">Please enter a valid 10-digit phone number.</div>
+      </div>
 
         <div class="form-row">
           <div class="form-group">
@@ -1950,7 +1964,7 @@
   <div class="wrap">
     <div class="landscape-footer-grid">
       <div class="landscape-footer-column">
-        <h3 style="font-family:'Fraunces', serif; font-size:22px; text-transform:none; letter-spacing:0; margin-bottom:14px;">Nivrá by Porwals</h3>
+        <h3 style="font-family:'Fraunces', serif; font-size:22px; text-transform:none; letter-spacing:0; margin-bottom:14px;">Nivrá</h3>
         <p>Wholesale handloom bedding and home furnishings, supplied to trade buyers and customers across India since 1978.</p>
       </div>
       <div class="landscape-footer-column">
@@ -1990,7 +2004,7 @@
     </div>
     
     <div class="landscape-footer-bottom-bar">
-      <div>© 2026 Nivrá by Porwals. All Rights Reserved.</div>
+      <div>© 2026 Nivrá. All Rights Reserved.</div>
       <div style="display: flex; gap: 15px;">
         <a href="./privacy-policy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a>
         <a href="./returns.html" style="color: inherit; text-decoration: none;">Returns</a>
