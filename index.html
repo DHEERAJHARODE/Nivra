@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/jpeg" href="logo.JPG">
-        
+
 <title>Wholesale Handloom Bedding & Home Furnishings | Nivrá by Porwals</title>
 <meta name="description" content="A B2B handloom supplier based in Indore... dependable bulk supply of premium bedsheets, quilts, comforters, curtains, towels and dhurries">
 <meta name="keywords" content="wholesale bedsheets supplier, handwoven dhurries wholesale, B2B handloom supplier">
@@ -1081,20 +1080,20 @@
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    background-color: rgba(251, 248, 243, 0.15); /* Lightened alpha top menu bar */
-    border-bottom: 1px solid rgba(198,162,78,0); 
+    background-color: var(--warm-white); /* Light Background */
+    border-bottom: 1px solid var(--line-light); 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
   }
   
   nav.scrolled { 
-    background-color: rgba(54, 38, 28, 0.95); /* Balanced contrast dark panel overlay */
+    background-color: #ffffff; /* Page Scroll karne par Solid Light Background */
     padding: 1rem clamp(1.5rem, 4vw, 3rem); 
-    border-bottom: 1px solid rgba(198,162,78,0.15); 
+    border-bottom: 1px solid var(--line-light); 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
   }
 
   .nav-brand-container { 
@@ -1137,10 +1136,10 @@
   .nav-links a { 
     font-family: "Jost", sans-serif;
     font-size: 14px; 
-    font-weight: 500; 
+    font-weight: 600; /* Darker readable text */
     letter-spacing: 0.1em; 
     text-transform: uppercase; 
-    color: rgba(238, 227, 211, 0.9); 
+    color: var(--deep-brown); /* Dark Brown Text */
     text-decoration: none;
     position: relative; 
     padding: 8px 0; 
@@ -1164,15 +1163,21 @@
   .mobile-menu-btn { 
     display: none; 
     background: none; 
-    border: 1px solid rgba(198,162,78,0.3); 
-    color: rgba(238, 227, 211, 0.9); 
+    border: 1px solid var(--line-light); 
+    color: var(--deep-brown); /* Dark Icon Color */
     cursor: pointer; 
     z-index: 100001; 
     padding: 8px 12px; 
     border-radius: 6px;
     transition: all 0.35s ease;
   }
-  .mobile-menu-btn:hover { background-color: rgba(255,255,255,0.05); border-color: var(--gold); }
+  .mobile-menu-btn:hover { background-color: rgba(0,0,0,0.05); border-color: var(--gold); }
+
+/* Cross icon jab open ho tab dark brown/gold dikhe */
+.mobile-menu-btn.is-active {
+  color: var(--gold);
+  border-color: var(--gold);
+}
 
   @media (max-width: 800px) {
     body.menu-open { overflow: hidden !important; }
@@ -1182,23 +1187,25 @@
     .mobile-menu-btn.is-active #icon-hamburger { display: none; }
     .mobile-menu-btn.is-active #icon-close { display: block; }
 
-    .nav-links {
+   .nav-links {
       position: fixed;
       top: 0; bottom: 0; right: -100%;
       width: 100vw; height: 100vh;
-      background: #2C1A0E; 
+      background: var(--warm-white);; 
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 2.5rem;
-      transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+      /* opacity aur visibility transition property me add kiya hai */
+      transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.4s ease, visibility 0.4s ease;
       z-index: 10000;
       opacity: 0;
       visibility: hidden;
     }
     .nav-links.is-open { right: 0; opacity: 1; visibility: visible; }
+    .nav-links.is-open { right: 0; opacity: 1; visibility: visible; }
     .nav-links li { width: 100%; text-align: center; }
-    .nav-links a { display: block; padding: 1rem; font-size: 1.0rem; letter-spacing: 0.25em; color: var(--cream); }
+    .nav-links a { display: block; padding: 1rem; font-size: 1.0rem; letter-spacing: 0.25em; color: var(--deep-brown); font-weight: 600; }
     .nav-links a:hover, .nav-links a:active { color: var(--gold); }
 
     .sidebar-overlay {
@@ -1327,11 +1334,10 @@
 
 <nav id="navbar">
   <a href="#hero" class="nav-brand-container" aria-label="Nivrá by Porwals Corporate Home">
-    <span class="brand-name">Nivrá</span>
-    <span class="brand-subtext">by porwals</span>
+    <img src="Nivra.png" alt="Nivrá Logo" style="height: 50px; width: auto;">
   </a>
   
- <ul class="nav-links">
+  <ul class="nav-links">
     <li><a href="#legacy">Our Legacy</a></li>
     <li><a href="#why-partner">Why Partner</a></li>
     <li><a href="#products">Products</a></li>
@@ -2241,7 +2247,7 @@ function handleValidationAndSubmit(e) {
   btnText.textContent = 'Sending...';
   btn.disabled = true;
 
-  const formData = new FormData(form);
+ const formData = new FormData(form);
 
   // Har submission ke liye unique subject aur client ka reply email set karne ke liye:
   const firstName = document.getElementById('form-first-name').value;
@@ -2259,7 +2265,7 @@ function handleValidationAndSubmit(e) {
     body: formData,
     headers: { 'Accept': 'application/json' }
   })
-          
+  
   .then(response => response.json())
   .then(data => {
     form.style.opacity = '0';
