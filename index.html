@@ -2243,11 +2243,23 @@ function handleValidationAndSubmit(e) {
 
   const formData = new FormData(form);
 
+  // Har submission ke liye unique subject aur client ka reply email set karne ke liye:
+  const firstName = document.getElementById('form-first-name').value;
+  const lastName = document.getElementById('form-last-name').value;
+  const clientEmail = document.getElementById('form-business-email').value;
+  const timeStamp = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+
+  // Naya Unique Subject
+  formData.append('_subject', `New Enquiry from ${firstName} ${lastName} (${timeStamp})`);
+  // Reply-To button dabane par seedhe client ko reply jaye
+  formData.append('_replyto', clientEmail);
+
   fetch('https://formsubmit.co/ajax/nivrabytheporwals@gmail.com', {
     method: 'POST',
     body: formData,
     headers: { 'Accept': 'application/json' }
   })
+          
   .then(response => response.json())
   .then(data => {
     form.style.opacity = '0';
