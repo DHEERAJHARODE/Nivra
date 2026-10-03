@@ -1,0 +1,18 @@
+# Patch backups — these freeze old versions of the page, including
+# the pre-hash FormSubmit endpoint. Keep them out of the repo.
+*.backup
+*.backup-*
+*.bak
+*.orig
+
+# Originals kept by the image optimiser (~7.7 MB)
+Porwal-Images-original/
+
+# Tooling that is not part of the site
+*.py
+*.sh
+*.gs
+
+# macOS
+.DS_Store
+._*

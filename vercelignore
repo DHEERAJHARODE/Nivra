@@ -1,0 +1,35 @@
+# Keeps working files out of the deployed site.
+#
+# Everything in the project folder is published unless it is listed
+# here. A static host serves an unknown extension as plain text, so
+# index.html.backup-3d would be readable at
+#   https://www.theporwals.com/index.html.backup-3d
+#
+# That matters beyond untidiness: an old backup freezes a past version
+# of the page permanently. Switch the FormSubmit endpoint to the hashed
+# one and the cleartext-email version stays published in the backup.
+
+# Patch backups
+*.backup
+*.backup-*
+*.bak
+*.orig
+
+# Originals kept by the image optimiser
+Porwal-Images-original/
+
+# Build and patch tooling — no reason for these to be on the web
+*.py
+*.sh
+*.md
+!README.md
+
+# Apps Script source. Belongs in Google, not in the site.
+*.gs
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/

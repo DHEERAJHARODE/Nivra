@@ -10,18 +10,70 @@
 <meta name="keywords" content="wholesale bedsheets supplier, handwoven dhurries wholesale, B2B handloom supplier">
 <meta name="robots" content="index, follow">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="canonical" href="https://www.theporwals.com/">
+
+<!-- Favicon — reusing the existing logo. Replace with a dedicated
+     32x32 and 180x180 set when you have one. -->
+<link rel="icon" href="./nivra-favicon.png">
+<link rel="apple-touch-icon" href="./nivra-favicon.png">
+<meta name="theme-color" content="#2C1A0E">
+
+<!-- Open Graph — controls the preview card when the link is shared on
+     WhatsApp, LinkedIn, Facebook. Without these a shared link shows as
+     bare text, which matters because WhatsApp is the main B2B channel. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nivrá by Porwals">
+<meta property="og:url" content="https://www.theporwals.com/">
+<meta property="og:title" content="Wholesale Handloom Bedding &amp; Home Furnishings | Nivrá by Porwals">
+<meta property="og:description" content="B2B handloom supplier in Indore since 1978. Bulk supply of bedsheets, comforters, curtains, towels and dhurries for retailers, distributors and designers.">
+<meta property="og:image" content="https://www.theporwals.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Handloom bedding and home furnishings by Nivrá">
+<meta property="og:locale" content="en_IN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wholesale Handloom Bedding &amp; Home Furnishings | Nivrá by Porwals">
+<meta name="twitter:description" content="B2B handloom supplier in Indore since 1978. Bulk supply for retailers, distributors and designers.">
+<meta name="twitter:image" content="https://www.theporwals.com/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Fonts load without blocking first paint.
+     media="print" makes the browser fetch this at low priority and
+     skip it when deciding whether it can render; onload flips it to
+     media="all" so it applies the moment it lands. The no-script
+     copy below keeps it working with JavaScript disabled.
+     Was costing ~800 ms of render-blocking time on mobile. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@400;500;600;700&family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+      media="print" onload="this.media='all'; this.onload=null;">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@400;500;600;700&family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"></noscript>
+<!-- Swiper's stylesheet, same non-blocking treatment (~770 ms).
+     The carousel is below the fold, so it arriving late is not
+     visible on load. The inline rules below keep the slides in a row
+     rather than stacked in the brief window before it applies. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      media="print" onload="this.media='all'; this.onload=null;">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
 
 <style>
-        /* Chrome, Safari, Edge, Opera ke arrows hatane ke liye */
+  /* Minimal Swiper layout, inline so the testimonial strip never
+     renders as a vertical stack while the real stylesheet loads. */
+  .swiper { overflow: hidden; position: relative; }
+  .swiper-wrapper { display: flex; }
+  .swiper-slide { flex-shrink: 0; width: 100%; }
+</style>
+
+<style>
+        /* Hide the number-input spinner arrows */
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
       }
 
-      /* Firefox ke liye */
+      /* Firefox equivalent */
       input[type=number] {
         -moz-appearance: textfield;
       }
@@ -30,18 +82,20 @@
     --warm-white: #FBF8F3;
     --deep-brown: #2C1A0E;
     --terracotta: #B5522A;
-    --gold: #C49A3C;
+    --gold: #C49A3C;          /* 6.37:1 on deep-brown — dark sections only */
     --gold-soft: #D8BC7C;
-    --sage: #7A8C6E;
+
+    /* The brand gold fails contrast on cream and warm-white (2.3-2.5:1).
+       These are its light-background counterparts. Measured, not guessed:
+         --gold-ink     5.63:1 on warm-white, 5.25:1 on cream  (AA small)
+         --gold-ink-lg  3.73:1 on warm-white, 3.49:1 on cream  (AA large) */
+    --gold-ink: #7D5F1A;
+    --gold-ink-lg: #A07A28;
     --linen: #E8DFD0;
     --charcoal: #3D3530;
     --espresso-card: #34241A;
     --line-light: #DDCDB4;
     --line-dark: #473529;
-  }
-  .highlight-text {
-    color: #ffffff;
-    font-weight: 300; 
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -64,7 +118,31 @@
     opacity: 0.4;
   }
 
+  /* Respect the OS "reduce motion" setting. Three layers on this page
+     animate continuously — the hero weave, the brand marquee and the
+     noise overlay — which is a genuine accessibility problem for
+     motion-sensitive users as well as a battery cost on mobile. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .hero-weave,
+    .associated-brands-flex {
+      animation: none !important;
+    }
+  }
+
   section { position: relative; padding: clamp(50px, 7vw, 90px) 0; }
+
+  /* Keeps anchored headings clear of the fixed navbar. Without this,
+     clicking a nav link parks the heading underneath the bar. */
+  section[id],
+  div[id] { scroll-margin-top: 90px; }
   .wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
   /* ══════════════════════════════
@@ -72,6 +150,9 @@
   ══════════════════════════════ */
   #hero {
     min-height: 100vh;
+    /* iOS Safari counts 100vh without the address bar, pushing the
+       diagonal below the fold on first load. dvh accounts for it. */
+    min-height: 100dvh;
     background: var(--deep-brown);
     display: grid;
     place-items: center;
@@ -98,7 +179,9 @@
     position: absolute;
     bottom: 0; left: 0; right: 0;
     height: clamp(60px, 10vw, 120px);
-    background: var(--warm-white);
+    /* Must match .trust-metrics-strip, which is what follows the
+       hero — not the warm-white further down the page */
+    background: #1A100A;
     clip-path: polygon(0 100%, 100% 0, 100% 100%);
   }
 
@@ -209,7 +292,7 @@
     position: relative;
     z-index: 5;
   }
-  
+
   .trust-metrics-flex {
     display: flex;
     justify-content: space-around;
@@ -221,13 +304,13 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
   }
-  
+
   .metric-pill {
     display: flex;
     align-items: center;
     gap: 8px;
   }
-  
+
   .metric-pill::before {
     content: "✦";
     color: var(--gold);
@@ -275,7 +358,7 @@
     content: '';
     position: absolute;
     top: -12px; left: -12px;
-    right: 12px; bottom: -12px;
+    right: -12px; bottom: -12px;
     border: 2px solid var(--gold);
     z-index: 0;
   }
@@ -468,6 +551,11 @@
     font-size: clamp(2.2rem, 5vw, 4rem);
     font-weight: 300;
     line-height: 1.1;
+    /* #products has a dark background and this rule previously set no
+       colour, so the heading inherited --charcoal and was only legible
+       because of a .highlight-text span forcing white. The light
+       sections (#testimonials, #how-it-works) override this below. */
+    color: var(--cream);
   }
 
   .section-header h2 em { font-style: italic; color: var(--gold); }
@@ -501,7 +589,7 @@
     overflow: hidden;
     cursor: pointer;
     aspect-ratio: 3/4;
-    background: #ffffff; 
+    background: #ffffff;
     border-radius: 6px;
     transform: translateZ(0);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -520,22 +608,40 @@
   .product-image {
     width: 100%;
     height: 100%;
-    object-fit: contain; 
+    object-fit: contain;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     padding: 8px;
   }
-  
+
   .product-card:hover .product-image {
     transform: scale(1.03);
+  }
+
+  /* A failed product image used to show a broken-image icon (or, for
+     the one card that hid it, an empty white box). This keeps the card
+     intact with a neutral placeholder instead. */
+  .product-image.img-failed {
+    visibility: hidden;
+  }
+  .product-illustration:has(.img-failed) {
+    background: var(--linen);
+  }
+  .product-illustration:has(.img-failed)::after {
+    content: 'Image unavailable';
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.4;
   }
 
   .product-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, 
-                  rgba(25, 12, 5, 0.96) 0%, 
-                  rgba(25, 12, 5, 0.82) 35%, 
-                  rgba(25, 12, 5, 0.4) 65%, 
+    background: linear-gradient(to top,
+                  rgba(25, 12, 5, 0.96) 0%,
+                  rgba(25, 12, 5, 0.82) 35%,
+                  rgba(25, 12, 5, 0.4) 65%,
                   rgba(25, 12, 5, 0.15) 100%);
     display: flex;
     flex-direction: column;
@@ -545,10 +651,10 @@
   }
 
   .product-card:hover .product-overlay {
-    background: linear-gradient(to top, 
-                  rgba(25, 12, 5, 0.98) 0%, 
-                  rgba(25, 12, 5, 0.9) 45%, 
-                  rgba(25, 12, 5, 0.6) 75%, 
+    background: linear-gradient(to top,
+                  rgba(25, 12, 5, 0.98) 0%,
+                  rgba(25, 12, 5, 0.9) 45%,
+                  rgba(25, 12, 5, 0.6) 75%,
                   rgba(25, 12, 5, 0.3) 100%);
   }
 
@@ -556,7 +662,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--gold) !important; 
+    color: var(--gold) !important;
     font-weight: 600;
     margin-bottom: 0.6rem;
     text-shadow: 0 2px 4px rgba(0,0,0,0.6);
@@ -616,28 +722,28 @@
 
   /* ── ASSOCIATED BRANDS ALIGNMENT BAR ── */
   /* ── ASSOCIATED BRANDS ALIGNMENT BAR ── */
-  .associated-brands-banner { 
-    background-color: var(--cream); 
-    border-top: 1px solid var(--line-light); 
-    padding: 30px 0 40px 0; 
+  .associated-brands-banner {
+    background-color: var(--cream);
+    border-top: 1px solid var(--line-light);
+    padding: 30px 0 40px 0;
     text-align: center;
     overflow: hidden;
     position: relative;
     width: 100%;
   }
-  
+
   .associated-brands-banner h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 300;
     text-align: center;
     line-height: 1.2;
-    margin-bottom: 45px; 
-    color: #808080; 
+    margin-bottom: 45px;
+    color: #808080;
   }
 
   .associated-brands-banner h3 span.brand-highlight {
-    color: #C49A3C;
+    color: var(--gold-ink-lg);
   }
 
   .marquee-wrapper {
@@ -667,11 +773,11 @@
     right: 0;
     background: linear-gradient(to left, var(--cream), transparent);
   }
-  
-  .associated-brands-flex { 
-    display: flex; 
-    align-items: center; 
-    /* justify-content hata diya hai taaki gap exactly kaam kare */
+
+  .associated-brands-flex {
+    display: flex;
+    align-items: center;
+    /* justify-content removed so the gap value applies exactly */
     gap: clamp(50px, 8vw, 100px); /* Exactly same gap as wrapper */
     min-width: max-content; /* Ensure items don't stretch or squeeze */
     flex-shrink: 0;
@@ -681,25 +787,46 @@
   .marquee-wrapper:hover .associated-brands-flex {
     animation-play-state: paused;
   }
-  
-  /* LOGO SIZING UPDATE */
+
+  /* LOGO SIZING — identical box per logo, contents letterboxed inside */
+  /* The logo is now wrapped in a link, which becomes the flex item.
+     It inherits the same box so the row keeps its even spacing, and
+     the hover scale stays on the image inside. */
+  .associated-brand-link {
+    display: block;
+    flex-shrink: 0;
+    line-height: 0;
+    border-radius: 4px;
+  }
+  .associated-brand-link:focus-visible {
+    outline: 2px solid var(--gold-ink, #7D5F1A);
+    outline-offset: 4px;
+  }
+
   .associated-brand-img {
-    height: clamp(60px, 10vw, 95px); /* Height kafi badha di hai (Max 95px) */
-    width: auto;
-    max-width: 250px; /* Max-width limit bhi badha di hai */
+    /* Fixed box: this is what makes every logo read as the same size */
+    height: clamp(42px, 6vw, 60px);
+    width: clamp(110px, 16vw, 160px);
     object-fit: contain;
-    opacity: 1; 
+    object-position: center;
+
+    /* Per-logo optical nudge. Set inline where a mark carries a lot of
+       internal padding and reads small: style="--logo-scale: 1.15" */
+    transform: scale(var(--logo-scale, 1));
+
+    opacity: 1;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
+    flex-shrink: 0;
   }
 
   .associated-brand-img:hover {
-    transform: scale(1.1); /* Hover effect thoda aur smooth aur bada kiya hai */
+    transform: scale(calc(var(--logo-scale, 1) * 1.08));
   }
 
   @keyframes marqueeTicker {
     0% { transform: translateX(0%); }
-    /* Transform calc update kiya hai gap ko handle karne ke liye */
+    /* Offset by one gap so the loop seam is invisible */
     100% { transform: translateX(calc(-100% - clamp(50px, 8vw, 100px))); }
   }
   /* ── SOURCING JOURNEY / HOW IT WORKS ── */
@@ -714,42 +841,42 @@
   }
 
   #how-it-works h2 span.sourcing-highlight {
-    color: #C49A3C;
+    color: var(--gold-ink-lg);
   }
 
-  .operational-steps-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-    gap: 24px; 
-    margin-top: 40px; 
+  .operational-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
   }
-  
-  .operational-step-card { 
-    background-color: rgba(255,255,255,0.7); 
-    padding: clamp(24px, 3vw, 35px); 
-    border-radius: 8px; 
-    border: 1px solid var(--line-light); 
+
+  .operational-step-card {
+    background-color: rgba(255,255,255,0.7);
+    padding: clamp(24px, 3vw, 35px);
+    border-radius: 8px;
+    border: 1px solid var(--line-light);
   }
-  
-  .operational-step-card .step-numeric-flag { 
-    font-family: "Fraunces", serif; 
-    font-size: clamp(36px, 5vw, 44px); 
-    color: var(--gold); 
-    font-weight: 600; 
-    margin-bottom: 8px; 
+
+  .operational-step-card .step-numeric-flag {
+    font-family: "Fraunces", "Cormorant Garamond", serif;
+    font-size: clamp(36px, 5vw, 44px);
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 8px;
     line-height: 1;
   }
-  
-  .operational-step-card h3 { 
-    font-size: 18px; 
-    color: var(--deep-brown); 
-    margin-bottom: 8px; 
+
+  .operational-step-card h3 {
+    font-size: 18px;
+    color: var(--deep-brown);
+    margin-bottom: 8px;
   }
-  
-  .operational-step-card p { 
-    font-size: 14px; 
-    line-height: 1.55; 
-    color: var(--charcoal); 
+
+  .operational-step-card p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--charcoal);
     opacity: 0.8;
   }
 
@@ -760,62 +887,62 @@
     padding: clamp(60px, 8vw, 100px) 0;
   }
 
-  .assurance-split-box { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: clamp(35px, 5vw, 60px); 
-    align-items: center; 
+  .assurance-split-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(35px, 5vw, 60px);
+    align-items: center;
   }
   @media (max-width: 900px) { .assurance-split-box { grid-template-columns: 1fr; } }
-  
-  .assurance-narrative h2 { 
+
+  .assurance-narrative h2 {
     font-family: "Fraunces", "Cormorant Garamond", serif;
-    font-size: clamp(2rem, 4vw, 3.2rem); 
-    color: var(--cream); 
-    margin-bottom: 20px; 
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--cream);
+    margin-bottom: 20px;
     font-weight: 400;
   }
-  
-  .assurance-narrative p { 
-    font-size: clamp(14.5px, 1.8vw, 16px); 
-    line-height: 1.8; 
-    color: rgba(245,240,232,0.65); 
-    margin-bottom: 16px; 
+
+  .assurance-narrative p {
+    font-size: clamp(14.5px, 1.8vw, 16px);
+    line-height: 1.8;
+    color: rgba(245,240,232,0.65);
+    margin-bottom: 16px;
   }
-  
-  .assurance-matrix-list { 
-    background-color: rgba(255,255,255,0.02); 
-    border: 1px solid var(--line-dark); 
-    padding: clamp(24px, 4vw, 40px); 
-    border-radius: 8px; 
+
+  .assurance-matrix-list {
+    background-color: rgba(255,255,255,0.02);
+    border: 1px solid var(--line-dark);
+    padding: clamp(24px, 4vw, 40px);
+    border-radius: 8px;
   }
-  
-  .assurance-matrix-list h3 { 
-    font-family: 'Fraunces', serif; 
-    font-size: clamp(22px, 3vw, 26px); 
-    color: var(--gold-soft); 
-    margin-bottom: 16px; 
+
+  .assurance-matrix-list h3 {
+    font-family: "Fraunces", "Cormorant Garamond", serif;
+    font-size: clamp(22px, 3vw, 26px);
+    color: var(--gold-soft);
+    margin-bottom: 16px;
     font-weight: 400;
   }
-  
-  .assurance-matrix-list ul { 
-    list-style: none; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 14px; 
-    font-size: 15px; 
-    color: rgba(245,240,232,0.7); 
+
+  .assurance-matrix-list ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 15px;
+    color: rgba(245,240,232,0.7);
   }
-  
-  .assurance-matrix-list ul li { 
-    display: flex; 
-    align-items: center; 
-    gap: 12px; 
+
+  .assurance-matrix-list ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
-  
-  .assurance-matrix-list ul li span.check-glyph { 
-    color: var(--gold); 
-    font-weight: bold; 
+
+  .assurance-matrix-list ul li span.check-glyph {
+    color: var(--gold);
+    font-weight: bold;
   }
 
   /* ══════════════════════════════
@@ -846,119 +973,39 @@
   .swiper-pagination-bullet { background: var(--deep-brown); opacity: 0.2; }
   .swiper-pagination-bullet-active { background: var(--terracotta); opacity: 1; }
 
-  /* ── OVERSEAS BUYERS SECTION (HIDDEN AS PER DIRECTIVE) ── */
-  #overseas-buyers {
-    display: none; /* Hidden for now as requested */
-    background-color: #2C1A0E;
-    color: rgba(245,240,232,0.8);
-    padding: clamp(60px, 8vw, 100px) 0;
-  }
-  .international-trade-box { 
-    background-color: var(--espresso-card); 
-    border: 1px solid var(--line-dark); 
-    border-radius: 8px; 
-    padding: clamp(24px, 5vw, 45px); 
-    margin-top: 35px; 
-  }
-  .international-trade-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-    gap: 32px; 
-  }
-  .international-trade-item h3 { 
-    font-family: "Fraunces", serif;
-    font-size: 19px; 
-    color: var(--gold-soft); 
-    margin-bottom: 8px; 
-    font-weight: 400;
-  }
-  .international-trade-item p { 
-    font-size: 14px; 
-    color: rgba(245,240,232,0.6); 
-    line-height: 1.6; 
-  }
-
-  /* ── LEAD CATALOGUE CAPTURE ── */
-  #catalogue-capture {
-    background: var(--warm-white);
-    padding: clamp(50px, 6vw, 80px) 0;
-  }
-  .lead-capture-shield { 
-    max-width: 800px; 
-    margin: 0 auto; 
-    background-color: var(--cream); 
-    border: 1px solid var(--line-light); 
-    border-radius: 8px; 
-    padding: clamp(30px, 6vw, 50px) clamp(20px, 5vw, 40px); 
-    text-align: center; 
-  }
-  .lead-capture-shield h2 { 
-    font-family: "Fraunces", serif;
-    font-size: clamp(22px, 3.5vw, 28px); 
-    color: var(--deep-brown); 
-    margin-bottom: 12px; 
-    font-weight: 400;
-  }
-  .lead-capture-shield p { 
-    font-size: 15px; 
-    color: var(--charcoal); 
-    opacity: 0.8;
-    margin-bottom: 24px; 
-  }
-  .lead-capture-inline-form { 
-    display: flex; 
-    max-width: 650px; 
-    margin: 0 auto; 
-    gap: 12px; 
-  }
-  .lead-capture-inline-form input.capture-input { 
-    flex: 1; 
-    padding: 14px 20px; 
-    border-radius: 4px; 
-    border: 1px solid var(--line-light); 
-    font-family: inherit; 
-    font-size: 14.5px; 
-    outline: none; 
-    background-color: #FFF;
-    width: 100%;
-  }
-  .lead-capture-inline-form input.capture-input:focus { border-color: var(--gold); }
-  .capture-response-message { display: none; margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--terracotta); }
-  @media (max-width: 600px) { .lead-capture-inline-form { flex-direction: column; } }
-
   /* ── FAQ ACCORDION MATRIX ── */
   #faq-matrix {
     padding: clamp(60px, 8vw, 100px) 0;
     background: var(--cream);
   }
-  .accordion-matrix-container { 
-    max-width: 850px; 
-    margin: 35px auto 0; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 14px; 
+  .accordion-matrix-container {
+    max-width: 850px;
+    margin: 35px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
-  .accordion-matrix-item { 
-    background-color: var(--warm-white); 
-    border: 1px solid var(--line-light); 
-    border-radius: 6px; 
-    overflow: hidden; 
+  .accordion-matrix-item {
+    background-color: var(--warm-white);
+    border: 1px solid var(--line-light);
+    border-radius: 6px;
+    overflow: hidden;
   }
-  .accordion-matrix-trigger { 
-    width: 100%; 
-    padding: 20px 24px; 
-    background: none; 
-    border: none; 
-    text-align: left; 
-    font-family: "Fraunces", serif; 
-    font-size: clamp(16px, 2.5vw, 19px); 
-    font-weight: 500; 
-    color: var(--deep-brown); 
-    cursor: pointer; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    gap: 16px; 
+  .accordion-matrix-trigger {
+    width: 100%;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: "Fraunces", "Cormorant Garamond", serif;
+    font-size: clamp(16px, 2.5vw, 19px);
+    font-weight: 500;
+    color: var(--deep-brown);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
   }
   .accordion-matrix-trigger::after { content: "+"; font-family: 'Jost', sans-serif; font-size: 22px; color: var(--gold); transition: transform 0.3s ease; }
   .accordion-matrix-item.active-state .accordion-matrix-trigger::after { content: "−"; }
@@ -968,10 +1015,10 @@
   /* ══════════════════════════════
      SECTION 5 — CONTACT & FORM
   ══════════════════════════════ */
-  #contact { 
-    padding: clamp(60px, 8vw, 100px) 0 0; 
-    background: var(--warm-white); 
-    margin-bottom: 4rem; 
+  #contact {
+    padding: clamp(60px, 8vw, 100px) 0 0;
+    background: var(--warm-white);
+    margin-bottom: 4rem;
   }
   .contact-split { display: grid; grid-template-columns: 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
   @media (min-width: 900px) { .contact-split { grid-template-columns: 1fr 1.2fr; } }
@@ -1033,31 +1080,93 @@
   .success-state h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--cream); margin-bottom: 0.8rem; font-weight: 300; }
   .success-state p { font-size: 0.95rem; color: rgba(245,240,232,0.7); line-height: 1.6; max-width: 300px; }
 
-  /* 4-COLUMN COMPREHENSIVE FOOTER */
-  .corporate-landscape-footer { 
-    background-color: var(--deep-brown); 
-    color: rgba(245,240,232,0.6); 
-    border-top: 1px solid rgba(245,240,232,0.05); 
-    padding: clamp(40px, 8vw, 80px) 0 40px; 
-    font-size: 14px; 
-    margin-top: 4rem; 
+  /* ── Contrast corrections ────────────────────────────────────
+     Gold-on-light failed WCAG AA everywhere it appeared. These rules
+     swap in the light-background gold tokens. Gold on dark sections is
+     untouched — it passes there at 6.37:1.
+
+     Grouped by the AA threshold that applies: 4.5:1 for small text,
+     3:1 for display text at 24px and above.
+  ───────────────────────────────────────────────────────────── */
+
+  /* Small text on light — needs 4.5:1 */
+  #legacy .section-label,
+  #why-partner .section-label,
+  #how-it-works .section-label,
+  #testimonials .section-label,
+  #faq-matrix .section-label,
+  #contact .section-label,
+  .contact-info-label,
+  .quote-icon-subline,
+  .accordion-matrix-trigger::after {
+    color: var(--gold-ink);
   }
-  .landscape-footer-grid { 
-    display: grid; 
-    grid-template-columns: 1.5fr repeat(3, 1fr); 
-    gap: 40px; 
-    margin-bottom: 40px; 
+
+  /* Display text on light (>=24px) — needs 3:1 */
+  .associated-brands-banner h3 span.brand-highlight,
+  #how-it-works h2 span.sourcing-highlight,
+  .testimonials-inner .section-header h2 em,
+  .operational-step-card .step-numeric-flag {
+    color: var(--gold-ink-lg);
+  }
+
+  /* Opacity-reduced body text that fell under the floor once
+     composited against its background */
+  .stat-label { opacity: 0.75; }                        /* was .6  — 3.53:1 */
+  .testimonials-inner .section-header p { opacity: 0.8; } /* was .7 — 4.49:1 */
+
+  /* Carousel dots were 8px. Touch targets need ~24px; the bullet stays
+     visually small while the tappable area grows around it. */
+  .testimonials-swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 0 6px !important;
+    position: relative;
+  }
+  .testimonials-swiper .swiper-pagination-bullet::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+  }
+  .testimonials-swiper .swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-height: 24px;
+  }
+
+  /* ── end contrast corrections ── */
+
+  /* 4-COLUMN COMPREHENSIVE FOOTER */
+  .corporate-landscape-footer {
+    background-color: var(--deep-brown);
+    color: rgba(245,240,232,0.6);
+    border-top: 1px solid rgba(245,240,232,0.05);
+    padding: clamp(40px, 8vw, 80px) 0 40px;
+    font-size: 14px;
+    margin-top: 4rem;
+  }
+  .landscape-footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
   }
   @media (max-width: 1024px) { .landscape-footer-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 600px) { .landscape-footer-grid { grid-template-columns: 1fr; } }
-  
-  .landscape-footer-column h3 { 
-    font-size: 14px; 
-    font-weight: 600; 
-    letter-spacing: 0.15em; 
-    text-transform: uppercase; 
-    color: var(--cream); 
-    margin-bottom: 16px; 
+
+  .landscape-footer-column h3 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 16px;
   }
   .landscape-footer-column p { line-height: 1.6; margin-bottom: 14px; }
   .landscape-footer-links-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -1066,114 +1175,144 @@
   .landscape-footer-seo-sentence { text-align: center; font-style: italic; font-size: 14px; color: var(--gold-soft); letter-spacing: 0.03em; border-top: 1px solid rgba(245,240,232,0.05); border-bottom: 1px solid rgba(245,240,232,0.05); padding: 20px 0; margin-bottom: 24px; }
   .landscape-footer-bottom-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 13px; }
   .landscape-footer-socials-matrix { display: flex; align-items: center; gap: 14px; }
-  .landscape-footer-socials-matrix a { width: 34px; height: 34px; background-color: rgba(255,255,255,0.03); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(245,240,232,0.6); text-decoration: none; font-weight: bold; font-size: 12px; transition: all 0.3s; }
+  /* ── Themeable social icons ──────────────────────────────
+     The SVG is used as a mask, not an image: background-color paints
+     the colour and the file only supplies the silhouette. This is why
+     the icons follow the link colour on hover without any extra rules,
+     and why the downloaded file's own colour does not matter.
+
+     Swap an icon by replacing the file in ./social-icons/ - no CSS
+     change needed. Use monochrome SVGs.
+  ──────────────────────────────────────────────────────────── */
+  .social-icon {
+    display: block;
+    width: 17px;
+    height: 17px;
+    background-color: currentColor;
+    -webkit-mask-position: center;
+            mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+            mask-size: contain;
+    transition: background-color 0.3s ease;
+  }
+
+  .social-icon--whatsapp {
+    -webkit-mask-image: url('./social-icons/whatsapp.svg');
+            mask-image: url('./social-icons/whatsapp.svg');
+  }
+  .social-icon--instagram {
+    -webkit-mask-image: url('./social-icons/instagram.svg');
+            mask-image: url('./social-icons/instagram.svg');
+  }
+  .social-icon--linkedin {
+    -webkit-mask-image: url('./social-icons/linkedin.svg');
+            mask-image: url('./social-icons/linkedin.svg');
+  }
+  .social-icon--facebook {
+    -webkit-mask-image: url('./social-icons/facebook.svg');
+            mask-image: url('./social-icons/facebook.svg');
+  }
+
+  /* Optical sizing — marks are drawn to different proportions, so a
+     shared box makes some read larger. Nudge individually. */
+  .social-icon--whatsapp  { width: 18px; height: 18px; }
+  .social-icon--linkedin  { width: 16px; height: 16px; }
+  .social-icon--facebook  { width: 16px; height: 16px; }
+  .landscape-footer-socials-matrix { }
+
+  /* ── END themeable social icons ── */
+
+  .landscape-footer-socials-matrix a { width: 36px; height: 36px; background-color: rgba(255,255,255,0.03); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(245,240,232,0.6); text-decoration: none; font-weight: bold; font-size: 12px; transition: all 0.3s; }
   .landscape-footer-socials-matrix a:hover { background-color: var(--gold); color: var(--deep-brown); transform: translateY(-2px); }
 
   /* ════════════════════════════════════════════════════════════════
      TRANSPARENT NAVIGATION UPGRADE (LIGHT BAR CONFIGURATION)
      ════════════════════════════════════════════════════════════════ */
-  nav { 
-    position: fixed; 
-    top: 0; left: 0; right: 0; 
-    z-index: 9999; 
-    padding: 1.5rem clamp(1.5rem, 4vw, 3rem); 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    background-color: var(--warm-white); /* Light Background */
-    border-bottom: 1px solid var(--line-light); 
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 9999;
+    padding: 1.5rem clamp(1.5rem, 4vw, 3rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--warm-white);
+    border-bottom: 1px solid var(--line-light);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-  }
-  
-  nav.scrolled { 
-    background-color: #ffffff; /* Page Scroll karne par Solid Light Background */
-    padding: 1rem clamp(1.5rem, 4vw, 3rem); 
-    border-bottom: 1px solid var(--line-light); 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .nav-brand-container { 
-    display: flex; 
-    flex-direction: column; 
-    line-height: 1; 
+  nav.scrolled {
+    background-color: #ffffff; /* Solid background once scrolled */
+    padding: 1rem clamp(1.5rem, 4vw, 3rem);
+    border-bottom: 1px solid var(--line-light);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .nav-brand-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
     text-decoration: none;
-    position: relative; 
-    z-index: 100001; 
+    position: relative;
+    z-index: 100001;
   }
-  
-  .nav-brand-container .brand-name { 
-    font-family: "Fraunces", "Cormorant Garamond", serif; 
-    font-size: clamp(34px, 5.5vw, 42px); /* At least 2 times bigger brand mark */
-    font-weight: 400; 
-    color: var(--cream); 
-    letter-spacing: .02em; 
-    text-transform: none;
-  }
-  
-  .nav-brand-container .brand-subtext { 
-    font-family: "Jost", sans-serif;
-    font-size: clamp(10px, 1.6vw, 12px); 
-    letter-spacing: .38em; 
-    text-transform: uppercase; 
-    color: var(--gold); 
-    margin-top: 4px; 
-    font-weight: 500;
-  }
-  
-  .nav-links { 
-    display: flex; 
-    gap: clamp(16px, 3vw, 32px); 
-    list-style: none; 
-    margin: 0; 
-    padding: 0; 
+
+  .nav-links {
+    display: flex;
+    gap: clamp(16px, 3vw, 32px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
     align-items: center;
   }
-  
-  .nav-links a { 
+
+  .nav-links a {
     font-family: "Jost", sans-serif;
-    font-size: 14px; 
-    font-weight: 600; /* Darker readable text */
-    letter-spacing: 0.1em; 
-    text-transform: uppercase; 
-    color: var(--deep-brown); /* Dark Brown Text */
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--deep-brown);
     text-decoration: none;
-    position: relative; 
-    padding: 8px 0; 
+    position: relative;
+    padding: 8px 0;
     transition: all 0.35s ease;
   }
-  
-  .nav-links a::after { 
-    content: ""; 
-    position: absolute; 
-    left: 0; 
-    bottom: 0; 
-    height: 2px; 
-    width: 0; 
-    background-color: var(--gold); 
-    transition: all 0.35s ease; 
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--gold);
+    transition: all 0.35s ease;
   }
-  
+
   .nav-links a:hover { color: var(--gold-soft); }
   .nav-links a:hover::after { width: 100%; }
 
-  .mobile-menu-btn { 
-    display: none; 
-    background: none; 
-    border: 1px solid var(--line-light); 
-    color: var(--deep-brown); /* Dark Icon Color */
-    cursor: pointer; 
-    z-index: 100001; 
-    padding: 8px 12px; 
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: 1px solid var(--line-light);
+    color: var(--deep-brown);
+    cursor: pointer;
+    z-index: 100001;
+    padding: 8px 12px;
     border-radius: 6px;
     transition: all 0.35s ease;
   }
   .mobile-menu-btn:hover { background-color: rgba(0,0,0,0.05); border-color: var(--gold); }
 
-/* Cross icon jab open ho tab dark brown/gold dikhe */
+/* Close icon turns gold while the menu is open */
 .mobile-menu-btn.is-active {
   color: var(--gold);
   border-color: var(--gold);
@@ -1191,18 +1330,17 @@
       position: fixed;
       top: 0; bottom: 0; right: -100%;
       width: 100vw; height: 100vh;
-      background: var(--warm-white);; 
+      background: var(--warm-white);
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 2.5rem;
-      /* opacity aur visibility transition property me add kiya hai */
+      /* opacity and visibility included in the transition */
       transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.4s ease, visibility 0.4s ease;
       z-index: 10000;
       opacity: 0;
       visibility: hidden;
     }
-    .nav-links.is-open { right: 0; opacity: 1; visibility: visible; }
     .nav-links.is-open { right: 0; opacity: 1; visibility: visible; }
     .nav-links li { width: 100%; text-align: center; }
     .nav-links a { display: block; padding: 1rem; font-size: 1.0rem; letter-spacing: 0.25em; color: var(--deep-brown); font-weight: 600; }
@@ -1315,7 +1453,7 @@
     color: var(--terracotta); font-weight: 600; margin-bottom: 10px;
   }
   #modalProductTitle {
-    font-family: 'Fraunces', serif; font-size: clamp(24px, 3.5vw, 32px);
+    font-family: "Fraunces", "Cormorant Garamond", serif; font-size: clamp(24px, 3.5vw, 32px);
     color: var(--deep-brown); line-height: 1.2; font-weight: 400; margin-bottom: 15px;
   }
   #modalProductDesc { font-size: 14.5px; line-height: 1.65; color: var(--charcoal); opacity: 0.8; margin-bottom: 30px; }
@@ -1334,10 +1472,10 @@
 
 <nav id="navbar">
   <a href="#hero" class="nav-brand-container" aria-label="Nivrá by Porwals Corporate Home">
-    <img src="Nivra.png" alt="Nivrá Logo" style="height: 50px; width: auto;">
+    <img src="Nivra.png" alt="Nivrá by Porwals" width="160" height="50" fetchpriority="high" style="height: 50px; width: auto;">
   </a>
-  
-  <ul class="nav-links">
+
+  <ul class="nav-links" id="primary-nav">
     <li><a href="#legacy">Our Legacy</a></li>
     <li><a href="#why-partner">Why Partner</a></li>
     <li><a href="#products">Products</a></li>
@@ -1345,7 +1483,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 
-  <button class="mobile-menu-btn" aria-label="Toggle Global Navigation Menu" id="menuToggleBtn">
+  <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav" id="menuToggleBtn">
     <svg id="icon-hamburger" width="24" height="20" viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M2 2h20M2 10h20M2 18h20"/>
     </svg>
@@ -1364,7 +1502,6 @@
     <p class="hero-tagline">Where ancestral craft meets contemporary living</p>
     <div class="hero-cta-group">
       <a href="#contact" class="hero-cta hero-cta--solid">Partner With Us</a>
-      <!-- <a href="#catalogue-capture" class="hero-cta">Download Catalogue</a> -->
     </div>
   </div>
   <div class="hero-diagonal"></div>
@@ -1433,21 +1570,20 @@
   <div class="wrap products-inner">
     <div class="section-header">
       <p class="section-label" style="color:var(--gold)">Product Categories</p>
-      <h2>
-        <span class="highlight-text">Wholesale Bedding, Comforters, Curtains, Pillows, and Home Furnishings</span>
-      </h2>
+      <h2>Wholesale Bedding, Comforters, Curtains, Pillows, and Home Furnishings</h2>
       <p>Source premium bedsheets, comforters, curtains, towels, dhurries and a kids range in bulk. Flexible minimum order quantities for wholesale and project sourcing, with custom colourways and weave patterns on request.</p>
     </div>
-    
+
     <div class="products-grid">
-        
-      <div class="product-card" 
-           data-cat="Bedding" 
-           data-title="Premium Cotton King Size Fitted Bedsheet" 
+
+      <div class="product-card" role="button" tabindex="0"
+           aria-label="View details for Premium Cotton King Size Fitted Bedsheet"
+           data-cat="Bedding"
+           data-title="Premium Cotton King Size Fitted Bedsheet"
            data-desc="Woven from top-tier long-staple cotton yarn for maximum luxury and regular laundering durability. Features heavy elastic edge fitting and high breathability optimized for premium architectural settings."
-           data-images="./Porwal Images/premium cotton king size fittef bedsheet/kingsize bedsheet.png, ./Porwal Images/premium cotton king size fittef bedsheet/onbed.png, ./Porwal Images/premium cotton king size fittef bedsheet/packing.png">
+           data-images="./Porwal Images/premium cotton king size fittef bedsheet/kingsize bedsheet.jpg, ./Porwal Images/premium cotton king size fittef bedsheet/onbed.jpg, ./Porwal Images/premium cotton king size fittef bedsheet/packing.jpg">
         <div class="product-illustration">
-          <img src="./Porwal Images/premium cotton king size fittef bedsheet/kingsize bedsheet.png" alt="Premium Fitted Bedsheet" class="product-image">
+          <img src="./Porwal Images/premium cotton king size fittef bedsheet/kingsize bedsheet.jpg" loading="lazy" decoding="async" alt="Premium Fitted Bedsheet" class="product-image" onerror="this.classList.add('img-failed')">
         </div>
         <div class="product-overlay">
           <span class="product-category">Bedding</span>
@@ -1457,13 +1593,14 @@
         </div>
       </div>
 
-      <div class="product-card"
-           data-cat="Soft Furnishings" 
-           data-title="Premium Soft & Breathable Comforter" 
+      <div class="product-card" role="button" tabindex="0"
+           aria-label="View details for Premium Soft & Breathable Comforter"
+           data-cat="Soft Furnishings"
+           data-title="Premium Soft & Breathable Comforter"
            data-desc="Engineered with lightweight, breathable fabric and uniform thermal micro-fill insulation architecture. Wrapped in tasteful and subtle minimal floral patterns."
-           data-images="./Porwal Images/comfoorter/img.png, ./Porwal Images/comfoorter/onbed.png, ./Porwal Images/comfoorter/packing.png">
+           data-images="./Porwal Images/comfoorter/img.jpg, ./Porwal Images/comfoorter/onbed.jpg, ./Porwal Images/comfoorter/packing.jpg">
         <div class="product-illustration">
-          <img src="./Porwal Images/comfoorter/img.png" alt="Premium Comforter" class="product-image">
+          <img src="./Porwal Images/comfoorter/img.jpg" loading="lazy" decoding="async" alt="Premium Comforter" class="product-image" onerror="this.classList.add('img-failed')">
         </div>
         <div class="product-overlay">
           <span class="product-category">Soft Furnishings</span>
@@ -1473,13 +1610,14 @@
         </div>
       </div>
 
-      <div class="product-card"
-           data-cat="Luxury Bedding" 
-           data-title="Premium Quilted Floral Comforter" 
+      <div class="product-card" role="button" tabindex="0"
+           aria-label="View details for Premium Quilted Floral Comforter"
+           data-cat="Luxury Bedding"
+           data-title="Premium Quilted Floral Comforter"
            data-desc="Features detailed lock-stitch quilting lines that prevent fill shifting over long-term processing. Cotton blend material designed with traditional navy flower and peach vine motif structures."
-           data-images="./Porwal Images/cotton kingsize bedsheet/kingsize bedsheet.png, ./Porwal Images/cotton kingsize bedsheet/onbed.png, ./Porwal Images/cotton kingsize bedsheet/packing.png">
+           data-images="./Porwal Images/cotton kingsize bedsheet/kingsize bedsheet.jpg, ./Porwal Images/cotton kingsize bedsheet/onbed.jpg, ./Porwal Images/cotton kingsize bedsheet/packing.jpg">
         <div class="product-illustration">
-          <img src="./Porwal Images/cotton kingsize bedsheet/kingsize bedsheet.png" alt="Quilted Floral Comforter" class="product-image">
+          <img src="./Porwal Images/cotton kingsize bedsheet/kingsize bedsheet.jpg" loading="lazy" decoding="async" alt="Quilted Floral Comforter" class="product-image" onerror="this.classList.add('img-failed')">
         </div>
         <div class="product-overlay">
           <span class="product-category">Luxury Bedding</span>
@@ -1489,13 +1627,14 @@
         </div>
       </div>
 
-      <div class="product-card"
-           data-cat="Kids Collection" 
-           data-title="Soft & Cozy Kids Comforter" 
+      <div class="product-card" role="button" tabindex="0"
+           aria-label="View details for Soft & Cozy Kids Comforter"
+           data-cat="Kids Collection"
+           data-title="Soft & Cozy Kids Comforter"
            data-desc="Naturally soft fabric structured gentle and kind on young skin. Features dynamic kid-friendly prints with durable wash care parameters."
-           data-images="./Porwal Images/kids bed.png">
+           data-images="./Porwal Images/kids bed.jpg">
         <div class="product-illustration">
-          <img src="./Porwal Images/kids bed.png" alt="Kids Cartoon Comforter" class="product-image">
+          <img src="./Porwal Images/kids bed.jpg" loading="lazy" decoding="async" alt="Kids Cartoon Comforter" class="product-image" onerror="this.classList.add('img-failed')">
         </div>
         <div class="product-overlay">
           <span class="product-category">Kids Collection</span>
@@ -1505,13 +1644,14 @@
         </div>
       </div>
 
-      <div class="product-card"
-           data-cat="Curtains" 
-           data-title="Premium Light-Filtering Curtains" 
+      <div class="product-card" role="button" tabindex="0"
+           aria-label="View details for Premium Light-Filtering Curtains"
+           data-cat="Curtains"
+           data-title="Premium Light-Filtering Curtains"
            data-desc="Tailored architectural curtain drapes with reinforced eyelet parameters. Offers structural alignment and balanced ambient light filtering for boutique hotels and modern residential spaces."
            data-images="./Porwal Images/curtains/c1.jpeg, ./Porwal Images/curtains/c2.jpeg">
         <div class="product-illustration">
-          <img src="./Porwal Images/curtains/c1.jpeg" alt="Premium Curtains View" class="product-image">
+          <img src="./Porwal Images/curtains/c1.jpeg" loading="lazy" decoding="async" alt="Premium Curtains View" class="product-image" onerror="this.classList.add('img-failed')">
         </div>
         <div class="product-overlay">
           <span class="product-category">Curtains</span>
@@ -1521,13 +1661,14 @@
         </div>
       </div>
 
-      <div class="product-card"
-           data-cat="Towels & Bath Linen" 
-           data-title="High-Absorbency Premium Towels" 
+      <div class="product-card" role="button" tabindex="0"
+           aria-label="View details for High-Absorbency Premium Towels"
+           data-cat="Towels & Bath Linen"
+           data-title="High-Absorbency Premium Towels"
            data-desc="Long-loop premium combed cotton bath linens engineered specifically for heavy institutional laundering cycles. High tensile warp thread build-up guarantees performance."
            data-images="./Porwal Images/bathtowel/bathtowel.jpeg">
         <div class="product-illustration">
-          <img src="./Porwal Images/bathtowel/bathtowel.jpeg" alt="Bath Linen View" class="product-image">
+          <img src="./Porwal Images/bathtowel/bathtowel.jpeg" loading="lazy" decoding="async" alt="Bath Linen View" class="product-image" onerror="this.classList.add('img-failed')">
         </div>
         <div class="product-overlay">
           <span class="product-category">Towels & Bath Linen</span>
@@ -1537,13 +1678,14 @@
         </div>
       </div>
 
-      <div class="product-card"
-           data-cat="Dhurries & Rugs" 
-           data-title="Handloomed Reversible Dhurries" 
+      <div class="product-card" role="button" tabindex="0"
+           aria-label="View details for Handloomed Reversible Dhurries"
+           data-cat="Dhurries & Rugs"
+           data-title="Handloomed Reversible Dhurries"
            data-desc="Authentic handloomed dhurries and rugs featuring traditional and contemporary patterns. Highly durable, reversible, and perfect for high-traffic areas or living spaces."
            data-images="./Porwal Images/rugs/rug.jpeg">
         <div class="product-illustration">
-          <img src="./Porwal Images/rugs/rug.jpeg" alt="Dhurries and Rugs" class="product-image" onerror="this.style.display='none'">
+          <img src="./Porwal Images/rugs/rug.jpeg" loading="lazy" decoding="async" alt="Dhurries and Rugs" class="product-image" onerror="this.classList.add('img-failed')">
           </div>
         <div class="product-overlay">
           <span class="product-category">Dhurries & Rugs</span>
@@ -1562,21 +1704,21 @@
   <div class="marquee-wrapper">
     <!-- Set 1 for marquee -->
     <div class="associated-brands-flex">
-      <img src="./Brand logos/bombay-dyeing-vector-logo.png" alt="Bombay Dyeing" class="associated-brand-img">
-      <img src="./Brand logos/decor-logo-png_seeklogo-401197.png" alt="D'Decor" class="associated-brand-img">
-      <img src="./Brand logos/florida.png" alt="Florida" class="associated-brand-img">
-      <img src="./Brand logos/Spaces.png" alt="Spaces" class="associated-brand-img">
-      <img src="./Brand logos/trident logo.png" alt="Trident" class="associated-brand-img">
-      <img src="./Brand logos/Welspun-logo.jpg" alt="Welspun" class="associated-brand-img">
+      <a class="associated-brand-link" href="https://bombaydyeing.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Bombay Dyeing"><img src="./brand-logos/bombay-dyeing-logo.png" loading="lazy" decoding="async" alt="Bombay Dyeing" class="associated-brand-img"></a>
+      <a class="associated-brand-link" href="https://www.ddecor.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit D'Decor"><img src="./brand-logos/ddecor-logo.png" loading="lazy" decoding="async" alt="D'Decor" class="associated-brand-img"></a>
+      <a class="associated-brand-link" href="https://floridadecor.in/" target="_blank" rel="noopener noreferrer" aria-label="Visit Florida"><img src="./brand-logos/florida-logo.png" loading="lazy" decoding="async" alt="Florida" class="associated-brand-img"></a>
+      <a class="associated-brand-link" href="https://spaces.in/" target="_blank" rel="noopener noreferrer" aria-label="Visit Spaces"><img src="./brand-logos/spaces-logo.png" loading="lazy" decoding="async" alt="Spaces" class="associated-brand-img"></a>
+      <a class="associated-brand-link" href="https://mytrident.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Trident"><img src="./brand-logos/trident-logo.png" loading="lazy" decoding="async" alt="Trident" class="associated-brand-img"></a>
+      <a class="associated-brand-link" href="https://www.welspun.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Welspun"><img src="./brand-logos/welspun-logo.png" loading="lazy" decoding="async" alt="Welspun" class="associated-brand-img"></a>
     </div>
     <!-- Set 2 for infinite scroll loop (Exact duplicate of Set 1) -->
      <div class="associated-brands-flex" aria-hidden="true">
-      <img src="./Brand logos/bombay-dyeing-vector-logo.png" alt="Bombay Dyeing" class="associated-brand-img">
-      <img src="./Brand logos/decor-logo-png_seeklogo-401197.png" alt="D'Decor" class="associated-brand-img">
-      <img src="./Brand logos/florida.png" alt="Florida" class="associated-brand-img">
-      <img src="./Brand logos/Spaces.png" alt="Spaces" class="associated-brand-img">
-      <img src="./Brand logos/trident logo.png" alt="Trident" class="associated-brand-img">
-      <img src="./Brand logos/Welspun-logo.jpg" alt="Welspun" class="associated-brand-img">
+      <a class="associated-brand-link" href="https://bombaydyeing.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="./brand-logos/bombay-dyeing-logo.png" loading="lazy" decoding="async" alt="Bombay Dyeing" class="associated-brand-img"></a>
+      <a class="associated-brand-link" href="https://www.ddecor.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="./brand-logos/ddecor-logo.png" loading="lazy" decoding="async" alt="D'Decor" class="associated-brand-img"></a>
+      <a class="associated-brand-link" href="https://floridadecor.in/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="./brand-logos/florida-logo.png" loading="lazy" decoding="async" alt="Florida" class="associated-brand-img"></a>
+      <a class="associated-brand-link" href="https://spaces.in/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="./brand-logos/spaces-logo.png" loading="lazy" decoding="async" alt="Spaces" class="associated-brand-img"></a>
+      <a class="associated-brand-link" href="https://mytrident.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="./brand-logos/trident-logo.png" loading="lazy" decoding="async" alt="Trident" class="associated-brand-img"></a>
+      <a class="associated-brand-link" href="https://www.welspun.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="./brand-logos/welspun-logo.png" loading="lazy" decoding="async" alt="Welspun" class="associated-brand-img"></a>
     </div>
   </div>
 </div>
@@ -1584,7 +1726,7 @@
 <section id="how-it-works">
   <div class="wrap">
     <div class="section-header" style="margin-bottom: 20px;">
-      <p class="section-label" style="color: #C49A3C;">Clear Operations</p>
+      <p class="section-label">Clear Operations</p>
       <h2><span class="sourcing-highlight">Sourcing</span> With Us Is Simple</h2>
     </div>
     <div class="operational-steps-grid">
@@ -1635,7 +1777,7 @@
 </section>
 
 <section id="testimonials">
-  <div class="testimonials-bg-text">Trust</div>
+  <div class="testimonials-bg-text" aria-hidden="true">Trust</div>
   <div class="wrap testimonials-inner">
     <div class="section-header">
       <p class="section-label">Partner Voices</p>
@@ -1645,7 +1787,7 @@
 
     <div class="swiper testimonials-swiper">
       <div class="swiper-wrapper">
-  
+
         <div class="swiper-slide">
           <div class="testi-card featured">
             <div class="stars">★★★★★</div>
@@ -1713,47 +1855,6 @@
   </div>
 </section>
 
-<section id="overseas-buyers">
-  <div class="wrap">
-    <div style="max-width:750px;">
-      <p class="section-label" style="color: var(--gold-soft);">For overseas buyers</p>
-      <h2>Buying From Outside India?</h2>
-      <p style="color: rgba(245,240,232,0.65); margin-top: 12px; font-size: 15.5px;">We supply overseas buyers as well as Indian buyers, including a growing base in the USA. Here is how we make export orders simple.</p>
-    </div>
-    <div class="international-trade-box">
-      <div class="international-trade-grid">
-        <div class="international-trade-item">
-          <h3>Foreign Currency Quotes</h3>
-          <p>Get seamless pricing sheets rendered in USD or native regional currency values for transparent trade review.</p>
-        </div>
-        <div class="international-trade-item">
-          <h3>Full Custom Clearance Data</h3>
-          <p>Every commercial invoice, cargo manifest, and origin certificate is filed smoothly to prevent port delays.</p>
-        </div>
-        <div class="international-trade-item">
-          <h3>Secure Sea/Air Packaging</h3>
-          <p>Strong multi-wall cartons, packed to protect your fabrics from moisture during sea and air transit.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- <section id="catalogue-capture">
-  <div class="wrap">
-    <div class="lead-capture-shield">
-      <h2>Get the Latest Catalogue and Offers</h2>
-      <p>Not ready to file a custom procurement enquiry yet? Download our complete handloom product catalog and seasonal design index directly to your inbox. WhatsApp works well for Indian buyers alongside email.</p>
-      <form class="lead-capture-inline-form" id="catalogConversionFormElement" onsubmit="executeCatalogConversionProtocol(event)">
-        <input type="email" id="conversionEmailInput" class="capture-input" placeholder="Enter corporate email address" required aria-label="Corporate Email Address">
-        <input type="tel" id="conversionWhatsappInput" class="capture-input" placeholder="WhatsApp Number" required aria-label="WhatsApp Number">
-        <button type="submit" class="hero-cta hero-cta--solid" style="border: none; cursor: pointer;">Get Catalogue</button>
-      </form>
-      <div class="capture-response-message" id="conversionStatusReportingBox"></div>
-    </div>
-  </div>
-</section> -->
-
 <section id="faq-matrix">
   <div class="wrap">
     <div style="text-align:center; max-width:650px; margin:0 auto;">
@@ -1762,32 +1863,32 @@
     </div>
     <div class="accordion-matrix-container">
       <div class="accordion-matrix-item">
-        <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">What is the minimum order quantity?</button>
-        <div class="accordion-matrix-panel">
+        <button class="accordion-matrix-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-1" id="faq-trigger-1" onclick="evaluateAccordionStateTrigger(this)">What is the minimum order quantity?</button>
+        <div class="accordion-matrix-panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1">
           <div class="accordion-matrix-content">Our minimum quantities are flexible, especially for first-time buyers. Tell us the product and we will confirm the minimum for it.</div>
         </div>
       </div>
       <div class="accordion-matrix-item">
-        <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">Who can buy from Nivrá?</button>
-        <div class="accordion-matrix-panel">
+        <button class="accordion-matrix-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-2" id="faq-trigger-2" onclick="evaluateAccordionStateTrigger(this)">Who can buy from Nivrá?</button>
+        <div class="accordion-matrix-panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2">
           <div class="accordion-matrix-content">Retailers, distributors, dealers, shop owners, home-based sellers, e-commerce sellers, interior designers and hospitality brands.</div>
         </div>
       </div>
       <div class="accordion-matrix-item">
-        <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">Do you offer custom colours and sizes?</button>
-        <div class="accordion-matrix-panel">
+        <button class="accordion-matrix-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-3" id="faq-trigger-3" onclick="evaluateAccordionStateTrigger(this)">Do you offer custom colours and sizes?</button>
+        <div class="accordion-matrix-panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3">
           <div class="accordion-matrix-content">Custom colours, sizes and weave patterns are made to order through our weavers on request.</div>
         </div>
       </div>
       <div class="accordion-matrix-item">
-        <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">Which areas do you ship to?</button>
-        <div class="accordion-matrix-panel">
+        <button class="accordion-matrix-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-4" id="faq-trigger-4" onclick="evaluateAccordionStateTrigger(this)">Which areas do you ship to?</button>
+        <div class="accordion-matrix-panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4">
           <div class="accordion-matrix-content">We ship across India and to select overseas markets. Courier cost depends on your city, which is why we ask for it in the enquiry form.</div>
         </div>
       </div>
       <div class="accordion-matrix-item">
-        <button class="accordion-matrix-trigger" onclick="evaluateAccordionStateTrigger(this)">How do I start a wholesale enquiry?</button>
-        <div class="accordion-matrix-panel">
+        <button class="accordion-matrix-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-5" id="faq-trigger-5" onclick="evaluateAccordionStateTrigger(this)">How do I start a wholesale enquiry?</button>
+        <div class="accordion-matrix-panel" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5">
           <div class="accordion-matrix-content">Send an enquiry and choose your business type. Our B2B team will share pricing within 24 hours.</div>
         </div>
       </div>
@@ -1801,7 +1902,7 @@
       <p class="section-label">Let's Work Together</p>
       <h2>Get Wholesale Prices and Bulk Quotes</h2>
       <p>Tell us what you need and your city, and our B2B team will send pricing within 24 hours. Minimum order quantities are flexible for first-time buyers.</p>
-      
+
       <div class="contact-info">
         <div class="contact-info-item">
           <div class="contact-info-icon">
@@ -1810,7 +1911,7 @@
           <div>
             <div class="contact-info-label">Office</div>
             <div class="contact-info-text">
-              <a href="https://maps.google.com" style="text-decoration: none; color: inherit;" target="_blank">
+              <a href="https://maps.app.goo.gl/bicVS1oTbrhypgzn9" style="text-decoration: none; color: inherit;" target="_blank" rel="noopener">
                 29/1, Chhipa Bakhal Road,<br>
                 Malharganj, Indore<br>
                 Madhya Pradesh - 452002
@@ -1820,7 +1921,7 @@
         </div>
         <div class="contact-info-item">
           <div class="contact-info-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 10a19.79 19.79 0 01-3.07-8.67A2 2 0 013.61 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           </div>
           <div>
             <div class="contact-info-label">Phone</div>
@@ -1829,7 +1930,7 @@
         </div>
         <div class="contact-info-item">
           <div class="contact-info-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </div>
           <div>
             <div class="contact-info-label">Email</div>
@@ -1840,7 +1941,7 @@
     </div>
 
     <div class="contact-form-container">
-      
+
       <div class="success-state" id="successState">
         <div class="checkmark-wrapper">
           <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
@@ -1853,57 +1954,65 @@
       </div>
 
       <form id="enquiryForm" novalidate onsubmit="handleValidationAndSubmit(event)">
-        
+
+        <!-- Honeypot: FormSubmit discards submissions where this is
+             filled. Bots complete every field they find; humans never
+             see it. Not inside a .form-group, so validation skips it. -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off"
+               aria-hidden="true" style="position:absolute; left:-9999px;
+               width:1px; height:1px; opacity:0;">
+
         <div class="form-row">
           <div class="form-group">
-            <label>First Name*</label>
+            <label for="form-first-name">First Name*</label>
             <input type="text" id="form-first-name" name="First Name" required data-rule="alpha">
             <div class="form-error-msg">Please enter a valid first name (letters only).</div>
           </div>
           <div class="form-group">
-            <label>Last Name*</label>
+            <label for="form-last-name">Last Name*</label>
             <input type="text" id="form-last-name" name="Last Name" required data-rule="alpha">
             <div class="form-error-msg">Please enter a valid last name (letters only).</div>
           </div>
         </div>
         <div class="form-group">
-          <label>Company Name</label>
+          <label for="form-company-name">Company Name</label>
           <input type="text" id="form-company-name" name="Company Name">
         </div>
         <div class="form-group">
-          <label>Business Email*</label>
+          <label for="form-business-email">Business Email*</label>
           <input type="email" id="form-business-email" name="Business Email" required data-rule="email">
           <div class="form-error-msg">Please enter a valid business email.</div>
         </div>
 
         <div class="form-group">
-        <label>Phone Number / WhatsApp*</label>
+        <label for="form-phone">Phone Number / WhatsApp*</label>
         <div class="phone-field-group">
-          <select id="form-country-code" aria-label="Country Code">
+          <select id="form-country-code" name="Country Code" aria-label="Country Code" onchange="syncFromCountryCode()">
             <option value="+91" selected>IN (+91)</option>
             <option value="+1">US (+1)</option>
             <option value="+44">UK (+44)</option>
             <option value="+971">AE (+971)</option>
             <option value="+61">AU (+61)</option>
           </select>
-          <!-- Yahan par oninput ka use karke 10 digits tak limit lagayi gayi hai -->
-          <input type="number" id="form-phone" name="Phone Number" required 
-                oninput="javascript: if (this.value.length > 10) this.value = this.value.slice(0, 10);" 
-                placeholder="10 digit number">
+          <!-- Digit limit is enforced per country in handlePhoneInput() -->
+          <input type="tel" inputmode="numeric" id="form-phone" name="Phone Number"
+                 required data-rule="phone" autocomplete="tel-national"
+                 placeholder="10 digit number">
         </div>
-        <div class="form-error-msg">Please enter a valid 10-digit phone number.</div>
+        <input type="hidden" id="form-phone-e164" name="Phone (International)">
+        <div class="form-error-msg" id="phone-error-msg">Please enter a valid phone number.</div>
       </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label>City / Hub*</label>
+            <label for="form-city">City / Hub*</label>
             <input type="text" id="form-city" name="City Hub" required>
             <div class="form-error-msg">City value is required to evaluate courier logistics.</div>
           </div>
-          
+
           <div class="form-group">
-            <label>Country*</label>
-            <select id="form-country" name="Country" required>
+            <label for="form-country">Country*</label>
+            <select id="form-country" name="Country" required onchange="syncFromCountry()">
               <option value="" disabled selected>Select Country</option>
               <option value="India">India</option>
               <option value="United States">United States</option>
@@ -1916,7 +2025,7 @@
         </div>
 
         <div class="form-group">
-          <label>Business Type*</label>
+          <label for="form-business-type">Business Type*</label>
           <select id="form-business-type" name="Business Type" required onchange="toggleOtherBusinessField(this)">
             <option value="" disabled selected>Select type</option>
             <option value="Authorized Dealer">Authorized Dealer</option>
@@ -1929,16 +2038,16 @@
             <option value="Other">Other (Please Specify)</option>
           </select>
           <div class="form-error-msg">Please classify your primary operational alignment.</div>
-          
+
           <div id="other-business-type-group" class="form-group">
-            <label>Specify Business Type*</label>
-            <input type="text" id="form-business-type-other" name="Custom Business Type" minlength="15" maxlength="25" placeholder="Enter 15-25 characters">
-            <div class="form-error-msg">Please provide custom details (between 15 to 25 characters).</div>
+            <label for="form-business-type-other">Specify Business Type*</label>
+            <input type="text" id="form-business-type-other" name="Custom Business Type" maxlength="60" placeholder="e.g. Wholesaler, Exporter, Boutique hotel">
+            <div class="form-error-msg">Please describe your business type.</div>
           </div>
         </div>
-        
+
         <div class="form-group">
-          <label>Products of Interest*</label>
+          <label for="form-products-interest">Products of Interest*</label>
           <select id="form-products-interest" name="Products of Interest" required>
             <option value="" disabled selected>Select category</option>
             <option value="Bedsheets & Pillow Covers">Bedding (Bedsheets & Pillowcases)</option>
@@ -1952,11 +2061,17 @@
           <div class="form-error-msg">Please specify a targeted inventory line.</div>
         </div>
         <div class="form-group">
-          <label>Message / Sourcing Requirements*</label>
+          <label for="form-message">Message / Sourcing Requirements*</label>
           <textarea id="form-message" name="Message" required placeholder="Detail your required volumes or requirements..."></textarea>
           <div class="form-error-msg">Please provide your target sourcing parameters.</div>
         </div>
-        
+
+        <div id="formErrorBox" role="alert" aria-live="assertive"
+             style="display:none; margin-top:1rem; padding:0.9rem 1rem;
+                    border:1px solid var(--terracotta); border-radius:4px;
+                    background:rgba(181,82,42,0.12); color:var(--cream);
+                    font-size:0.85rem; line-height:1.55;"></div>
+
         <button type="submit" class="form-submit" id="submitBtn">
           <span class="btn-text">Send Sourcing Enquiry</span>
           <span class="spinner"></span>
@@ -1971,7 +2086,7 @@
   <div class="wrap">
     <div class="landscape-footer-grid">
       <div class="landscape-footer-column">
-        <h3 style="font-family:'Fraunces', serif; font-size:22px; text-transform:none; letter-spacing:0; margin-bottom:14px;">Nivrá</h3>
+        <h3 style="font-family:'Fraunces','Cormorant Garamond',serif; font-size:22px; text-transform:none; letter-spacing:0; margin-bottom:14px;">Nivrá</h3>
         <p>Wholesale handloom bedding and home furnishings, supplied to trade buyers and customers across India since 1978.</p>
       </div>
       <div class="landscape-footer-column">
@@ -2005,39 +2120,55 @@
         <p><a href="mailto:nivrabytheporwals@gmail.com" style="color: inherit; text-decoration: none;">✉ nivrabytheporwals@gmail.com</a></p>
       </div>
     </div>
-    
+
     <div class="landscape-footer-seo-sentence">
       Wholesale handloom bedding and home furnishings from Indore, India.
     </div>
-    
+
     <div class="landscape-footer-bottom-bar">
-      <div>© 2026 Nivrá. All Rights Reserved.</div>
+      <div>© <span id="copyright-year">2026</span> Nivrá. All Rights Reserved.</div>
       <div style="display: flex; gap: 15px;">
         <a href="./privacy-policy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a>
         <a href="./returns.html" style="color: inherit; text-decoration: none;">Returns</a>
         <a href="./shipping.html" style="color: inherit; text-decoration: none;">Shipping</a>
       </div>
       <div class="landscape-footer-socials-matrix">
-        <a href="https://wa.me/917869916333" target="_blank" rel="noopener" aria-label="WhatsApp Business Interface">WA</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn Profile">In</a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram Portfolio">Ig</a>
+        <a href="https://wa.me/917869916333" target="_blank" rel="noopener"
+           aria-label="Message Nivrá on WhatsApp" title="WhatsApp">
+          <span class="social-icon social-icon--whatsapp" aria-hidden="true"></span>
+        </a>
+        <a href="https://www.linkedin.com/company/nivr%C3%A1-by-porwal-handloom-handicraft/"
+           target="_blank" rel="noopener"
+           aria-label="Nivrá by Porwal Handloom on LinkedIn" title="LinkedIn">
+          <span class="social-icon social-icon--linkedin" aria-hidden="true"></span>
+        </a>
+        <a href="https://www.instagram.com/porwal.handloom"
+           target="_blank" rel="noopener"
+           aria-label="Porwal Handloom on Instagram" title="Instagram">
+          <span class="social-icon social-icon--instagram" aria-hidden="true"></span>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61591965895684"
+        target="_blank" rel="noopener"
+        aria-label="Porwal Handloom on Facebook" title="Facebook">
+       <span class="social-icon social-icon--facebook" aria-hidden="true"></span>
+     </a>
       </div>
     </div>
   </div>
 </footer>
 
-<div id="productCatalogModal" class="modal-overlay">
+<div id="productCatalogModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
   <div class="modal-content">
     <button class="modal-close" id="closeCatalogBtn" aria-label="Close popup">×</button>
     <div class="modal-body">
-      
+
       <div class="modal-gallery">
         <div class="modal-main-img-wrap">
           <img id="modalMainImage" src="" alt="Catalog Main View">
         </div>
         <div id="modalThumbnailsContainer" class="modal-thumbnails"></div>
       </div>
-      
+
       <div class="modal-info">
         <span id="modalProductCat" class="modal-cat">Category</span>
         <h3 id="modalProductTitle">Product Title</h3>
@@ -2052,11 +2183,24 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
+// Footer year, so it does not silently go stale each January
+(function setCopyrightYear() {
+  const el = document.getElementById('copyright-year');
+  if (el) el.textContent = new Date().getFullYear();
+})();
+
 // ── NAVBAR SCROLL ──
 const navbar = document.getElementById('navbar');
+// Coalesce scroll events into one class update per animation frame
+let navTicking = false;
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-});
+  if (navTicking) return;
+  navTicking = true;
+  requestAnimationFrame(() => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    navTicking = false;
+  });
+}, { passive: true });
 
 // ── Side Navigation Toggle ──
 const menuToggleBtn = document.getElementById('menuToggleBtn');
@@ -2064,6 +2208,7 @@ const navLinksContainer = document.querySelector('.nav-links');
 const sidebarOverlay = document.getElementById('sidebarOverlay');
 
 function openMobileMenu() {
+  menuToggleBtn.setAttribute('aria-expanded', 'true');
   menuToggleBtn.classList.add('is-active');
   navLinksContainer.classList.add('is-open');
   sidebarOverlay.classList.add('is-visible');
@@ -2071,6 +2216,7 @@ function openMobileMenu() {
 }
 
 function closeMobileMenu() {
+  menuToggleBtn.setAttribute('aria-expanded', 'false');
   menuToggleBtn.classList.remove('is-active');
   navLinksContainer.classList.remove('is-open');
   sidebarOverlay.classList.remove('is-visible');
@@ -2092,23 +2238,23 @@ sidebarOverlay.addEventListener('click', closeMobileMenu);
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', function(e) {
     if (window.innerWidth <= 800) {
-      e.preventDefault(); 
-      
+      e.preventDefault();
+
       const targetSelector = this.getAttribute('href');
       const targetElement = document.querySelector(targetSelector);
-      
+
       closeMobileMenu();
-      
+
       if (targetElement) {
         setTimeout(() => {
-          const headerHeight = 75; 
+          const headerHeight = 75;
           const elementTargetY = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-          
+
           window.scrollTo({
             top: elementTargetY,
             behavior: 'smooth'
           });
-        }, 250); 
+        }, 250);
       }
     }
   });
@@ -2124,7 +2270,7 @@ window.addEventListener('resize', () => {
 function toggleOtherBusinessField(selectElement) {
   const otherGroupBlock = document.getElementById('other-business-type-group');
   const otherInputNode = document.getElementById('form-business-type-other');
-  
+
   if (selectElement.value === 'Other') {
     otherGroupBlock.style.display = 'block';
     otherInputNode.setAttribute('required', 'required');
@@ -2137,66 +2283,296 @@ function toggleOtherBusinessField(selectElement) {
 }
 
 // ── Swiper Engine Setup ──
-const swiper = new Swiper('.testimonials-swiper', {
+let swiper = null;
+try {
+  swiper = new Swiper('.testimonials-swiper', {
   slidesPerView: 1,
   spaceBetween: 20,
-  loop: true,
+  // Four testimonials, three shown at >=1024px. Swiper 11 needs at
+  // least slidesPerView x 2 slides for loop:true and misbehaves below
+  // that. rewind runs to the end and returns to the start instead,
+  // which is valid at any count. Switch back to loop: true if the
+  // testimonial count ever reaches six.
+  loop: false,
+  rewind: true,
   autoplay: {
     delay: 4500,
     disableOnInteraction: false,
+    pauseOnMouseEnter: true,
   },
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
   },
   breakpoints: {
-    768: { slidesPerView: 2, spaceBetween: 30 },
-    1024: { slidesPerView: 3, spaceBetween: 30 }
-  }
-});
+      768: { slidesPerView: 2, spaceBetween: 30 },
+      1024: { slidesPerView: 3, spaceBetween: 30 }
+    }
+  });
+} catch (err) {
+  // A CDN failure here used to take out the product modals and form
+  // validation with it, since both are wired up further down this
+  // same top-level script. The carousel degrades to a static list.
+  console.warn('Swiper unavailable, testimonials will not rotate:', err);
+}
 
 // ── Accordion System Toggle ──
 function evaluateAccordionStateTrigger(clickedButton) {
   const activeItem = clickedButton.parentElement;
   const disclosurePanel = clickedButton.nextElementSibling;
   const currentlyActiveState = activeItem.classList.contains('active-state');
-  
+
   document.querySelectorAll('.accordion-matrix-item').forEach(itemElement => {
     itemElement.classList.remove('active-state');
     itemElement.querySelector('.accordion-matrix-panel').style.maxHeight = null;
+    const t = itemElement.querySelector('.accordion-matrix-trigger');
+    if (t) t.setAttribute('aria-expanded', 'false');
   });
 
   if (!currentlyActiveState) {
     activeItem.classList.add('active-state');
     disclosurePanel.style.maxHeight = disclosurePanel.scrollHeight + "px";
+    clickedButton.setAttribute('aria-expanded', 'true');
   }
 }
 
-// ── Lower-Intent Lead Funnel Execution ──
-function executeCatalogConversionProtocol(event) {
-  event.preventDefault();
-  const userEmailAddress = document.getElementById('conversionEmailInput').value.trim();
-  const userWhatsappNumber = document.getElementById('conversionWhatsappInput').value.trim();
-  const responseReportingBox = document.getElementById('conversionStatusReportingBox');
-  
-  responseReportingBox.style.display = 'block';
-  
-  // Basic validation for both email and phone presence
-  if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(userEmailAddress) && userWhatsappNumber.length >= 7) {
-    responseReportingBox.style.color = '#2E7D32';
-    responseReportingBox.textContent = "Thank you. Your direct B2B catalog access link is on its way to your inbox.";
-    document.getElementById('catalogConversionFormElement').reset();
-  } else {
-    responseReportingBox.style.color = 'var(--terracotta)';
-    responseReportingBox.textContent = "Please provide a valid corporate email and WhatsApp number.";
+// An open panel's height is fixed in pixels at click time, so rotating
+// a phone or resizing reflows the text taller and clips it. Recompute.
+window.addEventListener('resize', () => {
+  const open = document.querySelector('.accordion-matrix-item.active-state');
+  if (!open) return;
+  const panel = open.querySelector('.accordion-matrix-panel');
+  if (panel) panel.style.maxHeight = panel.scrollHeight + 'px';
+});
+
+// ── Phone rules per country ──
+//
+// groups  = digit grouping in national convention
+// sep     = separator character for that country
+// min/max = digit count excluding the dial code
+//
+// Sources: Ofcom National Telephone Numbering Plan (UK),
+// TDRA numbering plan (UAE), ITU-T E.164.
+//
+// UK note: 4-6 grouping is correct for mobiles (7xxx xxxxxx).
+// UK landline area codes run 2-6 digits with no single grouping,
+// so landlines fall back to the same split — readable, not canonical.
+const PHONE_RULES = {
+  '+91':  { country: 'India',
+            min: 10, max: 10, groups: [5, 5],    sep: ' ',
+            label: '10-digit',       example: '78699 16333' },
+
+  '+1':   { country: 'United States',
+            min: 10, max: 10, groups: [3, 3, 4], sep: '-',
+            label: '10-digit',       example: '786-991-6333' },
+
+  '+44':  { country: 'United Kingdom',
+            min: 10, max: 11, groups: [4, 6],    sep: ' ',
+            label: '10 or 11 digit', example: '7911 123456' },
+
+  '+971': { country: 'United Arab Emirates',
+            min: 9,  max: 9,  groups: [2, 3, 4], sep: ' ',
+            label: '9-digit',        example: '50 123 4567' },
+
+  '+61':  { country: 'Australia',
+            min: 9,  max: 9,  groups: [3, 3, 3], sep: ' ',
+            label: '9-digit',        example: '412 345 678' }
+};
+
+// Anything not listed above accepts a loose international range
+const PHONE_FALLBACK = {
+  min: 7, max: 15, groups: [15], sep: ' ',
+  label: 'valid', example: 'phone number'
+};
+
+function currentPhoneRule() {
+  const codeEl = document.getElementById('form-country-code');
+  const code = codeEl ? codeEl.value : '+91';
+  return PHONE_RULES[code] || PHONE_FALLBACK;
+}
+
+// Applies a country's grouping to a bare digit string.
+// The final group absorbs any overflow, so an 11-digit UK number
+// renders as 7911 1234567 rather than losing a digit.
+function formatPhoneDigits(digits, rule) {
+  let out = '';
+  let i = 0;
+  for (let g = 0; g < rule.groups.length && i < digits.length; g++) {
+    const isLast = (g === rule.groups.length - 1);
+    const take = isLast ? digits.length - i : rule.groups[g];
+    if (out) out += rule.sep;
+    out += digits.substr(i, take);
+    i += take;
   }
+  return out;
+}
+
+// Detects a dial code at the front of a pasted number.
+//
+// Only runs when the digits are too long for the selected country, or
+// the user pasted something beginning with '+'. That guard matters:
+// 9178699163 is a perfectly valid 10-digit Indian mobile, and stripping
+// its leading 91 would silently corrupt it. A number that fits its
+// country is never touched.
+//
+// Returns { digits, code } — code is null when nothing was stripped.
+function stripDialCode(digits, hadPlus, rule) {
+  if (!hadPlus && digits.length <= rule.max) return { digits: digits, code: null };
+
+  // Longest codes first, so +971 is tested before +91 and +1
+  const codes = Object.keys(PHONE_RULES).sort(
+    (a, b) => b.replace('+', '').length - a.replace('+', '').length
+  );
+
+  for (const code of codes) {
+    const bare = code.replace('+', '');
+    if (!digits.startsWith(bare)) continue;
+
+    const rest = digits.slice(bare.length);
+    const candidate = PHONE_RULES[code];
+    if (rest.length >= candidate.min && rest.length <= candidate.max) {
+      return { digits: rest, code: code };
+    }
+  }
+
+  return { digits: digits, code: null };
+}
+
+// Reformats on every keystroke while keeping the caret where the user
+// left it. Without the digit-counting below, editing mid-number would
+// throw the cursor to the end on each keypress.
+function handlePhoneInput() {
+  const input = document.getElementById('form-phone');
+  let rule = currentPhoneRule();
+
+  const caret = input.selectionStart;
+  const digitsBeforeCaret = input.value.slice(0, caret).replace(/\D/g, '').length;
+
+  const hadPlus = input.value.trim().startsWith('+');
+  let digits = input.value.replace(/\D/g, '');
+
+  // Handle a pasted international number
+  const stripped = stripDialCode(digits, hadPlus, rule);
+  digits = stripped.digits;
+
+  if (stripped.code) {
+    const codeEl = document.getElementById('form-country-code');
+    if (codeEl && codeEl.value !== stripped.code) {
+      codeEl.value = stripped.code;
+      const countryEl = document.getElementById('form-country');
+      const matched = PHONE_RULES[stripped.code];
+      if (countryEl && matched) {
+        countryEl.value = matched.country;
+        const grp = countryEl.closest('.form-group');
+        if (grp) grp.classList.remove('invalid-state');
+      }
+      rule = currentPhoneRule();
+    }
+    const errMsg = document.getElementById('phone-error-msg');
+    if (errMsg) errMsg.textContent = 'Please enter a ' + rule.label + ' phone number.';
+    input.placeholder = rule.example;
+  }
+
+  digits = digits.slice(0, rule.max);
+  const formatted = formatPhoneDigits(digits, rule);
+  input.value = formatted;
+
+  // Caret lands at the end after a dial-code strip, since the value
+  // no longer corresponds to where the user was typing
+  if (stripped.code) {
+    input.setSelectionRange(formatted.length, formatted.length);
+    return;
+  }
+
+  // Walk forward until we've passed the same number of digits
+  let pos = 0;
+  let seen = 0;
+  while (pos < formatted.length && seen < digitsBeforeCaret) {
+    if (/\d/.test(formatted[pos])) seen++;
+    pos++;
+  }
+  input.setSelectionRange(pos, pos);
+}
+
+// Backspace directly after a separator should remove the digit before
+// it, not just the separator (which would be reinserted immediately and
+// appear to do nothing).
+function handlePhoneKeydown(e) {
+  if (e.key !== 'Backspace') return;
+  const input = e.target;
+  const start = input.selectionStart;
+  if (start !== input.selectionEnd || start < 2) return;
+  if (/\d/.test(input.value[start - 1])) return;
+
+  e.preventDefault();
+  input.value = input.value.slice(0, start - 2) + input.value.slice(start);
+  input.setSelectionRange(start - 2, start - 2);
+  handlePhoneInput();
+}
+
+// Keeps maxlength, placeholder, error text and existing value in step
+// with the selected country.
+function applyPhoneRuleForCountry() {
+  const rule = currentPhoneRule();
+  const input = document.getElementById('form-phone');
+  const errMsg = document.getElementById('phone-error-msg');
+  if (!input) return;
+
+  input.placeholder = rule.example;
+  if (errMsg) errMsg.textContent = 'Please enter a ' + rule.label + ' phone number.';
+
+  // Re-group whatever is already typed, trimming past the new maximum
+  const digits = input.value.replace(/\D/g, '').slice(0, rule.max);
+  input.value = formatPhoneDigits(digits, rule);
+}
+
+// ── Country / dial code synchronisation ──
+// Both selects describe the same fact. Changing either updates the other.
+const COUNTRY_TO_CODE = {};
+Object.keys(PHONE_RULES).forEach(code => {
+  COUNTRY_TO_CODE[PHONE_RULES[code].country] = code;
+});
+
+function syncFromCountryCode() {
+  const code = document.getElementById('form-country-code').value;
+  const countryEl = document.getElementById('form-country');
+  const rule = PHONE_RULES[code];
+
+  if (countryEl && rule && countryEl.value !== rule.country) {
+    countryEl.value = rule.country;
+    // Clear any stale validation error on the country field
+    const grp = countryEl.closest('.form-group');
+    if (grp) grp.classList.remove('invalid-state');
+  }
+  applyPhoneRuleForCountry();
+}
+
+function syncFromCountry() {
+  const country = document.getElementById('form-country').value;
+  const codeEl = document.getElementById('form-country-code');
+  const code = COUNTRY_TO_CODE[country];
+
+  if (codeEl && code && codeEl.value !== code) {
+    codeEl.value = code;
+  }
+  applyPhoneRuleForCountry();
 }
 
 // ── B2B Intake Engine Validation Rules ──
 const verificationCoreRegexEngine = {
-  'alpha': val => /^[A-Za-z\s.'-]{2,}$/.test(val),
+  // \p{L} matches letters in any script; \p{M} matches combining
+  // marks, which Indic scripts need — the halant and vowel signs in
+  // अक्षत are marks, not letters, so \p{L} alone still rejected
+  // Devanagari, Tamil and Bengali names. The old A-Za-z range
+  // rejected everything non-English.
+  'alpha': val => /^[\p{L}\p{M}\s.'-]{2,}$/u.test(val),
   'email': val => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val),
-  'numeric': val => /^[0-9\s-]{7,15}$/.test(val)
+  'numeric': val => /^[0-9\s-]{7,15}$/.test(val),
+  'phone': val => {
+    const rule = currentPhoneRule();
+    const digits = val.replace(/\D/g, '');
+    return digits.length >= rule.min && digits.length <= rule.max;
+  }
 };
 
 function handleValidationAndSubmit(e) {
@@ -2204,7 +2580,15 @@ function handleValidationAndSubmit(e) {
   const form = document.getElementById('enquiryForm');
   let isFormValid = true;
 
+  // Clear every group first, then only ever ADD invalid-state below.
+  // Previously this used toggle() per field, so in a group holding more
+  // than one control the last field evaluated overwrote the others'
+  // verdict - hiding real errors.
+  form.querySelectorAll('.form-group').forEach(g => g.classList.remove('invalid-state'));
+
   form.querySelectorAll('input, select, textarea').forEach(inputNode => {
+    // Hidden fields carry no user input and have no rules
+    if (inputNode.type === 'hidden') return;
     // Skip validating hidden components inside other elements unless requested active
     if (inputNode.id === 'form-business-type-other' && document.getElementById('form-business-type').value !== 'Other') {
       return;
@@ -2229,53 +2613,99 @@ function handleValidationAndSubmit(e) {
 
     // Custom Validation bounds rule enforcement for the dynamic field (15 to 25 chars length check)
     if (isFieldValid && inputNode.id === 'form-business-type-other') {
-      if (cleanValue.length < 15 || cleanValue.length > 25) {
+      if (cleanValue.length < 2 || cleanValue.length > 60) {
         isFieldValid = false;
       }
     }
 
-    group.classList.toggle('invalid-state', !isFieldValid);
-    if (!isFieldValid) isFormValid = false;
+    if (!isFieldValid) {
+      group.classList.add('invalid-state');
+      isFormValid = false;
+    }
   });
 
-  if (!isFormValid) return;
+  if (!isFormValid) {
+    // The form container is 620px tall, so a failing field is often
+    // below the fold - without this the page appears to do nothing
+    const firstBad = form.querySelector('.form-group.invalid-state');
+    if (firstBad) {
+      firstBad.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const field = firstBad.querySelector('input:not([type=hidden]), select, textarea');
+      if (field) setTimeout(() => field.focus({ preventScroll: true }), 300);
+    }
+    return;
+  }
+
+  const errBoxReset = document.getElementById('formErrorBox');
+  if (errBoxReset) errBoxReset.style.display = 'none';
 
   const btn = document.getElementById('submitBtn');
   const btnText = btn.querySelector('.btn-text');
-  
+
   btn.classList.add('is-loading');
   btnText.textContent = 'Sending...';
   btn.disabled = true;
 
- const formData = new FormData(form);
+ // A dialable international number for the inbox — the visible field
+  // holds a nationally formatted value, which is not click-to-call safe
+  const e164El = document.getElementById('form-phone-e164');
+  if (e164El) {
+    const dial = document.getElementById('form-country-code').value;
+    const digits = document.getElementById('form-phone').value.replace(/\D/g, '');
+    e164El.value = dial + digits;
+  }
 
-  // Har submission ke liye unique subject aur client ka reply email set karne ke liye:
+  const formData = new FormData(form);
+
+  // Give each submission a unique subject and a working Reply-To
   const firstName = document.getElementById('form-first-name').value;
   const lastName = document.getElementById('form-last-name').value;
   const clientEmail = document.getElementById('form-business-email').value;
-  const timeStamp = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+  // Pinned to IST. Generated client-side, this used to show the
+  // sender's local time, so an enquiry from Dubai looked like 3am.
+  const timeStamp = new Date().toLocaleString('en-IN', {
+    timeZone: 'Asia/Kolkata',
+    day: '2-digit', month: 'short',
+    hour: '2-digit', minute: '2-digit'
+  }) + ' IST';
 
-  // Naya Unique Subject
+  // Unique subject line
   formData.append('_subject', `New Enquiry from ${firstName} ${lastName} (${timeStamp})`);
-  // Reply-To button dabane par seedhe client ko reply jaye
+  // Reply-To so hitting reply goes straight to the buyer
   formData.append('_replyto', clientEmail);
 
-  fetch('https://formsubmit.co/ajax/nivrabytheporwals@gmail.com', {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  })
-  
+  // ── DEV_MODE ──────────────────────────────────────────────
+  // true  = fake a successful send, nothing is emailed (use locally)
+  // false = submit for real to the business inbox (production)
+  const DEV_MODE = false;
+
+  const submission = DEV_MODE
+    ? new Promise(resolve => setTimeout(
+        () => resolve({ json: () => Promise.resolve({ success: "true" }) }), 600))
+    : fetch('https://formsubmit.co/ajax/nivrabytheporwals@gmail.com', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+  submission
+
   .then(response => response.json())
   .then(data => {
+    // FormSubmit returns HTTP 200 with success:"false" on rate limits and
+    // unactivated endpoints. Without this check the buyer sees a thank-you
+    // while nothing is delivered.
+    if (data.success !== "true" && data.success !== true) {
+      throw new Error(data.message || 'Submission rejected by mail service');
+    }
     form.style.opacity = '0';
     form.style.visibility = 'hidden';
-    
+
     setTimeout(() => {
       form.style.display = 'none';
       const successState = document.getElementById('successState');
       successState.classList.add('active');
-      
+
       form.reset();
       document.getElementById('other-business-type-group').style.display = 'none';
       btn.classList.remove('is-loading');
@@ -2288,9 +2718,46 @@ function handleValidationAndSubmit(e) {
     btn.classList.remove('is-loading');
     btnText.textContent = 'Error. Try Again.';
     btn.disabled = false;
-    alert("There was an issue sending your message. Please try again later.");
+    // The real reason used to go to the console only — which is why
+    // "This form needs Activation" went unnoticed for so long. Show it.
+    const errBox = document.getElementById('formErrorBox');
+    if (errBox) {
+      errBox.innerHTML =
+        'Your enquiry could not be sent. Please call ' +
+        '<a href="tel:+917869916333" style="color:var(--gold);">+91 78699 16333</a> ' +
+        'or email <a href="mailto:nivrabytheporwals@gmail.com" style="color:var(--gold);">' +
+        'nivrabytheporwals@gmail.com</a> and we will pick it up directly.' +
+        '<br><span style="opacity:0.6; font-size:0.78rem;">Reason: ' +
+        (error && error.message ? error.message : 'network error') + '</span>';
+      errBox.style.display = 'block';
+      errBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   });
 }
+
+// Clear a field's red state as soon as the user edits it, rather than
+// leaving it red until the next submit attempt
+(function initErrorClearing() {
+  const form = document.getElementById('enquiryForm');
+  if (!form) return;
+  form.addEventListener('input', e => {
+    const grp = e.target.closest('.form-group');
+    if (grp) grp.classList.remove('invalid-state');
+  });
+  form.addEventListener('change', e => {
+    const grp = e.target.closest('.form-group');
+    if (grp) grp.classList.remove('invalid-state');
+  });
+})();
+
+// Live phone formatting + initial state
+(function initPhoneField() {
+  const input = document.getElementById('form-phone');
+  if (!input) return;
+  input.addEventListener('input', handlePhoneInput);
+  input.addEventListener('keydown', handlePhoneKeydown);
+  applyPhoneRuleForCountry();
+})();
 
 // ── Interactive Dynamic Lightbox Matrix ──
 const catalogModal = document.getElementById('productCatalogModal');
@@ -2303,6 +2770,15 @@ const modalProductDesc = document.getElementById('modalProductDesc');
 const modalEnquireBtn = document.getElementById('modalEnquireBtn');
 
 document.querySelectorAll('.product-card').forEach(card => {
+  // role="button" elements must respond to Enter and Space, which a
+  // div does not do on its own
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.click();
+    }
+  });
+
   card.addEventListener('click', (e) => {
     if (e.target.classList.contains('product-link')) return;
 
@@ -2319,16 +2795,20 @@ document.querySelectorAll('.product-card').forEach(card => {
 
     if (imagesArray.length > 0) {
       modalMainImage.src = imagesArray[0];
+      // Was a static "Catalog Main View" for all seven products
+      modalMainImage.alt = title;
 
       imagesArray.forEach((imgUrl, index) => {
         const thumbImg = document.createElement('img');
         thumbImg.src = imgUrl;
         thumbImg.alt = `${title} view ${index + 1}`;
         thumbImg.classList.add('modal-thumb');
+        thumbImg.tabIndex = 0;
+        thumbImg.setAttribute('role', 'button');
         if (index === 0) thumbImg.classList.add('active');
 
         thumbImg.addEventListener('click', (thumbEvent) => {
-          thumbEvent.stopPropagation(); 
+          thumbEvent.stopPropagation();
           modalMainImage.style.opacity = '0.3';
           setTimeout(() => {
             modalMainImage.src = imgUrl;
@@ -2344,13 +2824,56 @@ document.querySelectorAll('.product-card').forEach(card => {
 
     catalogModal.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // Remember what opened the modal so focus can go back there on close
+    lastFocusedCard = card;
+    // Focus the close button so keyboard users start inside the dialog
+    setTimeout(() => closeCatalogBtn.focus(), 50);
   });
+});
+
+// Tracks the card that opened the modal, so focus returns to it
+let lastFocusedCard = null;
+
+// Keeps Tab inside the dialog. Without this, tabbing walks invisibly
+// through the page behind the overlay.
+function trapModalFocus(e) {
+  if (e.key !== 'Tab' || !catalogModal.classList.contains('active')) return;
+
+  const focusable = catalogModal.querySelectorAll(
+    'button, [href], input, select, textarea, img.modal-thumb, [tabindex]:not([tabindex="-1"])'
+  );
+  if (!focusable.length) return;
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault();
+    first.focus();
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && catalogModal.classList.contains('active')) {
+    closeCatalogModal();
+    return;
+  }
+  trapModalFocus(e);
 });
 
 function closeCatalogModal() {
   catalogModal.classList.remove('active');
   if (!navLinksContainer.classList.contains('is-open')) {
     document.body.style.overflow = '';
+  }
+  // Return focus to the card that opened it, not the top of the page
+  if (lastFocusedCard) {
+    lastFocusedCard.focus();
+    lastFocusedCard = null;
   }
 }
 
@@ -2359,6 +2882,127 @@ catalogModal.addEventListener('click', (e) => {
   if (e.target === catalogModal) closeCatalogModal();
 });
 modalEnquireBtn.addEventListener('click', closeCatalogModal);
+</script>
+
+<!-- ── Structured data ──────────────────────────────────────────
+     Tells search engines what this business is and what the FAQ
+     section contains. Makes the page eligible for the local business
+     panel and expanded FAQ results.
+
+     Validate after any edit at https://validator.schema.org/ and
+     https://search.google.com/test/rich-results
+
+     Not included, because the site does not state them: opening hours,
+     geo coordinates, price range. Worth adding — supply the real values.
+──────────────────────────────────────────────────────────────── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeGoodsStore",
+  "@id": "https://www.theporwals.com/#business",
+  "name": "Nivrá by Porwals",
+  "alternateName": "Porwal Handloom and Handicraft",
+  "description": "Wholesale handloom bedding and home furnishings supplied to trade buyers across India since 1978.",
+  "url": "https://www.theporwals.com/",
+  "foundingDate": "1978",
+  "telephone": "+917869916333",
+  "email": "nivrabytheporwals@gmail.com",
+  "image": "https://www.theporwals.com/og-image.jpg",
+  "logo": "https://www.theporwals.com/Nivra.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "29/1, Chhipa Bakhal Road, Malharganj",
+    "addressLocality": "Indore",
+    "addressRegion": "Madhya Pradesh",
+    "postalCode": "452002",
+    "addressCountry": "IN"
+  },
+  "hasMap": "https://maps.app.goo.gl/bicVS1oTbrhypgzn9",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 22.7202926,
+    "longitude": 75.8441555
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "11:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "sameAs": [
+    "https://www.instagram.com/porwal.handloom",
+    "https://www.linkedin.com/company/nivr%C3%A1-by-porwal-handloom-handicraft/"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.theporwals.com/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the minimum order quantity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our minimum quantities are flexible, especially for first-time buyers. Tell us the product and we will confirm the minimum for it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who can buy from Nivrá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Retailers, distributors, dealers, shop owners, home-based sellers, e-commerce sellers, interior designers and hospitality brands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer custom colours and sizes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Custom colours, sizes and weave patterns are made to order through our weavers on request."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which areas do you ship to?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We ship across India and to select overseas markets. Courier cost depends on your city, which is why we ask for it in the enquiry form."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I start a wholesale enquiry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Send an enquiry and choose your business type. Our B2B team will share pricing within 24 hours."
+      }
+    }
+  ]
+}
 </script>
 
 </body>
